@@ -9,8 +9,6 @@
     "sourceType": "module"
   },
   "rules": {
-    "prettier": [
-      "error"
-    ]
+    "prettier/prettier": ["error"]
   }
 }
