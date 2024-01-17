@@ -9,15 +9,11 @@
     "sourceType": "module"
   },
   "rules": {
-<<<<<<< HEAD
-    "prettier/prettier": ["error"]
-=======
     "prettier/prettier": [
       "error",
       {
         "endOfLine": "auto"
       }
     ]
->>>>>>> 77f36bc4cec3b4dbc611ea2e6114ed033560c120
   }
 }
