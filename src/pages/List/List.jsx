@@ -1,4 +1,4 @@
-import PaperBox from '../components/Paper/PaperBox';
+import PaperBox from '../../components/Paper/PaperBox';
 import * as S from './List.style';
 
 export default function List() {
