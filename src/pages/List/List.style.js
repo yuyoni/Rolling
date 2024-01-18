@@ -32,4 +32,8 @@ export const Button = styled.button`
   font-weight: 600;
   line-height: 28px;
   letter-spacing: -0.18px;
+
+  &:hover {
+    background: var(--Purple-700);
+  }
 `;
