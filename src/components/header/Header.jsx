@@ -9,7 +9,9 @@ export default function Header() {
       <h2>로고</h2>
       <Nav>
         <div>
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
         </div>
         <div>
           <Link to="/post">
