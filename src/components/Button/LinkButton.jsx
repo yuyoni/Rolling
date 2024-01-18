@@ -1,7 +1,12 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-function LinkButton({ value }) {
-  return <Button>{value}</Button>;
+function LinkButton({ value, link }) {
+  return (
+    <Link to={link}>
+      <Button>{value}</Button>
+    </Link>
+  );
 }
 
 export default LinkButton;
