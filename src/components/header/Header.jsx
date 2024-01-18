@@ -5,8 +5,7 @@ import Logo from './Logo';
 
 export default function Header() {
   return (
-    <div>
-      <h2>로고</h2>
+    <Wrapper>
       <Nav>
         <div>
           <Link to="/">
@@ -19,17 +18,34 @@ export default function Header() {
           </Link>
         </div>
       </Nav>
-    </div>
+    </Wrapper>
   );
 }
+const Wrapper = styled.header`
+  display: flex;
+  width: 1920px;
+  height: 64px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  flex-shrink: 0;
+`;
+
 const Nav = styled.nav`
   display: flex;
   align-items: center;
-  // gap: 944px;
+  gap: 944px;
 `;
 const Button = styled.button`
-  background-color: #6750a4;
-  border: none;
-  color: #ffffff;
-  padding: 16px;
+  display: flex;
+  height: 40px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 6px;
+  border: 1px solid var(--gray-300, #ccc);
+  background: var(--white, #fff);
 `;
