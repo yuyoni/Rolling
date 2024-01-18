@@ -1,5 +1,7 @@
-import * as S from './PaperContainer.style';
+import leftArrow from '../../assetes/arrow_left.svg';
+import rightArrow from '../../assetes/arrow_right.svg';
 import Paper from './Paper';
+import * as S from './PaperContainer.style';
 
 export default function PaperContainer() {
   const mock = {
@@ -77,6 +79,9 @@ export default function PaperContainer() {
 
   return (
     <S.Wrapper>
+      <S.LeftArrowBox>
+        <S.Arrow src={leftArrow} alt="left-arrow" />
+      </S.LeftArrowBox>
       <S.SlideContainer>
         {/* 임시로 직접 4개 불러와봄 */}
         <Paper data={mock} />
@@ -84,6 +89,9 @@ export default function PaperContainer() {
         <Paper data={mock} />
         <Paper data={mock} />
       </S.SlideContainer>
+      <S.RightArrowBox>
+        <S.Arrow src={rightArrow} alt="right-arrow" />
+      </S.RightArrowBox>
     </S.Wrapper>
   );
 }
