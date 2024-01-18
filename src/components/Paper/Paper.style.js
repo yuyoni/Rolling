@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 275px;
   height: 260px;
   flex-shrink: 0;
@@ -11,12 +13,7 @@ export const Wrapper = styled.div`
   padding: 24px;
 `;
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const PaperInfo = styled.div`
+export const PaperInfoBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -38,7 +35,7 @@ export const PaperTitle = styled.span`
   letter-spacing: -0.24px;
 `;
 
-export const ImageBox = styled.div`
+export const ImageList = styled.div`
   display: flex;
   gap: -12px;
   margin-left: 12px; // 12만큼 띄우고
@@ -65,11 +62,11 @@ export const RestMessageCount = styled.div`
   justify-content: center;
 `;
 
-export const Line = styled.div`
+export const DividedLine = styled.div`
   width: 100%;
   height: 1px;
   background-color: rgba(0, 0, 0, 0.12);
-  margin-top: 43px;
+  margin-top: 36px;
   margin-bottom: 16px;
 `;
 

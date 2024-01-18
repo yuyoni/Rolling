@@ -3,11 +3,11 @@ import * as S from './Paper.style';
 export default function Paper({ data }) {
   const { name, recentMessages, messageCount, topReactions } = data;
 
-  const messages = recentMessages
+  const threeRecentMessages = recentMessages
     .slice(0, 3)
     .map(e => <S.Image src={e.profileImageURL} key={e.id} alt={e.sender} />);
 
-  const restMessages =
+  const restMessageCount =
     messageCount > 3 ? (
       <S.RestMessageCount>{`+${messageCount - 3}`}</S.RestMessageCount>
     ) : null;
@@ -21,18 +21,16 @@ export default function Paper({ data }) {
 
   return (
     <S.Wrapper>
-      <S.Container>
-        <S.PaperInfo>
-          <S.PaperTitle>To. {name}</S.PaperTitle>
-          <S.ImageBox>
-            {messages}
-            {restMessages}
-          </S.ImageBox>
-          <h3>{messageCount}명이 작성했어요!</h3>
-        </S.PaperInfo>
-        <S.Line />
-        <S.EmojiList>{reactions}</S.EmojiList>
-      </S.Container>
+      <S.PaperInfoBox>
+        <S.PaperTitle>To. {name}</S.PaperTitle>
+        <S.ImageList>
+          {threeRecentMessages}
+          {restMessageCount}
+        </S.ImageList>
+        <h3>{messageCount}명이 작성했어요!</h3>
+      </S.PaperInfoBox>
+      <S.DividedLine />
+      <S.EmojiList>{reactions}</S.EmojiList>
     </S.Wrapper>
   );
 }
