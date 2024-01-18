@@ -3,6 +3,7 @@ import Home from '../pages/Home';
 import Layout from '../pages/Layout';
 import List from '../pages/List';
 import Post from '../pages/Post';
+import SendMessage from '../pages/SendMessage';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: 'post',
         element: <Post />
+      },
+      {
+        path: 'message',
+        element: <SendMessage />
       }
     ]
   }
