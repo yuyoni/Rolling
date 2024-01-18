@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 import Poppins from './assetes/fonts/Poppins-Bold.woff';
 import PretendardBold from './assetes/fonts/Pretendard-Bold.woff';
 import PretendardRegular from './assetes/fonts/Pretendard-Regular.woff';
@@ -48,6 +49,8 @@ const GlobalStyles = createGlobalStyle`
     --Error : #DC3A3A;
     --Surface : #F6F8FF;
   }
+
+  ${reset};
 
   @font-face {
         font-family: "Poppins-Bold";
