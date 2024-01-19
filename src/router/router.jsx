@@ -3,6 +3,7 @@ import Home from '../pages/Home';
 import Layout from '../components/Layout';
 import List from '../pages/List/List';
 import Post from '../pages/Post';
+import CreatePaper from '../components/createpaper/CreatePaper';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: 'post',
         element: <Post />
+      },
+      {
+        path: 'createpaper',
+        element: <CreatePaper />
       }
     ]
   }

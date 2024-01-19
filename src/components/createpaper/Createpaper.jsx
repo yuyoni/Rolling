@@ -1,5 +1,5 @@
-import Header from './header.jsx';
-import FormContainer from './formcontainer.jsx';
+import Header from './Header.jsx';
+import FormContainer from './FormContainer.jsx';
 
 function CreatePaper() {
   return (
