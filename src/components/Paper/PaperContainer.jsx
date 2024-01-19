@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import leftArrow from '../../assetes/arrow_left.svg';
 import rightArrow from '../../assetes/arrow_right.svg';
 import Paper from './Paper';
 import * as S from './PaperContainer.style';
 
 export default function PaperContainer() {
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const slideContainerSize = 1180;
+
   const mock = {
     id: 1,
     name: '강영훈',
@@ -79,17 +83,25 @@ export default function PaperContainer() {
 
   return (
     <S.Wrapper>
-      <S.LeftArrowBox>
+      <S.LeftArrowBox
+        onClick={() => setCarouselIndex(prev => prev + slideContainerSize)}
+      >
         <S.Arrow src={leftArrow} alt="left-arrow" />
       </S.LeftArrowBox>
       <S.SlideContainer>
-        {/* 임시로 직접 4개 불러와봄 */}
-        <Paper data={mock} />
-        <Paper data={mock} />
-        <Paper data={mock} />
-        <Paper data={mock} />
+        <S.SlideElement $carouselIndex={carouselIndex}>
+          {/* 임시로 직접 6개 불러와봄 */}
+          <Paper data={mock} />
+          <Paper data={mock} />
+          <Paper data={mock} />
+          <Paper data={mock} />
+          <Paper data={mock} />
+          <Paper data={mock} />
+        </S.SlideElement>
       </S.SlideContainer>
-      <S.RightArrowBox>
+      <S.RightArrowBox
+        onClick={() => setCarouselIndex(prev => prev - slideContainerSize)}
+      >
         <S.Arrow src={rightArrow} alt="right-arrow" />
       </S.RightArrowBox>
     </S.Wrapper>

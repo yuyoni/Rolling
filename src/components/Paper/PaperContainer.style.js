@@ -4,16 +4,10 @@ export const Wrapper = styled.div`
   position: relative;
 `;
 
-export const SlideContainer = styled.div`
-  display: flex;
-  gap: 20px;
-  max-width: 1160px;
-  overflow: hidden;
-`;
-
 export const ArrowBox = styled.div`
   position: absolute;
   top: 110px;
+  z-index: 2;
 
   background-color: white;
   width: 40px;
@@ -37,4 +31,18 @@ export const RightArrowBox = styled(ArrowBox)`
 export const Arrow = styled.img`
   width: 16px;
   height: 16px;
+`;
+
+export const SlideContainer = styled.div`
+  position: relative;
+  max-width: 1160px;
+  overflow: hidden;
+`;
+
+export const SlideElement = styled.div`
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  transform: ${props => `translateX(${props.$carouselIndex}px)`};
+  transition: transform 0.5s ease;
 `;
