@@ -3,9 +3,11 @@ import styled from 'styled-components';
 
 function LinkButton({ value, link }) {
   return (
-    <Link to={link}>
-      <Button>{value}</Button>
-    </Link>
+    <ButtonArea>
+      <Link to={link}>
+        <Button>{value}</Button>
+      </Link>
+    </ButtonArea>
   );
 }
 
@@ -32,4 +34,14 @@ const Button = styled.button`
   font-weight: 700;
   line-height: 28px; /* 155.556% */
   letter-spacing: -0.18px;
+`;
+
+const ButtonArea = styled.div`
+  display: flex;
+  width: 1201px;
+  height: 104px;
+  padding: 24px 0px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 `;
