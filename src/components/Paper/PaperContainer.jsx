@@ -11,7 +11,7 @@ export default function PaperContainer() {
   // 마지막 순서일 때는 우측 버튼이 안보이는 기능을 테스트하기 위한 임시 상수들
   const itemsPerPage = 4;
   const totalItems = 15;
-  const totalPages = Math.floor(totalItems / itemsPerPage);
+  const totalPages = Math.ceil(totalItems / itemsPerPage) - 1;
   const lastIndexOfCarousel = -totalPages * slideContainerSize;
 
   const handleArrowClick = increment => {
@@ -100,7 +100,7 @@ export default function PaperContainer() {
       ) : null}
       <S.SlideContainer>
         <S.SlideElement $carouselIndex={carouselIndex}>
-          {/* 임시로 직접 15개 불러와봄 */}
+          {/* 임시로 길이 totalItems인 배열 생성해서 직접 15개 불러와봄 */}
           {Array.from({ length: totalItems }).map(() => (
             <Paper data={mock} />
           ))}
