@@ -15,6 +15,7 @@ export const ArrowBox = styled.div`
   border: 1px solid #dadcdf;
   border-radius: 50%;
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 
   display: flex;
   justify-content: center;
