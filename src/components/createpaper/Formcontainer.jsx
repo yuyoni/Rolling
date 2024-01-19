@@ -1,7 +1,13 @@
-function Formcontainer() {
+import RecipientInput from './RecipientInput';
+import BackgroundBox from './BackgroundBox';
+import Createbutton from './Createbutton';
+
+function FormContainer() {
   return (
     <div>
-      <form />
+      <RecipientInput />
+      <BackgroundBox />
+      <Createbutton />
     </div>
   );
 }
