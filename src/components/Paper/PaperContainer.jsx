@@ -83,11 +83,13 @@ export default function PaperContainer() {
 
   return (
     <S.Wrapper>
-      <S.LeftArrowBox
-        onClick={() => setCarouselIndex(prev => prev + slideContainerSize)}
-      >
-        <S.Arrow src={leftArrow} alt="left-arrow" />
-      </S.LeftArrowBox>
+      {carouselIndex ? (
+        <S.LeftArrowBox
+          onClick={() => setCarouselIndex(prev => prev + slideContainerSize)}
+        >
+          <S.Arrow src={leftArrow} alt="left-arrow" />
+        </S.LeftArrowBox>
+      ) : null}
       <S.SlideContainer>
         <S.SlideElement $carouselIndex={carouselIndex}>
           {/* 임시로 직접 6개 불러와봄 */}
