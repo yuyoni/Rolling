@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home';
-import Layout from '../pages/Layout';
-import List from '../pages/List';
+import Layout from '../components/Layout';
+import List from '../pages/List/List';
 import Post from '../pages/Post';
 import SendMessage from '../pages/SendMessage';
 
