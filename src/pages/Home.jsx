@@ -5,13 +5,13 @@ export default function Home() {
   return (
     <MainArea>
       <MainContainer>
-        <MainBox1>
+        <MainFirstBox>
           <div>홈화면1-1</div>
           <div>홈화면1-2</div>
-        </MainBox1>
-        <MainBox2>
+        </MainFirstBox>
+        <MainSecondBox>
           <div>홈화면2</div>
-        </MainBox2>
+        </MainSecondBox>
       </MainContainer>
 
       <LinkButton value="구경해보기" link="/list" />
@@ -34,7 +34,7 @@ const MainContainer = styled.div`
   margin: 100px 360px 0 360px
 `;
 
-const MainBox1 = styled.div`
+const MainFirstBox = styled.div`
   display: flex;
   padding: 60px 0px 60px 60px;
   justify-content: flex-end;
@@ -45,7 +45,7 @@ const MainBox1 = styled.div`
   background: var(--Surface, #f6f8ff);
 `;
 
-const MainBox2 = styled.div`
+const MainSecondBox = styled.div`
   display: flex;
   padding: 60px 192px 60px 0px;
   align-items: flex-start;
