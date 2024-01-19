@@ -22,6 +22,7 @@ const router = createBrowserRouter([
         path: 'post',
         element: <Post />
       },
+      // 임의로 메세지 보내기 페이지 경로 설정
       {
         path: 'message',
         element: <SendMessage />
