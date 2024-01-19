@@ -1,5 +1,5 @@
-function ColorImgselector() {
-  return ();
+function ColorImgSelector() {
+  return <div></div>;
 }
 
-export default ColorImgselector;
+export default ColorImgSelector;

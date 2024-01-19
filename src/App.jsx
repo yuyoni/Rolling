@@ -5,8 +5,12 @@ import GlobalStyles from './GlobalStyles';
 function App() {
   return (
     <div className="App">
+<<<<<<< Updated upstream
       <GlobalStyles />
       <RouterProvider router={router} />
+=======
+      <h1>Appasdf</h1>
+>>>>>>> Stashed changes
     </div>
   );
 }

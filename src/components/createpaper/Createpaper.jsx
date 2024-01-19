@@ -1,13 +1,13 @@
-import Header from './Header.jsx';
-import Formcontainer from './Formcontainer.jsx';
+import Header from './header.jsx';
+import FormContainer from './formcontainer.jsx';
 
-function Createpaper() {
+function CreatePaper() {
   return (
     <div>
       <Header />
-      <Formcontainer />
+      <FormContainer />
     </div>
   );
 }
 
-export default Createpaper;
+export default CreatePaper;

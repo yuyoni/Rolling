@@ -1,15 +1,15 @@
 import RecipientInput from './RecipientInput';
 import BackgroundBox from './BackgroundBox';
-import Createbutton from './Createbutton';
+import CreateButton from './CreateButton';
 
 function FormContainer() {
   return (
     <div>
       <RecipientInput />
       <BackgroundBox />
-      <Createbutton />
+      <CreateButton />
     </div>
   );
 }
 
-export default Formcontainer;
+export default FormContainer;
