@@ -8,19 +8,22 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.2rem 2rem;
-  width: 120rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Button = styled.button`
-  position: fixed;
-  bottom: 4rem;
+  position: absolute;
+  bottom: -6.4rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 50%);
 
   display: flex;
   width: 28rem;
@@ -34,12 +37,17 @@ export const Button = styled.button`
   text-align: center;
   font-family: Pretendard;
   font-size: 1.8rem;
-  font-style: normal;
-  font-weight: 600;
   line-height: 2.8rem;
-  letter-spacing: -0.018rem;
 
   &:hover {
     background: var(--Purple-700);
+  }
+
+  @media (max-width: 768px) {
+    left: 2.4rem;
+    right: 2.4rem;
+    bottom: -6.4rem;
+    width: auto;
+    transform: translateY(50%);
   }
 `;
