@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ArrowTop from '../../assetes/ArrowTop.svg';
 import ArrowDown from '../../assetes/ArrowDown.svg';
 
+// 목록 보여주기
 export function ToggleItems({ children, onClick }) {
   return (
     <ToggleList>
