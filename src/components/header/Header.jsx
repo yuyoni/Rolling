@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import * as S from './MainBox.style';
+import * as S from './Header.style';
 
 import Logo from './Logo';
 
