@@ -17,6 +17,10 @@ export const PaperTitle = styled.span`
   font-family: Pretendard-Bold;
   font-size: 2.4rem;
   line-height: 3.6rem;
+
+  @media (max-width: 360px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const ImageList = styled.div`
@@ -26,6 +30,9 @@ export const ImageList = styled.div`
 
 export const MessageCount = styled.h3`
   font-size: 1.6rem;
+  @media (max-width: 360px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const commonStyles = css`
@@ -55,12 +62,20 @@ export const DividedLine = styled.div`
   background-color: rgba(0, 0, 0, 0.12);
   margin-top: 3.1rem;
   margin-bottom: 0.4rem;
+
+  @media (max-width: 360px) {
+    margin-top: 2.1rem;
+  }
 `;
 
 export const EmojiList = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
+
+  @media (max-width: 360px) {
+    gap: 0.4rem;
+  }
 `;
 
 export const EmojiCount = styled.div`
@@ -75,5 +90,16 @@ export const EmojiCount = styled.div`
   p {
     color: var(--white);
     font-size: 1.6rem;
+  }
+
+  @media (max-width: 360px) {
+    padding: 0.8rem;
+    width: 5.5rem;
+    height: 3.2rem;
+    gap: 0.4rem;
+
+    p {
+      font-size: 1.4rem;
+    }
   }
 `;

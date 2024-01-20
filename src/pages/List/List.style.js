@@ -50,4 +50,10 @@ export const Button = styled.button`
     width: auto;
     transform: translateY(50%);
   }
+
+  @media (max-width: 768px) {
+    position: fixed;
+    bottom: 2.4rem;
+    transform: translateY(0);
+  }
 `;
