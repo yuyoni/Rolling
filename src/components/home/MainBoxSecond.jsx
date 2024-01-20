@@ -1,13 +1,15 @@
 import MainTextBox from './MainTextBox';
+import Emoji from '../../assetes/HomeItem/img_02.png';
 
 import * as S from './MainBox.style';
 
 function MainBoxSecond() {
+  const EmojiImg = Emoji;
   return (
     <div>
       <S.MainSecondBox>
         <div>
-          <h2>세컨드 박스</h2>
+          <img src={EmojiImg} alt="이모지" />
         </div>
         <MainTextBox
           num="02"

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TextBox = styled.div`
+export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -25,6 +25,13 @@ export const PointBox = styled.div`
   font-size: 14px;
   line-height: 20px; /* 142.857% */
   letter-spacing: -0.07px;
+`;
+
+export const TextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 `;
 
 export const Text = styled.div`

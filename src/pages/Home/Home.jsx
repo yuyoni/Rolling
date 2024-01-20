@@ -8,10 +8,7 @@ export default function Home() {
     <S.MainArea>
       <S.MainContainer>
         <MainBoxFirst />
-
         <MainBoxSecond />
-
-        <div>홈화면2</div>
       </S.MainContainer>
       <LinkButton value="구경해보기" link="/list" />
     </S.MainArea>
