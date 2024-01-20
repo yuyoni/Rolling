@@ -1,7 +1,7 @@
 import Header from './Header.jsx';
 import FormContainer from './FormContainer.jsx';
 
-function CreatePaper() {
+export default function CreatePaper() {
   return (
     <div>
       <Header />
@@ -9,5 +9,3 @@ function CreatePaper() {
     </div>
   );
 }
-
-export default CreatePaper;

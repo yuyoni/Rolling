@@ -1,6 +1,6 @@
-import RecipientInput from './RecipientInput';
 import BackgroundBox from './BackgroundBox';
 import CreateButton from './CreateButton';
+import RecipientInput from './RecipientInput';
 
 function FormContainer() {
   return (

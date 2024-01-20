@@ -1,15 +1,19 @@
-import BackgroundText from './BackgroundText';
+import { useState } from 'react';
 import BackgroundSelector from './BackgroundSelector';
-import ColorImgselector from './ColorImgselector';
+import BackgroundText from './BackgroundText';
+import ColorImgSelector from './ColorImgSelector';
 
-function BackgroundBox() {
+export default function BackgroundBox() {
+  const [toggle, setToggle] = useState('collor');
+  const toggleChange = () => {
+    if (toggle === 'collor') setToggle('img');
+    else setToggle('collor');
+  };
   return (
     <div>
       <BackgroundText />
-      <BackgroundSelector />
-      <ColorImgselector />
+      <BackgroundSelector toggle={toggle} toggleChange={toggleChange} />
+      <ColorImgSelector />
     </div>
   );
 }
-
-export default BackgroundBox;

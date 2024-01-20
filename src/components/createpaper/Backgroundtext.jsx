@@ -1,5 +1,3 @@
-function BackgroundText() {
-  return <div></div>;
+export default function BackgroundText() {
+  return <div>1</div>;
 }
-
-export default BackgroundText;
