@@ -1,6 +1,6 @@
 import * as S from './MainImgItemBox.style';
 
-function MainImgItemBox({ img, name, rel, content, date }) {
+export default function MainImgItemBox({ img, name, rel, content, date }) {
   return (
     <S.ItemBox>
       <S.FirstBox>
@@ -23,5 +23,3 @@ function MainImgItemBox({ img, name, rel, content, date }) {
     </S.ItemBox>
   );
 }
-
-export default MainImgItemBox;

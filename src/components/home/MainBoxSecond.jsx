@@ -3,7 +3,7 @@ import Emoji from '../../assetes/HomeItem/img_02.png';
 
 import * as S from './MainBox.style';
 
-function MainBoxSecond() {
+export default function MainBoxSecond() {
   const EmojiImg = Emoji;
   return (
     <div>
@@ -20,5 +20,3 @@ function MainBoxSecond() {
     </div>
   );
 }
-
-export default MainBoxSecond;

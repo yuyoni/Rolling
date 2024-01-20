@@ -5,7 +5,7 @@ import MainTextBox from './MainTextBox';
 
 import * as S from './MainBox.style';
 
-function MainBoxFirst() {
+export default function MainBoxFirst() {
   const FirstProfile = ProfileMen;
   return (
     <S.MainFirstBox>
@@ -34,5 +34,3 @@ function MainBoxFirst() {
     </S.MainFirstBox>
   );
 }
-
-export default MainBoxFirst;

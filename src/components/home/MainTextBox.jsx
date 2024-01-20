@@ -1,6 +1,6 @@
 import * as S from './MainTextBox.style';
 
-function MainTextBox({ num, text, subText }) {
+export default function MainTextBox({ num, text, subText }) {
   return (
     <S.TextContainer>
       <S.PointBox>Point.{num}</S.PointBox>
@@ -11,5 +11,3 @@ function MainTextBox({ num, text, subText }) {
     </S.TextContainer>
   );
 }
-
-export default MainTextBox;
