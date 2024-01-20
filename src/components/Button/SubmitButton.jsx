@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 
-export default function SubmitButton({ children, disabled, width }) {
-  return (
-    <ButtonStyle disabled={disabled} width={width}>
-      {children}
-    </ButtonStyle>
-  );
+export default function SubmitButton({ children, disabled }) {
+  return <ButtonStyle disabled={disabled}>{children}</ButtonStyle>;
 }
 
 const ButtonStyle = styled.button`
