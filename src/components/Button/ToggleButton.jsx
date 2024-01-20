@@ -11,13 +11,7 @@ export function ToggleItems({ children, onClick }) {
   );
 }
 
-export default function ToggleButton({
-  children,
-  nav,
-  listItems,
-  onChange,
-  target
-}) {
+export default function ToggleButton({ children, nav, listItems }) {
   const [show, setShow] = useState(false);
 
   // Toggle 클릭 시 보여주기
@@ -30,14 +24,9 @@ export default function ToggleButton({
     setShow(false);
   };
 
-  // 데이터 가져오기
-  const handleChange = e => {
-    onChange(target, e.target.dataset.value);
-  };
-
   return (
     <div onBlur={handleBlur}>
-      <ButtonDown nav={nav} type="button">
+      <ButtonDown nav={nav} type="button" onClick={handleShow}>
         <span>{children}</span>
         {show ? <ToggleIcon src={ArrowTop} /> : <ToggleIcon src={ArrowDown} />}
       </ButtonDown>
@@ -49,7 +38,6 @@ export default function ToggleButton({
               <Button
                 key={item}
                 onClick={handleShow}
-                onMouseOver={handleChange}
                 data-value={item}
                 type="button"
               >
