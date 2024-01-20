@@ -3,7 +3,7 @@ import Home from '../pages/Home';
 import Layout from '../components/Layout';
 import List from '../pages/List/List';
 import Post from '../pages/Post';
-import SendMessage from '../pages/SendMessage';
+import SendMessage from '../pages/Message/SendMessage';
 
 const router = createBrowserRouter([
   {

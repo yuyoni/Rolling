@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export default function Heading({ children }) {
+  return <HeadingStyle>{children}</HeadingStyle>;
+}
+
 const HeadingStyle = styled.label`
   color: var(--gray-900, #181818);
   font-family: Pretendard;
@@ -9,7 +13,3 @@ const HeadingStyle = styled.label`
   line-height: 36px; /* 150% */
   letter-spacing: -0.24px;
 `;
-
-export default function Heading({ children }) {
-  return <HeadingStyle>{children}</HeadingStyle>;
-}
