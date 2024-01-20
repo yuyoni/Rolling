@@ -1,59 +1,58 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
-const To = styled.form`
+// 나중에 따로 분리
+// 변수 선언 후 에러 상태 스타일링
+const ErrorStyle = styled.input`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 5.7rem 2.4rem;
-
-  & .MessagePage {
-    &__input {
-      display: flex;
-      flex-direction: column:
-      gap: 1.2rem;
-      margin-bottom: 5rem;
-    }
-
-    &__profileImg {
-      display: flex;
-      flex-direction: column:
-      align-items: flex-start;
-      gap: 1.2rem;
-      margin-bottom: 5rem;
-    }
-
-    &__relationship {
-      display: flex;
-      flex-direction: column:
-      align-items: flex-start;
-      gap: 1.2rem;
-      margin-bottom: 5rem;
-    }
-
-    &__content {
-      display: flex;
-      flex-direction: column:
-      align-items: flex-start;
-      gap: 1.2rem;
-      margin-bottom: 5rem;
-    }
-
-    &__font {
-      display: flex;
-      flex-direction: column:
-      align-items: flex-start;
-      gap: 1.2rem;
-      margin-bottom: 6.2rem;
-    }
-
-    &__submit {
-      left: 2.4rem;
-      right: 2.4rem;
-      bottom: 2.4rem;
-    }
-  }
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0.8rem;
+  border: ${({ $showError }) =>
+    $showError
+      ? '1px solid var(--Error, #dc3a3a)'
+      : '1px solid var(--gray-300, #ccc)'};
+  background: var(--white, #fff);
 `;
 
-export default function RecipientInput({ children }) {
-  return <To>{children}</To>;
+const P = styled.p`
+  color: var(--Error, #dc3a3a);
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+  letter-spacing: -0.06px;
+`;
+
+export default function RecipientInput({ placeholder }) {
+  const [showError, setShowError] = useState('');
+
+  // focus out 이벤트 발생 시
+  const handleBlur = e => {
+    if (!e.target.value) {
+      setShowError('값을 입력해주세요.');
+    } else {
+      setShowError('');
+    }
+  };
+
+  // focus시 초기화
+  const handleFocus = () => {
+    setShowError('');
+  };
+
+  return (
+    <>
+      <ErrorStyle
+        placeholder={placeholder}
+        $showError={showError}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+      />
+      {showError ? <P>{showError}</P> : null}
+    </>
+  );
 }

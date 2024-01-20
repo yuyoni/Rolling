@@ -1,13 +1,13 @@
 import BackgroundText from './BackgroundText';
 import BackgroundSelector from './BackgroundSelector';
-import ColorImgSelector from './ColorImgSelector';
+import ColorImgselector from './ColorImgselector';
 
 function BackgroundBox() {
   return (
     <div>
       <BackgroundText />
       <BackgroundSelector />
-      <ColorImgSelector />
+      <ColorImgselector />
     </div>
   );
 }

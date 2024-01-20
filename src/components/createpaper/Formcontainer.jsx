@@ -5,7 +5,7 @@ import CreateButton from './CreateButton';
 function FormContainer() {
   return (
     <div>
-      <RecipientInput />
+      <RecipientInput placeholder="받는 사람 이름을 입력해주세요" />
       <BackgroundBox />
       <CreateButton />
     </div>
