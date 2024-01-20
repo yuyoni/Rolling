@@ -1,9 +1,23 @@
+import { useState } from 'react';
 import leftArrow from '../../assetes/arrow_left.svg';
 import rightArrow from '../../assetes/arrow_right.svg';
 import Paper from './Paper';
 import * as S from './PaperContainer.style';
 
 export default function PaperContainer() {
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const slideContainerSize = 1180;
+
+  // 마지막 순서일 때는 우측 버튼이 안보이는 기능을 테스트하기 위한 임시 상수들
+  const itemsPerPage = 4;
+  const totalItems = 15;
+  const totalPages = Math.ceil(totalItems / itemsPerPage) - 1;
+  const lastIndexOfCarousel = -totalPages * slideContainerSize;
+
+  const handleArrowClick = increment => {
+    setCarouselIndex(prev => prev + increment);
+  };
+
   const mock = {
     id: 1,
     name: '강영훈',
@@ -79,19 +93,24 @@ export default function PaperContainer() {
 
   return (
     <S.Wrapper>
-      <S.LeftArrowBox>
-        <S.Arrow src={leftArrow} alt="left-arrow" />
-      </S.LeftArrowBox>
+      {carouselIndex ? (
+        <S.LeftArrowBox onClick={() => handleArrowClick(slideContainerSize)}>
+          <S.Arrow src={leftArrow} alt="left-arrow" />
+        </S.LeftArrowBox>
+      ) : null}
       <S.SlideContainer>
-        {/* 임시로 직접 4개 불러와봄 */}
-        <Paper data={mock} />
-        <Paper data={mock} />
-        <Paper data={mock} />
-        <Paper data={mock} />
+        <S.SlideElement $carouselIndex={carouselIndex}>
+          {/* 임시로 길이 totalItems인 배열 생성해서 직접 15개 불러와봄 */}
+          {Array.from({ length: totalItems }).map(() => (
+            <Paper data={mock} />
+          ))}
+        </S.SlideElement>
       </S.SlideContainer>
-      <S.RightArrowBox>
-        <S.Arrow src={rightArrow} alt="right-arrow" />
-      </S.RightArrowBox>
+      {carouselIndex > lastIndexOfCarousel ? (
+        <S.RightArrowBox onClick={() => handleArrowClick(-slideContainerSize)}>
+          <S.Arrow src={rightArrow} alt="right-arrow" />
+        </S.RightArrowBox>
+      ) : null}
     </S.Wrapper>
   );
 }
