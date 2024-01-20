@@ -1,4 +1,4 @@
-import Header from '../components/Header';
+import Header from '../components/header/Header';
 import Heading from '../components/Heading';
 import InputFrom from '../components/InputFrom';
 import SendMessageForm from './SendMessageForm';
