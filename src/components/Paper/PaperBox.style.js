@@ -8,7 +8,7 @@ const Container = styled.div`
   row-gap: 1.6rem;
   width: 100%;
 
-  span {
+  & > span {
     font-family: Pretendard;
     font-weight: 700;
     font-size: 2.4rem;
