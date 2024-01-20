@@ -3,15 +3,15 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   align-items: flex-start;
-  margin-top: 50px;
+  margin-top: 5rem;
   flex-direction: column;
-  row-gap: 16px;
+  row-gap: 1.6rem;
   width: 100%;
 
   span {
     font-family: Pretendard-Bold;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 `;
 

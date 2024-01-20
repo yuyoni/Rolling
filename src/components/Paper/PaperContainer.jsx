@@ -6,7 +6,7 @@ import * as S from './PaperContainer.style';
 
 export default function PaperContainer() {
   const [carouselIndex, setCarouselIndex] = useState(0);
-  const slideContainerSize = 1180;
+  const slideContainerSize = 118;
 
   // 마지막 순서일 때는 우측 버튼이 안보이는 기능을 테스트하기 위한 임시 상수들
   const itemsPerPage = 4;

@@ -3,11 +3,11 @@ import { styled, css } from 'styled-components';
 export const PaperInfoBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1.2rem;
 `;
 
 export const PaperTitle = styled.span`
-  height: 36px;
+  height: 3.6rem;
   align-self: stretch;
   overflow: hidden;
   color: var(--gray-900);
@@ -15,26 +15,26 @@ export const PaperTitle = styled.span`
   white-space: nowrap;
 
   font-family: Pretendard-Bold;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
 `;
 
 export const ImageList = styled.div`
   display: flex;
-  margin-left: 12px;
+  margin-left: 1.2rem;
 `;
 
 export const MessageCount = styled.h3`
-  font-size: 16px;
+  font-size: 1.6rem;
 `;
 
 const commonStyles = css`
-  width: 28px;
-  height: 28px;
-  border-radius: 50px;
-  border: 1.5px solid var(--white);
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 5rem;
+  border: 0.15rem solid var(--white);
   background: var(--white);
-  margin-left: -12px; // 12만큼씩 음수 갭 설정
+  margin-left: -1.2rem; // 12만큼씩 음수 갭 설정
   color: var(--gray-500);
 `;
 
@@ -51,29 +51,29 @@ export const RestMessageCount = styled.div`
 
 export const DividedLine = styled.div`
   width: 100%;
-  height: 1px;
+  height: 0.1rem;
   background-color: rgba(0, 0, 0, 0.12);
-  margin-top: 31px;
-  margin-bottom: 4px;
+  margin-top: 3.1rem;
+  margin-bottom: 0.4rem;
 `;
 
 export const EmojiList = styled.div`
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 0.8rem;
 `;
 
 export const EmojiCount = styled.div`
   display: flex;
-  padding: 8px 12px;
-  width: 65px;
-  height: 36px;
-  gap: 10px;
-  border-radius: 32px;
+  padding: 0.8rem 1.2rem;
+  width: 6.5rem;
+  height: 3.6rem;
+  gap: 1rem;
+  border-radius: 3.2rem;
   background: rgba(0, 0, 0, 0.54);
 
   p {
     color: var(--white);
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 `;

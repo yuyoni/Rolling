@@ -3,14 +3,14 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 275px;
-  height: 260px;
+  width: 27.5rem;
+  height: 26rem;
   flex-shrink: 0;
-  border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1.6rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
   background: var(--Purple-200, #ecd9ff); // 나중에 데이터로부터 받아와야하는 값
-  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
-  padding: 24px;
+  box-shadow: 0 0.2rem 1.2rem 0 rgba(0, 0, 0, 0.08);
+  padding: 2.4rem;
 `;
 
 export default Wrapper;
