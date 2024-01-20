@@ -1,32 +1,6 @@
 import styled from 'styled-components';
 
-function MainItemBox({ img, name, rel, content, date }) {
-  return (
-    <ItemBox>
-      <FirstBox>
-        <InfoBox>
-          <ProfileImg>
-            <Image src={img} alt="프로필 사진" />
-          </ProfileImg>
-          <WhoBox>
-            <Name>From. {name}</Name>
-            <div>{rel}</div>
-          </WhoBox>
-        </InfoBox>
-      </FirstBox>
-      <Line />
-
-      <SecondBox>
-        <Content>{content}</Content>
-        <div>{date}</div>
-      </SecondBox>
-    </ItemBox>
-  );
-}
-
-export default MainItemBox;
-
-const ItemBox = styled.div`
+export const ItemBox = styled.div`
   width: 206px;
   height: 162px;
   flex-shrink: 0;
@@ -42,7 +16,7 @@ const ItemBox = styled.div`
   gap: 10px;
 `;
 
-const FirstBox = styled.div`
+export const FirstBox = styled.div`
   display: flex;
   width: 100%;
   padding: 20px 24px 0px 24px;
@@ -51,13 +25,13 @@ const FirstBox = styled.div`
   align-items: flex-start;
 `;
 
-const InfoBox = styled.div`
+export const InfoBox = styled.div`
   display: inline-flex;
   align-items: flex-start;
   gap: 10px;
 `;
 
-const ProfileImg = styled.div`
+export const ProfileImg = styled.div`
   display: flex;
   height: 34px;
 
@@ -68,37 +42,37 @@ const ProfileImg = styled.div`
   // background: var(--white);
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   border-radius: 50px;
 `;
 
-const WhoBox = styled.div`
+export const WhoBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1px;
 `;
 
-const Name = styled.div`
+export const Name = styled.div`
   color: #000;
   font-family: 'Pretendard-Bold';
   font-size: 12px;
   line-height: 18px; /* 120% */
 `;
 
-const Line = styled.div`
+export const Line = styled.div`
   width: 180px;
   height: 1px;
   flex-shrink: 0;
   background: #e1e1e1;
 `;
 
-const SecondBox = styled.div`
+export const SecondBox = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Content = styled.div`
+export const Content = styled.div`
   width: 180px;
   height: 54px;
   flex-shrink: 0;
