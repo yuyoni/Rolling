@@ -1,10 +1,8 @@
-import Header from './Header.jsx';
-import FormContainer from './FormContainer.jsx';
+import FormContainer from './FormContainer';
 
 export default function CreatePaper() {
   return (
     <div>
-      <Header />
       <FormContainer />
     </div>
   );

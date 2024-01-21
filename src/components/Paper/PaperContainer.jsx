@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import leftArrow from '../../assetes/arrow-left.svg';
-import rightArrow from '../../assetes/arrow-right.svg';
+import leftArrow from '../../assetes/images/arrow-left.svg';
+import rightArrow from '../../assetes/images/arrow-right.svg';
 import Paper from './Paper';
 import * as S from './PaperContainer.style';
 
