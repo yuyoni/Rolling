@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import BackgroundSelector from './BackgroundSelector';
 import BackgroundText from './BackgroundText';
-import ColorImgSelector from './ColorImgselector';
+import ColorImgSelector from './ColorImgSelector';
 
 export default function BackgroundBox() {
   const [toggle, setToggle] = useState('collor');
