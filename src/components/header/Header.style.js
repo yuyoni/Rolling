@@ -9,6 +9,11 @@ export const Wrapper = styled.header`
   align-items: center;
   gap: 1px;
   flex-shrink: 0;
+
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 20;
 `;
 
 export const Nav = styled.nav`

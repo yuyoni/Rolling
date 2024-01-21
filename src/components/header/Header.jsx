@@ -7,16 +7,13 @@ export default function Header() {
   return (
     <S.Wrapper>
       <S.Nav>
-        <div>
-          <Link to="/">
-            <Logo />
-          </Link>
-        </div>
-        <div>
-          <Link to="/post">
-            <S.Button>롤링 페이퍼 만들기</S.Button>
-          </Link>
-        </div>
+        <Link to="/">
+          <Logo />
+        </Link>
+
+        <Link to="/post">
+          <S.Button>롤링 페이퍼 만들기</S.Button>
+        </Link>
       </S.Nav>
     </S.Wrapper>
   );
