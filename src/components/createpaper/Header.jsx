@@ -1,8 +1,8 @@
 function Header() {
   return (
-    <header>
+    <div>
       <h1>rolling</h1>
-    </header>
+    </div>
   );
 }
 
