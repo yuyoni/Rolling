@@ -1,38 +1,59 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 12px 20px;
-  width: 1200px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Button = styled.button`
-  position: fixed;
-  bottom: 40px;
+  position: absolute;
+  bottom: -6.4rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 50%);
 
   display: flex;
-  width: 280px;
-  padding: 14px 24px;
+  width: 28rem;
+  padding: 1.4rem 2.4rem;
   justify-content: center;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 1.2rem;
   background: var(--Purple-600);
 
   color: var(--white);
   text-align: center;
   font-family: Pretendard;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 28px;
-  letter-spacing: -0.18px;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
 
   &:hover {
     background: var(--Purple-700);
+  }
+
+  @media (max-width: 768px) {
+    left: 2.4rem;
+    right: 2.4rem;
+    bottom: -6.4rem;
+    width: auto;
+    transform: translateY(50%);
+  }
+
+  @media (max-width: 768px) {
+    position: fixed;
+    bottom: 2.4rem;
+    transform: translateY(0);
   }
 `;
