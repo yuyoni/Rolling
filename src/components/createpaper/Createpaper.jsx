@@ -1,4 +1,4 @@
-import Header from './Header.jsx';
+import Header from '../Header.jsx';
 import FormContainer from './FormContainer.jsx';
 
 export default function CreatePaper() {

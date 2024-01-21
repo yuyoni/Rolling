@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import BackgroundSelector from './BackgroundSelector';
 import BackgroundText from './BackgroundText';
-import ColorImgSelector from './ColorImgSelector';
+import ColorImgSelector from './ColorImgselector';
 
 export default function BackgroundBox() {
   const [toggle, setToggle] = useState('collor');
@@ -13,7 +13,7 @@ export default function BackgroundBox() {
     <div>
       <BackgroundText />
       <BackgroundSelector toggle={toggle} toggleChange={toggleChange} />
-      <ColorImgSelector />
+      <ColorImgSelector toggle={toggle} toggleChange={toggleChange} />
     </div>
   );
 }

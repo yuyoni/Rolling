@@ -7,7 +7,7 @@ const CollorButton = styled.button`
   padding: 1.2rem 1.6rem;
   border-radius: 0.8rem;
   border: ${({ $toggle }) =>
-    $toggle === '1' ? '1px solid var(--purple-600, #9935FF)' : 'none'};
+    $toggle === 'collor' ? '1px solid var(--purple-600, #9935FF)' : 'none'};
 `;
 const ImgButton = styled.button`
   display: flex;
@@ -16,7 +16,7 @@ const ImgButton = styled.button`
   padding: 1.2rem 1.6rem;
   border-radius: 0.8rem;
   border: ${({ $toggle }) =>
-    $toggle === '2' ? '1px solid var(--purple-600, #9935FF)' : 'none'};
+    $toggle === 'img' ? '1px solid var(--purple-600, #9935FF)' : 'none'};
 `;
 
 export default function BackgroundSelector({ toggle, toggleChange }) {
