@@ -13,7 +13,7 @@ export default function Card({ card, cardType }) {
         <S.AddCard>
           <S.AddCardButton>
             <S.IconWrapper>
-              <S.AddIcon />
+              <S.AddIcon alt="add-button-icon" />
             </S.IconWrapper>
           </S.AddCardButton>
         </S.AddCard>
@@ -22,7 +22,7 @@ export default function Card({ card, cardType }) {
           <S.CardHeader>
             <S.SenderBox>
               <S.ProfileImageWrapper>
-                <S.ProfileImage src={profileImageURL} />
+                <S.ProfileImage src={profileImageURL} alt="profile-image" />
               </S.ProfileImageWrapper>
 
               <S.SenderInfoBox>
@@ -34,7 +34,7 @@ export default function Card({ card, cardType }) {
               </S.SenderInfoBox>
             </S.SenderBox>
             <S.DeleteButton>
-              <S.DeleteIcon />
+              <S.DeleteIcon alt="delete-button-icon" />
             </S.DeleteButton>
           </S.CardHeader>
           <S.HorizonLine />

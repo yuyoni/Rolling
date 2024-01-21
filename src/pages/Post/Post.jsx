@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { deleteCard, getCardList } from '../../apis/postApis';
 import CardContainer from '../../components/Card/CardContainer';
 import PaperHeader from '../../components/Card/PaperHeader';

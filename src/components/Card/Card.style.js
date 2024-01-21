@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import deleteIcon from '../../assetes/deleteIcon.svg';
-import plusIcon from '../../assetes/plusIcon.svg';
+import deleteIcon from '../../assetes/delete-icon.svg';
+import plusIcon from '../../assetes/plus-icon.svg';
 
 export const Card = styled.div`
   position: relative;
@@ -84,39 +84,18 @@ export const SenderNameWrapper = styled.div`
   align-items: flex-start;
   gap: 6px;
 
-  & span {
-    color: #000;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 120% */
-  }
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 120% */
 `;
 export const Sender = styled.span`
   color: #000;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 24px;
-`;
-export const RelationshipWrapper = styled.div`
-  display: flex;
-  padding: 0 8px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  border-radius: 4px;
-  background: var(--Purple-100, #f8f0ff);
-`;
-export const Relationship = styled.p`
-  color: var(--Purple-600, #9935ff);
-
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: -0.07px;
+  line-height: 24px; /* 120% */
 `;
 
 export const SenderBox = styled.div`
@@ -140,7 +119,9 @@ export const Content = styled.div`
   overflow: hidden;
   color: var(--gray-600, #4a4a4a);
   text-overflow: ellipsis;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 
   font-family: ${props => props.font || 'Pretendard'};
   font-size: 18px;
@@ -157,11 +138,10 @@ export const DateWrapper = styled.p`
 
   color: var(--gray-400, #999);
 
-  /* Font/12 Regular */
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; /* 150% */
+  line-height: 18px;
   letter-spacing: -0.06px;
 `;
 
