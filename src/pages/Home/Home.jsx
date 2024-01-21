@@ -1,6 +1,6 @@
 import LinkButton from '../../components/Button/LinkButton';
-import MainBoxFirst from '../../components/home/MainBoxFirst';
-import MainBoxSecond from '../../components/home/MainBoxSecond';
+import MainBoxFirst from '../../components/Home/MainBoxFirst';
+import MainBoxSecond from '../../components/Home/MainBoxSecond';
 import * as S from './Home.style';
 
 export default function Home() {
