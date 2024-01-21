@@ -2,14 +2,17 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
-  margin-top: 50px;
+  align-items: flex-start;
+  margin-top: 5rem;
   flex-direction: column;
+  row-gap: 1.6rem;
+  width: 100%;
 
-  span {
-    font-family: Pretendard-Bold;
+  & > span {
+    font-family: Pretendard;
     font-weight: 700;
-    font-size: 24px;
-    margin-bottom: 16px;
+    font-size: 2.4rem;
+    padding-left: 2rem;
   }
 `;
 
