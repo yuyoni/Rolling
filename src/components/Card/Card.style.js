@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import deleteIcon from '../../assetes/deleteIcon.svg';
+import plusIcon from '../../assetes/plusIcon.svg';
 
 export const Card = styled.div`
   position: relative;
@@ -10,6 +11,46 @@ export const Card = styled.div`
   border-radius: 16px;
   background: var(--white, #fff);
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+`;
+
+export const AddCard = styled.div`
+  display: flex;
+  width: 384px;
+  height: 280px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 16px;
+  background: var(--white, #fff);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+`;
+
+export const AddCardButton = styled.button`
+  display: flex;
+  width: 56px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 100px;
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  padding: 16px;
+  align-items: flex-start;
+  gap: 10px;
+
+  border-radius: 100px;
+  background: var(--gray-500, #555);
+`;
+
+export const AddIcon = styled.img`
+  content: url(${plusIcon});
+  width: 24px;
+  height: 24px;
 `;
 
 export const ProfileImageWrapper = styled.div`
@@ -88,6 +129,10 @@ export const SenderBox = styled.div`
 `;
 
 export const Content = styled.div`
+  position: absolute;
+  top: 116px;
+  left: 24px;
+
   width: 336px;
   height: 106px;
   flex-shrink: 0;
@@ -106,6 +151,10 @@ export const Content = styled.div`
 `;
 
 export const DateWrapper = styled.p`
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+
   color: var(--gray-400, #999);
 
   /* Font/12 Regular */
@@ -144,6 +193,8 @@ export const DeleteIcon = styled.img`
 `;
 
 export const HorizonLine = styled.div`
+  position: absolute;
+  left: 24px;
   width: 336px;
   height: 1px;
   flex-shrink: 0;

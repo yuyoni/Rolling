@@ -1,22 +1,25 @@
 import { useEffect, useState } from 'react';
-import getCardList from '../../apis/postApis';
+import { deleteCard, getCardList } from '../../apis/postApis';
 import CardContainer from '../../components/Card/CardContainer';
 import PaperHeader from '../../components/Card/PaperHeader';
 import * as S from './Post.stytle';
 
 export default function Post() {
-  // const { questionID } = useParams();
+  // const { recipientId } = useParams();
   const recipientId = 2508; // Test
 
   const [cards, setCards] = useState([]);
-  // eslint-disable-next-line
   const [count, setCount] = useState(0);
 
   const handleInit = async () => {
     const response = await getCardList(recipientId);
-    setCards(response.results);
+    setCards([{}, ...response.results]);
     setCount(response.count);
   };
+
+  // const handleDelete = async () => {
+  //   const response = await deleteCard(recipientId);
+  // };
 
   useEffect(() => {
     handleInit();
