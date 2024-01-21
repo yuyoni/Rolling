@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import logoImg from '../../assetes/logoIcon.svg';
+import logoImg from '../../assetes/images/logo-icon.svg';
 
 function Logo() {
   return (

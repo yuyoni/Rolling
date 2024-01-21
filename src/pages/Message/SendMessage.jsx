@@ -2,6 +2,7 @@ import Heading from '../../components/Text/Heading';
 import InputFrom from '../../components/Input/InputFrom';
 import SendMessageForm from './SendMessageForm';
 import ToggleButton from '../../components/Button/ToggleButton';
+import SubmitButton from '../../components/Button/SubmitButton';
 
 const relationship = ['지인', '친구', '동료', '가족'];
 const font = ['Noto Sans', 'Pretendard', '나눔명조', '나눔손글씨 손편지체'];
@@ -27,7 +28,9 @@ export default function SendMessage() {
         <Heading>폰트 선택</Heading>
         <ToggleButton listItems={font} target="font" />
       </div>
-      <div className="MessagePage__submit">생성하기</div>
+      <div className="MessagePage__submit">
+        <SubmitButton>생성하기</SubmitButton>
+      </div>
     </SendMessageForm>
   );
 }
