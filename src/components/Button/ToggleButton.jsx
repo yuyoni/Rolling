@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import ArrowTop from '../../assetes/ArrowTop.svg';
-import ArrowDown from '../../assetes/ArrowDown.svg';
+import ArrowTop from '../../assetes/images/arrow-top.svg';
+import ArrowDown from '../../assetes/images/arrow-down.svg';
 
 // 목록 보여주기
 export function ToggleItems({ children, onClick }) {

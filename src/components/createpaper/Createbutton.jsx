@@ -1,7 +1,7 @@
 export default function CreateButton() {
   return (
     <div>
-      <button>Create</button>
+      <button type="button">Create</button>
     </div>
   );
 }
