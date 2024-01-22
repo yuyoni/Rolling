@@ -22,6 +22,7 @@ export const PointBox = styled.div`
 
   /* Font/14 Bold */
   font-family: 'Pretendard-Bold';
+  font-weight: 700;
   font-size: 14px;
   line-height: 20px; /* 142.857% */
   letter-spacing: -0.07px;
@@ -39,6 +40,7 @@ export const Text = styled.div`
 
   /* Font/24 Bold */
   font-family: 'Pretendard-Bold';
+  font-weight: 700;
   font-size: 24px;
   line-height: 36px; /* 150% */
   letter-spacing: -0.24px;
