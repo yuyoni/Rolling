@@ -1,23 +1,20 @@
 import { useState } from 'react';
 import leftArrow from '../../assetes/images/arrow-left.svg';
 import rightArrow from '../../assetes/images/arrow-right.svg';
+import { SLIDE_CONTAINER_SIZE } from '../../constants/paperConstants';
 import useFetchData from '../../hooks/useFetchData';
+import getCarouselIndex from '../../utils/getCarouselIndex';
 import Paper from './Paper';
 import * as S from './PaperContainer.style';
 
 export default function PaperContainer() {
-  const paperData = useFetchData('recipients/');
   const [carouselIndex, setCarouselIndex] = useState(0);
 
-  // 상수들도 constants로 분리해야 할 지 생각해보기
-  const SLIDE_CONTAINER_SIZE = 118;
-  const ITEMS_PER_CONTAINER = 4;
-  const TOTAL_ITEMS = paperData ? paperData.results.length : 0;
-  const TOTAL_PAGES = Math.ceil(TOTAL_ITEMS / ITEMS_PER_CONTAINER) - 1;
+  const paperData = useFetchData('recipients/');
 
-  const LAST_INDEX_OF_CAROUSEL = -(TOTAL_PAGES * SLIDE_CONTAINER_SIZE);
+  const lastIndexOfCarousel = getCarouselIndex(paperData);
 
-  const isVisibleRightArrow = carouselIndex > LAST_INDEX_OF_CAROUSEL;
+  const isVisibleRightArrow = carouselIndex > lastIndexOfCarousel;
   const isVisibleLeftArrow = carouselIndex !== 0;
 
   const handleArrowClick = increment => {
