@@ -19,6 +19,7 @@ export default function Editor() {
       <S.StyledReactQuill
         modules={modules}
         className="ql-editor ql-container ql-toobar"
+        style={{ padding: '0' }}
       />
     </S.ReactQuillContainer>
   );
