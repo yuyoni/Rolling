@@ -12,6 +12,7 @@ export const LogoText = styled.div`
   font-size: 19.971px;
   font-family: 'Pretendard-Bold';
   line-height: normal;
+  font-weight: 700;
 `;
 
 export const LogoImg = styled.div`

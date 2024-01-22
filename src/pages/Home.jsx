@@ -7,7 +7,7 @@ export default function Home() {
       <MainContainer>
         <MainFirstBox>
           <div>홈화면1-1</div>
-          <div>홈화면1-2</div>
+          <div>홈화면1-22222</div>
         </MainFirstBox>
         <MainSecondBox>
           <div>홈화면2</div>
