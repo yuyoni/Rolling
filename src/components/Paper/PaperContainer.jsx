@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import leftArrow from '../../assetes/images/arrow-left.svg';
 import rightArrow from '../../assetes/images/arrow-right.svg';
 import Paper from './Paper';
@@ -90,6 +90,18 @@ export default function PaperContainer() {
       }
     ]
   };
+
+  // useEffect를 이용하여 데이터 fetch 해오기
+  useEffect(() => {
+    async function getData(endpoint) {
+      const url = `https://rolling-api.vercel.app/3-1/${endpoint}`;
+      const response = await fetch(url);
+      const data = await response.json();
+
+      return data;
+    }
+    getData('recipients/');
+  }, []);
 
   return (
     <S.Wrapper>
