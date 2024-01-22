@@ -16,7 +16,10 @@ export default function Editor() {
 
   return (
     <S.ReactQuillContainer>
-      <S.StyledReactQuill modules={modules} />
+      <S.StyledReactQuill
+        modules={modules}
+        className="ql-editor ql-container ql-toobar"
+      />
     </S.ReactQuillContainer>
   );
 }
