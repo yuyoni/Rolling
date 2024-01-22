@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import leftArrow from '../../assetes/images/arrow-left.svg';
 import rightArrow from '../../assetes/images/arrow-right.svg';
+import useFetchData from '../../hooks/useFetchData';
 import Paper from './Paper';
 import * as S from './PaperContainer.style';
 
 export default function PaperContainer() {
-  const [paperData, setPaperData] = useState(null);
+  const paperData = useFetchData('recipients/');
   const [carouselIndex, setCarouselIndex] = useState(0);
 
   // 상수들도 constants로 분리해야 할 지 생각해보기
@@ -22,22 +23,6 @@ export default function PaperContainer() {
   const handleArrowClick = increment => {
     setCarouselIndex(prev => prev + increment);
   };
-
-  // useEffect를 이용하여 데이터 fetch 해오기
-  useEffect(() => {
-    async function fetchData(endpoint) {
-      const url = `https://rolling-api.vercel.app/3-1/${endpoint}`; // baseURL 환경변수로 빼기
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        setPaperData(data); // 이 부분 setter를 파라미터로 받는 커스텀 훅으로 수정하기
-      } catch (error) {
-        throw new Error('Error fetching data');
-      }
-    }
-
-    fetchData('recipients/'); // 이 부분도 endpoint 매개변수로 바꿔주기
-  }, []);
 
   return (
     <S.Wrapper>
