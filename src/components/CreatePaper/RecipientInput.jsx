@@ -27,6 +27,8 @@ const P = styled.p`
   letter-spacing: -0.06px;
 `;
 
+const Label = styled.label``;
+
 export default function RecipientInput({ placeholder }) {
   const [showError, setShowError] = useState('');
 
@@ -46,6 +48,7 @@ export default function RecipientInput({ placeholder }) {
 
   return (
     <>
+      <Label htmlFor="recipient">To.</Label>
       <ErrorStyle
         placeholder={placeholder}
         $showError={showError}
