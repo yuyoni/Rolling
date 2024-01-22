@@ -29,13 +29,12 @@ export default function ToggleButton({ children, nav, listItems }) {
     <div onBlur={handleBlur}>
       <S.ButtonDown nav={nav} type="button" onClick={handleShow}>
         <span>{children}</span>
-        {show ? (
-          <S.ToggleIcon src={ArrowTop} />
-        ) : (
-          <S.ToggleIcon src={ArrowDown} />
-        )}
+        <S.ToggleIcon
+          src={show ? ArrowTop : ArrowDown}
+          alt="토글 이미지 아이콘"
+        />
       </S.ButtonDown>
-      {show ? (
+      {show && (
         <S.ToggleUl>
           {/* airbnb arrow-body-style */}
           {listItems.map(item => (
@@ -51,7 +50,7 @@ export default function ToggleButton({ children, nav, listItems }) {
             </S.ToggleList>
           ))}
         </S.ToggleUl>
-      ) : null}
+      )}
     </div>
   );
 }
