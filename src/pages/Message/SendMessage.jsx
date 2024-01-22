@@ -1,5 +1,5 @@
 import Heading from '../../components/Text/Heading';
-import InputFrom from '../../components/Input/InputFrom';
+import InputText from '../../components/Input/InputText';
 import SendMessageForm from './SendMessageForm';
 import ToggleButton from '../../components/Button/ToggleButton';
 import SubmitButton from '../../components/Button/SubmitButton';
@@ -12,7 +12,7 @@ export default function SendMessage() {
     <SendMessageForm>
       <div className="MessagePage__input">
         <Heading>From.</Heading>
-        <InputFrom />
+        <InputText placeholder="이름을 입력해 주세요" />
       </div>
       <div className="MessagePage__profileImg">
         <Heading>프로필 이미지</Heading>
