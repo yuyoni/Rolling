@@ -4,6 +4,7 @@ import SendMessageForm from './SendMessageForm';
 import ToggleButton from '../../components/Button/ToggleButton';
 import SubmitButton from '../../components/Button/SubmitButton';
 import Editor from '../../components/Text/Editor';
+import ProfileImgMain from '../../components/ProfileImg/ProfileImgMain';
 
 const relationship = ['지인', '친구', '동료', '가족'];
 const font = ['Noto Sans', 'Pretendard', '나눔명조', '나눔손글씨 손편지체'];
@@ -17,6 +18,7 @@ export default function SendMessage() {
       </div>
       <div className="MessagePage__profileImg">
         <Heading>프로필 이미지</Heading>
+        <ProfileImgMain />
       </div>
       <div className="MessagePage__relationship">
         <Heading>상대와의 관계</Heading>
