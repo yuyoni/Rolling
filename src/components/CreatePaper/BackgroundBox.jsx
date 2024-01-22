@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import BackgroundSelector from './BackgroundSelector';
 import BackgroundText from './BackgroundText';
@@ -13,7 +14,8 @@ export default function BackgroundBox() {
     <div>
       <BackgroundText />
       <BackgroundSelector toggle={toggle} toggleChange={toggleChange} />
-      <ColorImgSelector />
+      <ColorImgSelector toggle={toggle} toggleChange={toggleChange} />
     </div>
   );
 }
+
