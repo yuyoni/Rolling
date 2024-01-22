@@ -1,4 +1,5 @@
-import * as S from './ProfileImg.style';
+import * as S from './ProfileImgMain.style';
+import ProfileImgList from './ProfileImgList';
 
 export default function ProfileImgMain({ selectedProfileImg }) {
   return (

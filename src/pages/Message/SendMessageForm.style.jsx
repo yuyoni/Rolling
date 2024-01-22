@@ -8,40 +8,17 @@ const MessageForm = styled.form`
   max-width: fit-content;
   width: 100%;
 
-  & .MessagePage {
-    &__input {
+  .MessagePage {
+    &__input,
+    &__profileImg,
+    &__relationship,
+    &__content,
+    &__font,
+    &__submit {
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
       margin-bottom: 5rem;
-    }
-
-    &__profileImg {
-      display: flex;
-      flex-direction: column:
-      gap: 1.2rem;
-      margin-bottom: 5rem;
-    }
-
-    &__relationship {
-      display: flex;
-      flex-direction: column:
-      gap: 1.2rem;
-      margin-bottom: 5rem;
-    }
-
-    &__content {
-      display: flex;
-      flex-direction: column:
-      gap: 1.2rem;
-      margin-bottom: 5rem;
-    }
-
-    &__font {
-      display: flex;
-      flex-direction: column:
-      gap: 1.2rem;
-      margin-bottom: 6.2rem;
     }
 
     &__submit {
@@ -49,7 +26,6 @@ const MessageForm = styled.form`
       right: 2.4rem;
       bottom: 2.4rem;
     }
-  }
 `;
 
 export default MessageForm;

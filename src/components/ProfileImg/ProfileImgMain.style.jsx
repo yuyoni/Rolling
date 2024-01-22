@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import DefaultImg from '../../assetes/images/default-profile-img.svg';
+import DefaultImg from '../../assetes/images/default-profile-img.png';
 
 export const ProfileImgContainer = styled.div`
   display: flex;
