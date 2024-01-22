@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import deleteIcon from '../../assetes/deleteIcon.svg';
+import deleteIcon from '../../assetes/delete-icon.svg';
+import plusIcon from '../../assetes/plus-icon.svg';
 
 export const Card = styled.div`
   position: relative;
@@ -10,6 +11,46 @@ export const Card = styled.div`
   border-radius: 16px;
   background: var(--white, #fff);
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+`;
+
+export const AddCard = styled.div`
+  display: flex;
+  width: 384px;
+  height: 280px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 16px;
+  background: var(--white, #fff);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+`;
+
+export const AddCardButton = styled.button`
+  display: flex;
+  width: 56px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 100px;
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  padding: 16px;
+  align-items: flex-start;
+  gap: 10px;
+
+  border-radius: 100px;
+  background: var(--gray-500, #555);
+`;
+
+export const AddIcon = styled.img`
+  content: url(${plusIcon});
+  width: 24px;
+  height: 24px;
 `;
 
 export const ProfileImageWrapper = styled.div`
@@ -43,39 +84,18 @@ export const SenderNameWrapper = styled.div`
   align-items: flex-start;
   gap: 6px;
 
-  & span {
-    color: #000;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 120% */
-  }
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 120% */
 `;
 export const Sender = styled.span`
   color: #000;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 24px;
-`;
-export const RelationshipWrapper = styled.div`
-  display: flex;
-  padding: 0 8px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  border-radius: 4px;
-  background: var(--Purple-100, #f8f0ff);
-`;
-export const Relationship = styled.p`
-  color: var(--Purple-600, #9935ff);
-
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: -0.07px;
+  line-height: 24px; /* 120% */
 `;
 
 export const SenderBox = styled.div`
@@ -88,6 +108,10 @@ export const SenderBox = styled.div`
 `;
 
 export const Content = styled.div`
+  position: absolute;
+  top: 116px;
+  left: 24px;
+
   width: 336px;
   height: 106px;
   flex-shrink: 0;
@@ -95,7 +119,9 @@ export const Content = styled.div`
   overflow: hidden;
   color: var(--gray-600, #4a4a4a);
   text-overflow: ellipsis;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 
   font-family: ${props => props.font || 'Pretendard'};
   font-size: 18px;
@@ -106,13 +132,16 @@ export const Content = styled.div`
 `;
 
 export const DateWrapper = styled.p`
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+
   color: var(--gray-400, #999);
 
-  /* Font/12 Regular */
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; /* 150% */
+  line-height: 18px;
   letter-spacing: -0.06px;
 `;
 
@@ -144,6 +173,8 @@ export const DeleteIcon = styled.img`
 `;
 
 export const HorizonLine = styled.div`
+  position: absolute;
+  left: 24px;
   width: 336px;
   height: 1px;
   flex-shrink: 0;

@@ -23,3 +23,4 @@ yarn-error.log*
 # editor directories and files
 .vscode
 /.idea
+/rolling.iml
