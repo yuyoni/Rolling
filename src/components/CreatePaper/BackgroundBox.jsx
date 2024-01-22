@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import BackgroundSelector from './BackgroundSelector';
 import BackgroundText from './BackgroundText';
@@ -18,4 +17,3 @@ export default function BackgroundBox() {
     </div>
   );
 }
-
