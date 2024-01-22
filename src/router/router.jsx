@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home';
 import Layout from '../components/Layout';
 import List from '../pages/List/List';
-import Post from '../pages/Post';
+import Post from '../pages/Post/Post';
 import CreatePaper from '../components/CreatePaper/CreatePaper';
 import SendMessage from '../pages/Message/SendMessage';
 
