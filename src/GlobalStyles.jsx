@@ -53,25 +53,32 @@ const GlobalStyles = createGlobalStyle`
   ${reset};
 
   @font-face {
-        font-family: "Poppins-Bold";
+        font-family: "Poppins";
         src: url(${Poppins}) format('woff'); 
         font-weight: 700;
+        font-display: swap;
     }
 
   @font-face {
-    font-family: "Pretendard-Bold";
+    font-family: "Pretendard";
     src: url(${PretendardBold}) format('woff'); 
     font-weight: 700;
+    font-display: swap;
   }
 
   @font-face {
-    font-family: "Pretendard-Regular";
+    font-family: "Pretendard";
     src: url(${PretendardRegular}) format('woff'); 
     font-weight: 400;
+    font-display: swap;
   }
 
   * {
     box-sizing: border-box;
+  }
+
+  html {
+    font-size: 62.5%;
   }
 
   body {
@@ -79,9 +86,9 @@ const GlobalStyles = createGlobalStyle`
     justify-content: center;
 
     margin: 0;
-    font-family: "Pretendard-Regular"; 
+    font-family: "Pretendard"; 
     font-weight: 400;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-style: normal;
     line-height: normal;
   }
