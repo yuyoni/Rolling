@@ -95,6 +95,7 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color : var(--gray-700, #3A3A3A);
     cursor: pointer;
   }
 

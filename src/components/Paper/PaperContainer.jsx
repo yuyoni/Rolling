@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import useFetchData from '../../hooks/useFetchData';
 import ArrowButton from './Button/ArrowButton';
 import Paper from './Paper';
@@ -20,7 +21,9 @@ export default function PaperContainer() {
         <S.SlideElement $carouselIndex={carouselIndex}>
           {paperData &&
             paperData.results.map(paper => (
-              <Paper key={paper.id} data={paper} />
+              <Link to={`/post/${paper.id}`}>
+                <Paper key={paper.id} data={paper} />
+              </Link>
             ))}
         </S.SlideElement>
       </S.SlideContainer>
