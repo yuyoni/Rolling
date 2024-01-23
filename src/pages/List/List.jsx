@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import PaperBox from '../../components/Paper/PaperBox';
-import * as S from './List.style';
-import useFetchData from '../../hooks/useFetchData';
 import Skeleton from '../../components/Paper/Skeleton/Skeleton';
+import useFetchData from '../../hooks/useFetchData';
+import * as S from './List.style';
 
 export default function List() {
   const { data, isLoading } = useFetchData('recipients/');
@@ -13,11 +13,8 @@ export default function List() {
         <Skeleton />
       ) : (
         <S.Container>
-          <PaperBox title="인기 롤링 페이퍼 🔥" paperData={data.results} />
-          <PaperBox
-            title="최근에 만든 롤링 페이퍼 ⭐️️"
-            paperData={data.results}
-          />
+          <PaperBox orderBy="messageCount" paperData={data.results} />
+          <PaperBox orderBy="createdAt" paperData={data.results} />
           <Link to="/post">
             <S.Button>나도 만들어 보기</S.Button>
           </Link>
