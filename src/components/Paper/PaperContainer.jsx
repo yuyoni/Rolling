@@ -5,7 +5,7 @@ import Paper from './Paper';
 import * as S from './PaperContainer.style';
 
 export default function PaperContainer({ paperData }) {
-  const paperLength = paperData ? paperData.results.length : 0;
+  const paperLength = paperData.length;
   const [carouselIndex, setCarouselIndex] = useState(0);
 
   return (
@@ -17,12 +17,11 @@ export default function PaperContainer({ paperData }) {
       />
       <S.SlideContainer>
         <S.SlideElement $carouselIndex={carouselIndex}>
-          {paperData &&
-            paperData.results.map(paper => (
-              <Link to={`/post/${paper.id}`} key={paper.id}>
-                <Paper data={paper} />
-              </Link>
-            ))}
+          {paperData.map(paper => (
+            <Link to={`/post/${paper.id}`} key={paper.id}>
+              <Paper data={paper} />
+            </Link>
+          ))}
         </S.SlideElement>
       </S.SlideContainer>
       <ArrowButton
