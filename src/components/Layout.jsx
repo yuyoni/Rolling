@@ -14,8 +14,10 @@ export default function Layout() {
 const Wrapper = styled.div`
   @media (max-width: 768px) {
     max-width: 768px;
+    width: 100%;
   }
   @media (max-width: 360px) {
     max-width: 360px;
+    width: 100%;
   }
 `;

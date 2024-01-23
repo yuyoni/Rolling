@@ -26,6 +26,10 @@ export const SkeletonBox = styled(Flex)`
   flex-direction: column;
   margin-top: 5rem;
   gap: 1.6rem;
+
+  @media (max-width: 768px) {
+    transform: translateX(220px);
+  }
 `;
 
 export const SkeletonList = styled(Flex)`
@@ -40,6 +44,10 @@ export const SkeletonTitle = styled(Skeleton)`
   width: 20.5rem;
   height: 3.1rem;
   border-radius: 0.8rem;
+
+  @media (max-width: 360px) {
+    width: 15.6rem;
+  }
 `;
 
 export const SkeletonItem = styled(Skeleton)`
@@ -47,4 +55,9 @@ export const SkeletonItem = styled(Skeleton)`
   height: 26rem;
   border-radius: 1.6rem;
   background-color: #d8d8d8;
+
+  @media (max-width: 360px) {
+    width: 20.8rem;
+    height: 23.2rem;
+  }
 `;

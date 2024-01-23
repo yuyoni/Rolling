@@ -1,5 +1,5 @@
 import getSortedData from '../../utils/getSortedData';
-import Container from './PaperBox.style';
+import Wrapper from './PaperBox.style';
 import PaperContainer from './PaperContainer';
 
 export default function PaperBox({ orderBy, paperData }) {
@@ -10,9 +10,9 @@ export default function PaperBox({ orderBy, paperData }) {
   const sortedPaperData = [...getSortedData(orderBy, paperData)];
 
   return (
-    <Container>
+    <Wrapper>
       <span>{title[orderBy]}</span>
       <PaperContainer paperData={sortedPaperData} />
-    </Container>
+    </Wrapper>
   );
 }
