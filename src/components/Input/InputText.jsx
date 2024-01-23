@@ -5,8 +5,8 @@ export default function InputFrom({ placeholder }) {
   const [showError, setShowError] = useState('');
 
   // focus out 이벤트 발생 시
-  const handleBlur = e => {
-    if (!e.target.value) {
+  const handleBlur = event => {
+    if (!event.target.value) {
       setShowError('이름을 입력해 주세요.');
     } else {
       setShowError('');
