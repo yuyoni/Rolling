@@ -1,7 +1,7 @@
 import * as S from './ProfileImagesMain.style';
 import ProfileImagesOptionList from './ProfileImagesOptionList';
 
-export default function ProfileImgMain({
+export default function ProfileImagesMain({
   profileImages,
   selectedProfileImage,
   onChange
