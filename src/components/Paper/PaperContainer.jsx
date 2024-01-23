@@ -21,8 +21,8 @@ export default function PaperContainer() {
         <S.SlideElement $carouselIndex={carouselIndex}>
           {paperData &&
             paperData.results.map(paper => (
-              <Link to={`/post/${paper.id}`}>
-                <Paper key={paper.id} data={paper} />
+              <Link to={`/post/${paper.id}`} key={paper.id}>
+                <Paper data={paper} />
               </Link>
             ))}
         </S.SlideElement>
