@@ -33,4 +33,5 @@ export const ProfileImageOptionItems = styled.li`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 `;

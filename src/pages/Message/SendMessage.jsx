@@ -61,6 +61,7 @@ export default function SendMessage() {
         <ProfileImagesMain
           profileImages={profileImages}
           onChange={handleChange}
+          selectedProfileImage={recipientPostData.profileImageURL}
         />
       </div>
       <div className="MessagePage__relationship">

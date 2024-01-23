@@ -3,12 +3,16 @@ import ProfileIamgesOptionList from './ProfileImagesOptionList';
 
 export default function ProfileImgMain({
   profileImages,
-  selectedProfileImage
+  selectedProfileImage,
+  onChange
 }) {
   return (
     <S.ProfileImageWrapper>
-      <S.SelectedProfileImage $selectedImg={selectedProfileImage} />
-      <ProfileIamgesOptionList profileImages={profileImages} />
+      <S.SelectedProfileImage $selectedImage={selectedProfileImage} />
+      <ProfileIamgesOptionList
+        profileImages={profileImages}
+        onChange={onChange}
+      />
     </S.ProfileImageWrapper>
   );
 }
