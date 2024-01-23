@@ -56,7 +56,7 @@ export const RestMessageCount = styled.div`
   justify-content: center;
 `;
 
-export const DividedLine = styled.div`
+export const HorizontalLine = styled.div`
   width: 100%;
   height: 0.1rem;
   background-color: rgba(0, 0, 0, 0.12);
