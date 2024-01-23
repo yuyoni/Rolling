@@ -16,7 +16,7 @@ export default function SendMessage() {
   const [profileImages, setProfileImages] = useState([]);
   const [recipientPostData, setRecipientPostData] = useState({
     team: '3-1',
-    recipientId: '',
+    recipientId: '2508',
     sender: '',
     profileImageURL: defaultImage,
     relationship: '지인',
