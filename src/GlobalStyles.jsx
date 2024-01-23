@@ -16,11 +16,13 @@ const GlobalStyles = createGlobalStyle`
     --Purple-800: #6E0AD1;
     --Purple-900: #5603A7;
 
-    --Beige-100: #FFF0D6;
-    --Beige-200: #FFE2AD;
-    --Beige-300: #FFC583;
-    --Beige-400: #FFAE65;
-    --Beige-500: #FF8832;
+    --Orange-100: #FFF0D6;
+    --Orange-200: #FFE2AD;
+    --Orange-300: #FFC583;
+    --Orange-400: #FFAE65;
+    --Orange-500: #FF8832;
+
+    --Beige-200: #ffe9bf;
 
     --Blue-100: #E2F5FF;
     --Blue-200: #B1E4FF;
