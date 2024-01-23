@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ProfileListContainer = styled.div`
+export const ProfileImageListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -14,14 +14,14 @@ export const Subtitle = styled.p`
   letter-spacing: -0.016rem;
 `;
 
-export const ProfileList = styled.ul`
+export const ProfileImageList = styled.ul`
   display: flex;
   flex-grow: 1;
   flex-wrap: wrap;
   gap: 0.4rem;
 `;
 
-export const ProfileOptionItem = styled.li`
+export const ProfileImageOptionItems = styled.li`
   display: flex;
   width: 5.6rem;
   height: 5.6rem;
