@@ -16,11 +16,12 @@ export const Wrapper = styled.header`
   // z-index: 20;
 `;
 
-export const Nav = styled.nav`
+export const Navigation = styled.nav`
   display: flex;
   align-items: center;
   gap: 944px;
 `;
+
 export const Button = styled.button`
   display: flex;
   height: 40px;
@@ -32,4 +33,11 @@ export const Button = styled.button`
   border-radius: 6px;
   border: 1px solid var(--gray-300, #ccc);
   background: var(--white, #fff);
+
+  font-family: 'Pretendard';
+  // font-size: 16px;
+  font-weight: 700;
+  line-height: 26px; /* 162.5% */
+  letter-spacing: -0.16px;
+  color: var(--gray-900, #181818);
 `;
