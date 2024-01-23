@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import defaultImg from '../../assetes/images/default-profile-img.png';
+import defaultImage from '../../assetes/images/default-profile-image.png';
 
 export const ProfileImgContainer = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const SelectedProfileImg = styled.span`
   height: 8rem;
   border-radius: 10rem;
   background: ${({ $selectedImg }) =>
-    $selectedImg ? `url(${$selectedImg})` : `url(${defaultImg})`};
+    $selectedImg ? `url(${$selectedImg})` : `url(${defaultImage})`};
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

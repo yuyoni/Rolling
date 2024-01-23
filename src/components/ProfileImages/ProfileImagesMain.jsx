@@ -1,11 +1,11 @@
-import * as S from './ProfileImgMain.style';
-import ProfileImgOption from './ProfileImgOption';
+import * as S from './ProfileImagesMain.style';
+import ProfileIamgesOptionList from './ProfileImagesOptionList';
 
 export default function ProfileImgMain({ profileImages, selectedProfileImg }) {
   return (
     <S.ProfileImgContainer>
       <S.SelectedProfileImg $selectedImg={selectedProfileImg} />
-      <ProfileImgOption profileImages={profileImages} />
+      <ProfileIamgesOptionList profileImages={profileImages} />
     </S.ProfileImgContainer>
   );
 }

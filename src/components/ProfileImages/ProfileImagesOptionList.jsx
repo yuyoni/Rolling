@@ -1,6 +1,6 @@
-import * as S from './ProfileImgOption.style';
+import * as S from './ProfileImagesOptionList.style';
 
-export default function ProfileImgOption({ profileImages }) {
+export default function ProfileImagesOptionList({ profileImages }) {
   return (
     <S.ProfileListContainer>
       <S.Subtitle>프로필 이미지를 선택해주세요!</S.Subtitle>
