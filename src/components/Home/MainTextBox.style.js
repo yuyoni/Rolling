@@ -39,19 +39,34 @@ export const Text = styled.div`
   color: var(--gray-900, #181818);
 
   /* Font/24 Bold */
+<<<<<<< HEAD
   font-family: 'Pretendard';
   font-weight: 700;
   font-size: 24px;
   line-height: 36px; /* 150% */
   letter-spacing: -0.3px;
+=======
+  font-family: 'Pretendard-Bold';
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px; /* 150% */
+  letter-spacing: -0.24px;
+>>>>>>> 91e6c49bcd60435fa7c5ab1e611961a21ebcb7a3
 `;
 
 export const SubText = styled.div`
   color: var(--gray-500, #555);
 
   /* Font/18 Regular */
+<<<<<<< HEAD
   font-family: 'Pretendard';
   font-size: 18px;
   line-height: 28px; /* 155.556% */
   letter-spacing: -0.2px;
+=======
+  font-family: 'Pretendard-Regular';
+  font-size: 18px;
+  line-height: 28px; /* 155.556% */
+  letter-spacing: -0.18px;
+>>>>>>> 91e6c49bcd60435fa7c5ab1e611961a21ebcb7a3
 `;

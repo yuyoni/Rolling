@@ -21,7 +21,6 @@ export const Navigation = styled.nav`
   align-items: center;
   gap: 944px;
 `;
-
 export const Button = styled.button`
   display: flex;
   height: 40px;
