@@ -8,7 +8,15 @@ const Wrapper = styled.div`
   flex-shrink: 0;
   border-radius: 1.6rem;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
-  background: var(--Purple-200, #ecd9ff); // 나중에 데이터로부터 받아와야하는 값
+  ${({ $backgroundImageURL, $backgroundColor }) =>
+    `${
+      $backgroundImageURL
+        ? `background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url(${$backgroundImageURL});`
+        : `background-color: ${$backgroundColor}`
+    }`};
+  background-repeat: no-repeat;
+  background-size: cover;
+
   box-shadow: 0 0.2rem 1.2rem 0 rgba(0, 0, 0, 0.08);
   padding: 2.4rem;
 

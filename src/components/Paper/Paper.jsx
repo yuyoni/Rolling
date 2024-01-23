@@ -2,10 +2,20 @@ import PaperInfo from '../PaperInfo';
 import Wrapper from './Paper.style';
 
 export default function Paper({ data }) {
-  const { name, recentMessages, messageCount, topReactions } = data;
+  const {
+    name,
+    recentMessages,
+    messageCount,
+    topReactions,
+    backgroundImageURL,
+    backgroundColor
+  } = data;
 
   return (
-    <Wrapper>
+    <Wrapper
+      $backgroundImageURL={backgroundImageURL}
+      $backgroundColor={backgroundColor}
+    >
       <PaperInfo
         name={name}
         recentMessages={recentMessages}
