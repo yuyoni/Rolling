@@ -1,4 +1,4 @@
-const BADGE_COLOR_MAPPER = {
+export const BADGE_COLOR_MAPPER = {
   지인: {
     wrapper: 'var(--Orange-100)',
     text: 'var(--Orange-500)'
@@ -17,4 +17,9 @@ const BADGE_COLOR_MAPPER = {
   }
 };
 
-export default BADGE_COLOR_MAPPER;
+export const PAPER_COLOR_MAPPER = {
+  orange: 'var(--Orange-200)',
+  purple: 'var(--Purple-200)',
+  green: 'var(--Green-200)',
+  blue: 'var(--Blue-200)'
+};

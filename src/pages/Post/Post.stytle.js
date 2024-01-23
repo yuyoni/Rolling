@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { PAPER_COLOR_MAPPER } from '../../constants/colorMapper';
 
 export const Page = styled.div`
   display: flex;
@@ -6,8 +7,15 @@ export const Page = styled.div`
   align-items: center;
   width: 1920px;
   height: 1080px;
+  background-image: ${props =>
+    props.$backgroundImageURL ? `url(${props.$backgroundImageURL})` : 'none'};
+  background: ${({ $backgroundColor }) =>
+    $backgroundColor
+      ? PAPER_COLOR_MAPPER[$backgroundColor]
+      : 'var(--Orange-200)'};
 
-  background: var(--Orange-200, #ffe2ad);
+  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 export const PageTemp = styled.div`
