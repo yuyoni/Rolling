@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MainArea = styled.div`
-  width: 1920px;
+  width: 100%;
   height: 1080px;
   background: #fff;
   display: flex;
@@ -20,4 +20,14 @@ export const MainContainer = styled.div`
   align-items: flex-start;
   padding: 60px 0 0 0;
   gap: 30px;
+
+  /* 모바일 */
+  @media (max-width: 768px) {
+    width: 320px;
+  }
+
+  /* 테블릿 */
+  @media (max-width: 1200px) {
+    width: 720px;
+  }
 `;
