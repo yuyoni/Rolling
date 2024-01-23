@@ -1,5 +1,5 @@
 import * as S from './ProfileImagesMain.style';
-import ProfileIamgesOptionList from './ProfileImagesOptionList';
+import ProfileImagesOptionList from './ProfileImagesOptionList';
 
 export default function ProfileImgMain({
   profileImages,
@@ -9,7 +9,7 @@ export default function ProfileImgMain({
   return (
     <S.ProfileImageWrapper>
       <S.SelectedProfileImage $selectedImage={selectedProfileImage} />
-      <ProfileIamgesOptionList
+      <ProfileImagesOptionList
         profileImages={profileImages}
         onChange={onChange}
       />
