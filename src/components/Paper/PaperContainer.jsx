@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useFetchData from '../../hooks/useFetchData';
 import ArrowButton from './Button/ArrowButton';
 import Paper from './Paper';
 import * as S from './PaperContainer.style';
 
-export default function PaperContainer() {
-  const paperData = useFetchData('recipients/');
+export default function PaperContainer({ paperData }) {
   const paperLength = paperData ? paperData.results.length : 0;
   const [carouselIndex, setCarouselIndex] = useState(0);
 
