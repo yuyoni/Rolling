@@ -2,9 +2,16 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import * as S from './Card.style';
 import RelationBadge from './RelationBadge';
 
-export default function Card({ card, cardType, isEditing }) {
-  const { sender, profileImageURL, relationship, content, font, createdAt } =
-    card;
+export default function Card({ card, cardType, isEditing, onDelete }) {
+  const {
+    id,
+    sender,
+    profileImageURL,
+    relationship,
+    content,
+    font,
+    createdAt
+  } = card;
 
   const formattedDate = new Date(createdAt).toLocaleDateString();
   const nextUrl = `${useLocation().pathname}/message`;
@@ -12,6 +19,10 @@ export default function Card({ card, cardType, isEditing }) {
 
   const handleClickAddCard = () => {
     navigate(nextUrl);
+  };
+
+  const handleDeleteCard = () => {
+    onDelete(id);
   };
 
   return (
@@ -41,7 +52,7 @@ export default function Card({ card, cardType, isEditing }) {
               </S.SenderInfoBox>
             </S.SenderBox>
             {isEditing && (
-              <S.DeleteButton>
+              <S.DeleteButton onClick={handleDeleteCard}>
                 <S.DeleteIcon alt="delete-button-icon" />
               </S.DeleteButton>
             )}
