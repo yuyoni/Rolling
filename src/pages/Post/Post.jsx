@@ -7,7 +7,7 @@ import {
   getRecipientInformation
 } from '../../apis/postApis';
 import CardContainer from '../../components/Card/CardContainer';
-import PaperPageHeader from '../../components/Card/PaperPageHeader';
+import PostPageHeader from '../../components/Card/PostPageHeader';
 import * as S from './Post.stytle';
 
 export default function Post() {
@@ -70,7 +70,7 @@ export default function Post() {
       $backgroundImageURL={backgroundURL}
       $backgroundColor={backgroundColors}
     >
-      <PaperPageHeader
+      <PostPageHeader
         recentMessages={recentMessage}
         name={recipientName}
         messageCount={cardCount}
