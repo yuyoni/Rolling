@@ -1,37 +1,33 @@
 import { useState } from 'react';
-import useFetchData from '../../hooks/useFetchData';
-import LeftArrowButton from './Button/LeftArrowButton';
-import RightArrowButton from './Button/RightArrowButton';
+import { Link } from 'react-router-dom';
+import ArrowButton from './Button/ArrowButton';
 import Paper from './Paper';
 import * as S from './PaperContainer.style';
 
-export default function PaperContainer() {
-  const paperData = useFetchData('recipients/');
-  const paperLength = paperData ? paperData.results.length : 0;
+export default function PaperContainer({ paperData }) {
+  const paperLength = paperData.length;
   const [carouselIndex, setCarouselIndex] = useState(0);
-
-  const handleArrowClick = increment => {
-    setCarouselIndex(prev => prev + increment);
-  };
 
   return (
     <S.Wrapper>
-      <LeftArrowButton
+      <ArrowButton
+        isLeft
         carouselIndex={carouselIndex}
-        handleArrowClick={handleArrowClick}
+        setCarouselIndex={setCarouselIndex}
       />
       <S.SlideContainer>
         <S.SlideElement $carouselIndex={carouselIndex}>
-          {paperData &&
-            paperData.results.map(paper => (
-              <Paper key={paper.id} data={paper} />
-            ))}
+          {paperData.map(paper => (
+            <Link to={`/post/${paper.id}`} key={paper.id}>
+              <Paper data={paper} />
+            </Link>
+          ))}
         </S.SlideElement>
       </S.SlideContainer>
-      <RightArrowButton
+      <ArrowButton
         carouselIndex={carouselIndex}
         paperLength={paperLength}
-        handleArrowClick={handleArrowClick}
+        setCarouselIndex={setCarouselIndex}
       />
     </S.Wrapper>
   );

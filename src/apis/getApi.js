@@ -6,7 +6,7 @@ export default async function fetchData(param) {
     const response = await fetch(url);
     const body = await response.json();
     return body;
-  } catch (e) {
-    throw Error(e);
+  } catch (error) {
+    throw new Error(error);
   }
 }
