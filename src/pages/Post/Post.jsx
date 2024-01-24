@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 // eslint-disable-next-line no-unused-vars
 import {
   // deleteCard,
@@ -6,12 +7,11 @@ import {
   getRecipientInformation
 } from '../../apis/postApis';
 import CardContainer from '../../components/Card/CardContainer';
-import PaperHeader from '../../components/Card/PaperHeader';
+import PaperPageHeader from '../../components/Card/PaperPageHeader';
 import * as S from './Post.stytle';
 
 export default function Post() {
-  // const { recipientId } = useParams();
-  const recipientId = 2508; // Test
+  const { id: recipientId } = useParams();
 
   const [cards, setCards] = useState([]);
   // eslint-disable-next-line no-unused-vars
@@ -70,7 +70,7 @@ export default function Post() {
       $backgroundImageURL={backgroundURL}
       $backgroundColor={backgroundColors}
     >
-      <PaperHeader
+      <PaperPageHeader
         recentMessages={recentMessage}
         name={recipientName}
         messageCount={cardCount}

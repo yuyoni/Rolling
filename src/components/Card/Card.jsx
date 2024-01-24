@@ -1,3 +1,4 @@
+import { useLocation, useNavigate } from 'react-router-dom';
 import * as S from './Card.style';
 import RelationBadge from './RelationBadge';
 
@@ -6,12 +7,18 @@ export default function Card({ card, cardType }) {
     card;
 
   const formattedDate = new Date(createdAt).toLocaleDateString();
+  const nextUrl = `${useLocation().pathname}/messages`;
+  const navigate = useNavigate();
+
+  const handleClickAddCard = () => {
+    navigate(nextUrl);
+  };
 
   return (
     <div>
       {cardType === 'add' ? (
         <S.AddCard>
-          <S.AddCardButton>
+          <S.AddCardButton onClick={handleClickAddCard}>
             <S.IconWrapper>
               <S.AddIcon alt="add-button-icon" />
             </S.IconWrapper>
