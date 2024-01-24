@@ -8,6 +8,7 @@ import {
 } from '../../apis/postApis';
 import CardContainer from '../../components/Card/CardContainer';
 import PostPageHeader from '../../components/Card/PostPageHeader';
+import editButton from '../../assetes/images/edit-button.svg';
 import * as S from './Post.stytle';
 
 export default function Post() {
@@ -28,6 +29,7 @@ export default function Post() {
   const [paperUpdatedAt, setPaperUpdatedAt] = useState('');
   // eslint-disable-next-line no-unused-vars
   const [reactionNum, setReactionNum] = useState(0);
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleInit = async () => {
     const cardResponse = await getCardList(recipientId);
@@ -65,18 +67,30 @@ export default function Post() {
     handleInit();
   }, []);
 
+  const handleIsEditing = () => {
+    setIsEditing(!isEditing);
+  };
+
   return (
-    <S.Page
-      $backgroundImageURL={backgroundURL}
-      $backgroundColor={backgroundColors}
-    >
+    <S.Page>
       <PostPageHeader
         recentMessages={recentMessage}
         name={recipientName}
         messageCount={cardCount}
         topReactions={topReaction}
       />
-      <CardContainer cards={cards} />
+      <S.CardBackgroundWrapper
+        $backgroundImageURL={backgroundURL}
+        $backgroundColor={backgroundColors}
+      >
+        <S.EditButton
+          $backgroundColor={backgroundColors}
+          onClick={handleIsEditing}
+        >
+          <img src={editButton} alt="edit-button" />
+        </S.EditButton>
+        <CardContainer cards={cards} isEditing={isEditing} />
+      </S.CardBackgroundWrapper>
     </S.Page>
   );
 }

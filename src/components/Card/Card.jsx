@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import * as S from './Card.style';
 import RelationBadge from './RelationBadge';
 
-export default function Card({ card, cardType }) {
+export default function Card({ card, cardType, isEditing }) {
   const { sender, profileImageURL, relationship, content, font, createdAt } =
     card;
 
@@ -40,9 +40,11 @@ export default function Card({ card, cardType }) {
                 <RelationBadge relationship={relationship} />
               </S.SenderInfoBox>
             </S.SenderBox>
-            <S.DeleteButton>
-              <S.DeleteIcon alt="delete-button-icon" />
-            </S.DeleteButton>
+            {isEditing && (
+              <S.DeleteButton>
+                <S.DeleteIcon alt="delete-button-icon" />
+              </S.DeleteButton>
+            )}
           </S.CardHeader>
           <S.HorizonLine />
           <S.Content $font={font}>{content}</S.Content>
