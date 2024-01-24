@@ -10,6 +10,7 @@ export const MainBox = styled.div`
 export const MainBoxFirst = styled(MainBox)`
   padding: 60px 0px 60px 60px;
   justify-content: flex-end;
+  width: 100%;
   gap: 152px;
 
   /* 테블릿 */
@@ -30,6 +31,7 @@ export const MainBoxFirst = styled(MainBox)`
 
 export const MainBoxSecond = styled(MainBox)`
   padding: 60px 192px 60px 0px;
+  width: 100%;
 
   /* 테블릿 */
   @media (max-width: 768px) {
@@ -57,4 +59,10 @@ export const MainItemContainer = styled.div`
   padding: 21px 40px 21px 40px;
   justify-content: center;
   align-items: center;
+`;
+
+// 메인 두번째 박스 구역
+
+export const Image = styled.img`
+  width: 100%;
 `;
