@@ -52,7 +52,7 @@ export const MainBoxSecond = styled(MainBox)`
 export const MainItemContainer = styled.div`
   display: flex;
   gap: 10px;
-  width: 720px;
+  width: 100%;
   height: 204px;
   padding: 21px 40px 21px 40px;
   justify-content: center;
