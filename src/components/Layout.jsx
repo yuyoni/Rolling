@@ -12,3 +12,4 @@ export default function Layout() {
     </S.Wrapper>
   );
 }
+
