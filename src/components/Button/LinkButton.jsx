@@ -38,7 +38,7 @@ const Button = styled.button`
 
 const ButtonArea = styled.div`
   display: flex;
-  width: 1201px;
+  width: 100%;
   height: 104px;
   padding: 24px 0px;
   justify-content: center;
