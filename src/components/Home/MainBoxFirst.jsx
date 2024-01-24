@@ -9,24 +9,24 @@ export default function MainBoxFirst() {
   return (
     <S.MainBoxFirst>
       <MainTextBox
-        num="01"
+        number="01"
         text="누구나 손쉽게, 온라인 롤링 페이퍼를 만들 수 있어요"
         subText="로그인 없이 자유롭게 만들어요"
       />
       <S.MainItemContainer>
         <MainItemBox
-          img={ProfileMan}
-          name="김선영"
-          rel="동료"
+          profileImage={ProfileMan}
+          recipientId="김선영"
+          relationship="동료"
           content="안녕하세요"
-          date="2024.01.20"
+          createdAt="2024.01.20"
         />
         <MainItemBox
-          img={ProfileMan}
-          name="김선영"
-          rel="동료"
+          profileImage={ProfileMan}
+          recipientId="김선영"
+          relationship="동료"
           content="안녕하세요"
-          date="2024.01.20"
+          createdAt="2024.01.20"
         />
         <MainItemBasicBox />
       </S.MainItemContainer>
