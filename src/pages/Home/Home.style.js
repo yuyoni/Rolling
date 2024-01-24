@@ -13,7 +13,7 @@ export const MainArea = styled.div`
 
 export const MainContainer = styled.div`
   display: flex;
-  width: 1200px;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
