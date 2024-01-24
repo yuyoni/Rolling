@@ -24,8 +24,6 @@ export default function SendMessage() {
     font: 'Noto Sans'
   });
 
-  // 구조 분해 사용하면 될듯(새로운 값 업데이트)
-  // 불변성 규칙을 따른다고 함
   const handleChange = (target, value) => {
     setRecipientPostData(prevrecipientPostData => ({
       ...prevrecipientPostData,
@@ -85,7 +83,11 @@ export default function SendMessage() {
         </ToggleButton>
       </div>
       <div className="MessagePage__submit">
-        <SubmitButton>생성하기</SubmitButton>
+        <SubmitButton
+          disabled={!recipientPostData.sneder || !recipientPostData.content}
+        >
+          생성하기
+        </SubmitButton>
       </div>
     </SendMessageForm>
   );

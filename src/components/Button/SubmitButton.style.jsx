@@ -5,8 +5,8 @@ const ButtonStyle = styled.button`
   font-weight: 700;
   line-height: 2.8rem;
   letter-spacing: -0.18px;
-  padding: 1.4rem 2.4rem;
   border-radius: 1.2rem;
+  padding: 1.4rem 2.4rem;
   font-style: normal;
   text-align: center;
   color: var(--white, #fff);
@@ -16,6 +16,21 @@ const ButtonStyle = styled.button`
 
   &:disabled {
     background: var(--gray-300, #ccc);
+  }
+
+  &:hover {
+    background: var(--purple-700, #861dee);
+    outline: none;
+  }
+
+  &:active {
+    background: var(--purple-800, #6e0ad1);
+    outline: none;
+  }
+
+  &:focus {
+    outline: 2px solid var(--purple-900, #5603a7);
+    background: var(--purple-800, #6e0ad1);
   }
 `;
 
