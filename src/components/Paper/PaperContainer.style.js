@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 export const SlideContainer = styled.div`
   position: relative;
   max-width: 116rem;
-  overflow: hidden;
+  overflow-x: clip;
 
   @media (max-width: 768px) {
     overflow: scroll;
