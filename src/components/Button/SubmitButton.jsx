@@ -1,5 +1,9 @@
 import ButtonStyle from './SubmitButton.style';
 
-export default function SubmitButton({ children, disabled }) {
-  return <ButtonStyle disabled={disabled}>{children}</ButtonStyle>;
+export default function SubmitButton({ disabled, children, onClick }) {
+  return (
+    <ButtonStyle disabled={disabled} onClick={onClick}>
+      {children}
+    </ButtonStyle>
+  );
 }
