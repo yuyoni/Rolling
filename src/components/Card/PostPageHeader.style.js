@@ -12,7 +12,6 @@ export const BackgroundArea = styled.div`
 export const PaperTitle = styled.div`
   margin-right: 26.3rem;
   color: var(--gray-800, #2b2b2b);
-  font-family: Pretendard;
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
