@@ -5,6 +5,16 @@ export const MainBox = styled.div`
   align-items: flex-start;
   border-radius: 16px;
   background: var(--Surface, #f6f8ff);
+  width: 100%;
+
+  /* 테블릿 */
+  @media (max-width: 768px) {
+    /* margin: 0 40px 0 40px; */
+  }
+
+  /* 모바일 */
+  @media (max-width: 360px) {
+  }
 `;
 
 export const MainBoxFirst = styled(MainBox)`

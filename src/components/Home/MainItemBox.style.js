@@ -15,6 +15,17 @@ export const ItemBox = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  /* 테블릿 */
+  @media (max-width: 768px) {
+    /* width: 50%; */
+  }
+
+  /* 모바일 */
+  @media (max-width: 360px) {
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
 `;
 
 export const BasicBox = styled(ItemBox)`

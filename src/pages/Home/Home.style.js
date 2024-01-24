@@ -21,13 +21,15 @@ export const MainContainer = styled.div`
   padding: 60px 0 0 0;
   gap: 30px;
 
+  /* 수정중 */
+
   /* 테블릿 */
   @media (max-width: 768px) {
-    width: 100%;
+    padding: 49px 24px 0 24px;
   }
 
   /* 모바일 */
   @media (max-width: 360px) {
-    width: 100%;
+    padding: 42px 20px 0 20px;
   }
 `;
