@@ -3,7 +3,6 @@ import ArrowTop from '../../assetes/images/arrow-top.svg';
 import ArrowDown from '../../assetes/images/arrow-down.svg';
 import * as S from './ToggleButton.style';
 
-// 목록 보여주기
 export function ToggleItems({ children, onClick }) {
   return (
     <S.ToggleList>
@@ -12,17 +11,25 @@ export function ToggleItems({ children, onClick }) {
   );
 }
 
-export default function ToggleButton({ children, nav, listItems }) {
+export default function ToggleButton({
+  children,
+  nav,
+  listItems,
+  onChange,
+  target
+}) {
   const [show, setShow] = useState(false);
 
-  // Toggle 클릭 시 보여주기
   const handleShow = () => {
     setShow(!show);
   };
 
-  // Toggle 내용 숨기기
   const handleBlur = () => {
     setShow(false);
+  };
+
+  const handleChange = event => {
+    onChange(target, event.target.dataset.value);
   };
 
   return (
@@ -42,6 +49,7 @@ export default function ToggleButton({ children, nav, listItems }) {
               <S.Button
                 key={item}
                 onClick={handleShow}
+                onMouseOver={handleChange}
                 data-value={item}
                 type="button"
               >
