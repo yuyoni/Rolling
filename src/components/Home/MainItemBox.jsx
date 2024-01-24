@@ -11,9 +11,8 @@ export default function MainItemBox({
     <S.ItemBox>
       <S.FirstBox>
         <S.InfoBox>
-          <S.ProfileImg>
-            <S.Image src={profileImage} alt="프로필 사진" />
-          </S.ProfileImg>
+          <S.ProfileImage src={profileImage} alt="프로필 사진" />
+
           <S.WhoBox>
             <S.Name>From. {recipientId}</S.Name>
             <div>{relationship}</div>

@@ -13,13 +13,18 @@ export const ItemBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+`;
+
+export const BasicBox = styled(ItemBox)`
+  position: relative;
 `;
 
 export const FirstBox = styled.div`
   display: flex;
   width: 100%;
-  padding: 20px 24px 0px 24px;
+  padding: 0 24px 0px 24px;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
@@ -31,9 +36,10 @@ export const InfoBox = styled.div`
   gap: 10px;
 `;
 
-export const ProfileImg = styled.div`
+export const ProfileImage = styled.img`
   display: flex;
   height: 34px;
+  border-radius: 50px;
 
   // border: 1px solid;
   // background: url(<path-to-image>);
@@ -43,7 +49,11 @@ export const ProfileImg = styled.div`
 `;
 
 export const Image = styled.img`
-  border-radius: 50px;
+  position: absolute;
+`;
+
+export const MouseImage = styled(Image)`
+  right: 40px;
 `;
 
 export const WhoBox = styled.div`
