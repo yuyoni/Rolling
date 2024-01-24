@@ -7,7 +7,7 @@ export default function Card({ card, cardType }) {
     card;
 
   const formattedDate = new Date(createdAt).toLocaleDateString();
-  const nextUrl = `${useLocation().pathname}/messages`;
+  const nextUrl = `${useLocation().pathname}/message`;
   const navigate = useNavigate();
 
   const handleClickAddCard = () => {
