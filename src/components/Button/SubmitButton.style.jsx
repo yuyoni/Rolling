@@ -12,25 +12,27 @@ const ButtonStyle = styled.button`
   color: var(--white, #fff);
   border: none;
   background: var(--purple-600, #9935ff);
-  cursor: pointer;
 
   &:disabled {
     background: var(--gray-300, #ccc);
+    cursor: auto;
   }
 
-  &:hover {
-    background: var(--purple-700, #861dee);
-    outline: none;
-  }
+  &:not(:disabled) {
+    &:hover {
+      background: var(--purple-700, #861dee);
+      outline: none;
+    }
 
-  &:active {
-    background: var(--purple-800, #6e0ad1);
-    outline: none;
-  }
+    &:active {
+      background: var(--purple-800, #6e0ad1);
+      outline: none;
+    }
 
-  &:focus {
-    outline: 2px solid var(--purple-900, #5603a7);
-    background: var(--purple-800, #6e0ad1);
+    &:focus {
+      outline: 2px solid var(--purple-900, #5603a7);
+      background: var(--purple-800, #6e0ad1);
+    }
   }
 `;
 
