@@ -22,6 +22,10 @@ export const PaperBox = styled.div`
   display: flex;
   align-items: center;
   gap: 1.2rem;
+
+  & > img {
+    cursor: pointer;
+  }
 `;
 
 export const HorizonLine = styled.div`
