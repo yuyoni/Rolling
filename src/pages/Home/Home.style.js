@@ -21,13 +21,13 @@ export const MainContainer = styled.div`
   padding: 60px 0 0 0;
   gap: 30px;
 
-  /* 모바일 */
+  /* 테블릿 */
   @media (max-width: 768px) {
-    width: 320px;
+    width: 720px;
   }
 
-  /* 테블릿 */
-  @media (max-width: 1200px) {
-    width: 720px;
+  /* 모바일 */
+  @media (max-width: 360px) {
+    width: 320px;
   }
 `;

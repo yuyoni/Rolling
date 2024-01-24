@@ -18,14 +18,14 @@ export const Wrapper = styled.div`
   // background-color: #ffffff;
   // z-index: 20;
 
-  /* 모바일 */
+  /* 테블릿 */
   @media (max-width: 768px) {
-    padding: 12px 20px;
+    padding: 11px 24px;
   }
 
-  /* 테블릿 */
-  @media (max-width: 1247px) {
-    padding: 11px 24px;
+  /* 모바일 */
+  @media (max-width: 360px) {
+    padding: 12px 20px;
   }
 `;
 
@@ -42,18 +42,18 @@ export const Navigation = styled.div`
   justify-content: space-between;
   /* width: 100%; */
 
-  /* 모바일 */
+  /* 테블릿 */
   @media (max-width: 768px) {
+    /* max-width: 100%; */
+    transition: max-width 0.5s ease;
+  }
+
+  /* 모바일 */
+  @media (max-width: 360px) {
     /* width: 100%; */
     /* max-width: 100%; */
     gap: 79px;
 
-    transition: max-width 0.5s ease;
-  }
-
-  /* 테블릿 */
-  @media (max-width: 1200px) {
-    /* max-width: 100%; */
     transition: max-width 0.5s ease;
   }
 `;
