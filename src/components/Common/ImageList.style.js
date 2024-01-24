@@ -16,11 +16,11 @@ const commonStyles = css`
 `;
 
 export const Image = styled.img`
-  ${commonStyles}
+  ${commonStyles};
 `;
 
 export const RestMessageCount = styled.div`
-  ${commonStyles}
+  ${commonStyles};
   display: flex;
   align-items: center;
   justify-content: center;
