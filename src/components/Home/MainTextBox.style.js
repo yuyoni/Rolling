@@ -36,12 +36,12 @@ export const TextBox = styled.div`
   gap: 8px;
 
   /* 테블릿 */
-  @media (max-width: 768px) {
+  @media (max-width: 1248px) {
     width: 100%;
   }
 
   /* 모바일 */
-  @media (max-width: 360px) {
+  @media (max-width: 768px) {
     width: 272px;
   }
 `;
@@ -57,12 +57,12 @@ export const Text = styled.div`
   letter-spacing: -0.3px;
 
   /* 테블릿 */
-  @media (max-width: 768px) {
+  @media (max-width: 1248px) {
     width: 100%;
   }
 
   /* 모바일 */
-  @media (max-width: 360px) {
+  @media (max-width: 768px) {
     font-size: 18px;
   }
 `;
@@ -77,7 +77,7 @@ export const SubText = styled.div`
   letter-spacing: -0.2px;
 
   /* 모바일 */
-  @media (max-width: 360px) {
+  @media (max-width: 768px) {
     font-size: 15px;
   }
 `;

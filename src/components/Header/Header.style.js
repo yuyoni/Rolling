@@ -43,13 +43,14 @@ export const Navigation = styled.div`
   /* width: 100%; */
 
   /* 테블릿 */
-  @media (max-width: 768px) {
+  @media (max-width: 1248px) {
     /* max-width: 100%; */
+    padding: 0 24px;
     transition: max-width 0.5s ease;
   }
 
   /* 모바일 */
-  @media (max-width: 360px) {
+  @media (max-width: 768px) {
     /* width: 100%; */
     /* max-width: 100%; */
     gap: 79px;

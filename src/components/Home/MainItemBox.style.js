@@ -17,12 +17,12 @@ export const ItemBox = styled.div`
   gap: 10px;
 
   /* 테블릿 */
-  @media (max-width: 768px) {
+  @media (max-width: 1248px) {
     /* width: 50%; */
   }
 
   /* 모바일 */
-  @media (max-width: 360px) {
+  @media (max-width: 768px) {
     /* justify-content: center; */
     /* align-items: center; */
   }

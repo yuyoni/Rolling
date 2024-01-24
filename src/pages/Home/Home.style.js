@@ -24,12 +24,12 @@ export const MainContainer = styled.div`
   /* 수정중 */
 
   /* 테블릿 */
-  @media (max-width: 768px) {
+  @media (max-width: 1248px) {
     padding: 49px 24px 0 24px;
   }
 
   /* 모바일 */
-  @media (max-width: 360px) {
+  @media (max-width: 768px) {
     padding: 42px 20px 0 20px;
   }
 `;

@@ -2,18 +2,22 @@ import styled from 'styled-components';
 
 export const MainBox = styled.div`
   display: flex;
-  align-items: flex-start;
+  /* align-items: flex-start; */
+  align-items: center;
+
   border-radius: 16px;
   background: var(--Surface, #f6f8ff);
   width: 100%;
 
   /* 테블릿 */
-  @media (max-width: 768px) {
+  @media (max-width: 1248px) {
     /* margin: 0 40px 0 40px; */
+    align-items: flex-start;
   }
 
   /* 모바일 */
-  @media (max-width: 360px) {
+  @media (max-width: 768px) {
+    align-items: flex-start;
   }
 `;
 
@@ -24,14 +28,14 @@ export const MainBoxFirst = styled(MainBox)`
   gap: 152px;
 
   /* 테블릿 */
-  @media (max-width: 768px) {
+  @media (max-width: 1248px) {
     flex-direction: column;
     padding: 40px;
     gap: 36px;
   }
 
   /* 모바일 */
-  @media (max-width: 360px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     padding: 40px;
     /* justify-content: center; */
@@ -44,14 +48,14 @@ export const MainBoxSecond = styled(MainBox)`
   width: 100%;
 
   /* 테블릿 */
-  @media (max-width: 768px) {
+  @media (max-width: 1248px) {
     flex-direction: column-reverse;
     padding: 40px;
     gap: 36px;
   }
 
   /* 모바일 */
-  @media (max-width: 360px) {
+  @media (max-width: 768px) {
     flex-direction: column-reverse;
     padding: 40px;
 
