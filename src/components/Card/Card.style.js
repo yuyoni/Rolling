@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import deleteIcon from '../../assetes/delete-icon.svg';
-import plusIcon from '../../assetes/plus-icon.svg';
+import deleteIcon from '../../assetes/images/delete-icon.svg';
+import plusIcon from '../../assetes/images/plus-icon.svg';
 
 export const Card = styled.div`
   position: relative;
@@ -123,7 +123,7 @@ export const Content = styled.div`
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 
-  font-family: ${props => props.font || 'Pretendard'};
+  font-family: ${props => props.$font || 'Pretendard'};
   font-size: 18px;
   font-style: normal;
   font-weight: 400;

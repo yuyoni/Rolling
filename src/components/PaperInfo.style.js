@@ -46,17 +46,17 @@ const commonStyles = css`
 `;
 
 export const Image = styled.img`
-  ${commonStyles}
+  ${commonStyles};
 `;
 
 export const RestMessageCount = styled.div`
-  ${commonStyles}
+  ${commonStyles};
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-export const DividedLine = styled.div`
+export const HorizontalLine = styled.div`
   width: 100%;
   height: 0.1rem;
   background-color: rgba(0, 0, 0, 0.12);
@@ -80,6 +80,7 @@ export const EmojiList = styled.div`
 
 export const EmojiCount = styled.div`
   display: flex;
+  align-items: center;
   padding: 0.8rem 1.2rem;
   width: 6.5rem;
   height: 3.6rem;

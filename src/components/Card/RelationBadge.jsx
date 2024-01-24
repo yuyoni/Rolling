@@ -1,5 +1,5 @@
 import * as S from './RelationBadge.style';
-import BADGE_COLOR_MAPPER from '../../constants/colorMapper';
+import { BADGE_COLOR_MAPPER } from '../../constants/colorMapper';
 
 export default function RelationBadge({ relationship }) {
   const MAPPER = BADGE_COLOR_MAPPER;

@@ -38,7 +38,7 @@ export default function Card({ card, cardType }) {
             </S.DeleteButton>
           </S.CardHeader>
           <S.HorizonLine />
-          <S.Content font={font}>{content}</S.Content>
+          <S.Content $font={font}>{content}</S.Content>
           <S.DateWrapper>{formattedDate}</S.DateWrapper>
         </S.Card>
       )}
