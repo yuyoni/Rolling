@@ -75,7 +75,6 @@ export default function Post() {
         name={recipientName}
         messageCount={cardCount}
         topReactions={topReaction}
-        isVertical={false}
       />
       <CardContainer cards={cards} />
     </S.Page>

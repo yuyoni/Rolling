@@ -1,16 +1,22 @@
-import * as S from './MainImgItemBox.style';
+import * as S from './MainItemBox.style';
 
-export default function MainImgItemBox({ img, name, rel, content, date }) {
+export default function MainItemBox({
+  profileImage,
+  recipientId,
+  relationship,
+  content,
+  createdAt
+}) {
   return (
     <S.ItemBox>
       <S.FirstBox>
         <S.InfoBox>
           <S.ProfileImg>
-            <S.Image src={img} alt="프로필 사진" />
+            <S.Image src={profileImage} alt="프로필 사진" />
           </S.ProfileImg>
           <S.WhoBox>
-            <S.Name>From. {name}</S.Name>
-            <div>{rel}</div>
+            <S.Name>From. {recipientId}</S.Name>
+            <div>{relationship}</div>
           </S.WhoBox>
         </S.InfoBox>
       </S.FirstBox>
@@ -18,7 +24,7 @@ export default function MainImgItemBox({ img, name, rel, content, date }) {
 
       <S.SecondBox>
         <S.Content>{content}</S.Content>
-        <div>{date}</div>
+        <div>{createdAt}</div>
       </S.SecondBox>
     </S.ItemBox>
   );

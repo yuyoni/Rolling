@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import Heading from '../../components/Text/Heading';
 import InputText from '../../components/Input/InputText';
 import SendMessageForm from './SendMessageForm';
@@ -8,12 +9,16 @@ import Editor from '../../components/Text/Editor';
 import ProfileImagesMain from '../../components/ProfileImages/ProfileImagesMain';
 import getProfileImages from '../../apis/profileApis';
 import defaultImage from '../../assetes/images/default-profile-image.png';
+import PostMessage from '../../apis/recipientApis';
 
 const relationship = ['지인', '친구', '동료', '가족'];
 const font = ['Noto Sans', 'Pretendard', '나눔명조', '나눔손글씨 손편지체'];
 
 export default function SendMessage() {
+  const { userId } = useParams();
+  const navigate = useNavigate();
   const [profileImages, setProfileImages] = useState([]);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [recipientPostData, setRecipientPostData] = useState({
     team: '3-1',
     recipientId: '2508',
@@ -24,8 +29,6 @@ export default function SendMessage() {
     font: 'Noto Sans'
   });
 
-  // 구조 분해 사용하면 될듯(새로운 값 업데이트)
-  // 불변성 규칙을 따른다고 함
   const handleChange = (target, value) => {
     setRecipientPostData(prevrecipientPostData => ({
       ...prevrecipientPostData,
@@ -44,7 +47,25 @@ export default function SendMessage() {
 
   useEffect(() => {
     handleLoad();
-  }, []);
+  }, [userId, navigate]);
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    try {
+      setIsSuccess(false);
+      await PostMessage(recipientPostData);
+    } catch (error) {
+      return;
+    } finally {
+      setIsSuccess(true);
+    }
+  };
+
+  useEffect(() => {
+    if (isSuccess) {
+      navigate(`/post/2508`);
+    }
+  }, [isSuccess, userId, navigate]);
 
   return (
     <SendMessageForm>
@@ -85,7 +106,12 @@ export default function SendMessage() {
         </ToggleButton>
       </div>
       <div className="MessagePage__submit">
-        <SubmitButton>생성하기</SubmitButton>
+        <SubmitButton
+          disabled={!recipientPostData.sender || !recipientPostData.content}
+          onClick={handleSubmit}
+        >
+          생성하기
+        </SubmitButton>
       </div>
     </SendMessageForm>
   );

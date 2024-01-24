@@ -13,7 +13,7 @@ export const MainArea = styled.div`
 
 export const MainContainer = styled.div`
   display: flex;
-  width: 1200px;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -23,11 +23,11 @@ export const MainContainer = styled.div`
 
   /* 테블릿 */
   @media (max-width: 768px) {
-    width: 720px;
+    width: 100%;
   }
 
   /* 모바일 */
   @media (max-width: 360px) {
-    width: 320px;
+    width: 100%;
   }
 `;
