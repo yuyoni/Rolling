@@ -21,11 +21,11 @@ export const PointBox = styled.div`
   color: var(--white, #fff);
 
   /* Font/14 Bold */
-  font-family: 'Pretendard-Bold';
+  font-family: 'Pretendard';
   font-weight: 700;
   font-size: 14px;
   line-height: 20px; /* 142.857% */
-  letter-spacing: -0.07px;
+  letter-spacing: -0.1px;
 `;
 
 export const TextBox = styled.div`
@@ -39,19 +39,19 @@ export const Text = styled.div`
   color: var(--gray-900, #181818);
 
   /* Font/24 Bold */
-  font-family: 'Pretendard-Bold';
+  font-family: 'Pretendard';
   font-weight: 700;
   font-size: 24px;
   line-height: 36px; /* 150% */
-  letter-spacing: -0.24px;
+  letter-spacing: -0.3px;
 `;
 
 export const SubText = styled.div`
   color: var(--gray-500, #555);
 
   /* Font/18 Regular */
-  font-family: 'Pretendard-Regular';
+  font-family: 'Pretendard';
   font-size: 18px;
   line-height: 28px; /* 155.556% */
-  letter-spacing: -0.18px;
+  letter-spacing: -0.2px;
 `;

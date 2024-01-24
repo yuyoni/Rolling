@@ -55,7 +55,8 @@ export const WhoBox = styled.div`
 
 export const Name = styled.div`
   color: #000;
-  font-family: 'Pretendard-Bold';
+  font-family: 'Pretendard';
+  font-weight: 700;
   font-size: 12px;
   line-height: 18px; /* 120% */
 `;
@@ -81,10 +82,10 @@ export const Content = styled.div`
   color: #555;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-family: 'Pretendard-Regular';
+  font-family: 'Pretendard';
   font-size: 12px;
   line-height: 18px; /* 150% */
-  letter-spacing: -0.059px;
+  letter-spacing: -0.06px;
 
   // border: solid 1px;
 `;

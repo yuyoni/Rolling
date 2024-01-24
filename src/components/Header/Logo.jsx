@@ -1,12 +1,12 @@
-import logoImg from '../../assetes/images/logo-icon.svg';
+import logoImage from '../../assetes/images/logo-icon.svg';
 import * as S from './Logo.style';
 
 export default function Logo() {
   return (
     <S.LogoStyle>
-      <S.LogoImg>
-        <img src={logoImg} alt="Logo" />
-      </S.LogoImg>
+      <S.LogoImage>
+        <img src={logoImage} alt="Logo" />
+      </S.LogoImage>
       <S.LogoText>Rolling</S.LogoText>
     </S.LogoStyle>
   );
