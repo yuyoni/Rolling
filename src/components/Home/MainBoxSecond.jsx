@@ -6,9 +6,9 @@ import * as S from './MainBox.style';
 export default function MainBoxSecond() {
   return (
     <S.MainBoxSecond>
-      <div>
-        <img src={EmojiMainImage} alt="이모지" />
-      </div>
+      {/* <S.MainImageBox> */}
+      <S.Image src={EmojiMainImage} alt="이모지" />
+      {/* </S.MainImageBox> */}
       <MainTextBox
         number="02"
         text="서로에게 이모지로 감정을 표현해보세요"

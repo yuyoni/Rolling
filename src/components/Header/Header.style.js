@@ -31,9 +31,10 @@ export const Wrapper = styled.div`
 
 export const Navigation = styled.div`
   display: flex;
+
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  /* justify-content: center; */
+  min-width: 1200px;
   padding: 11px 0px;
   /* gap: 944px; */
 
@@ -43,16 +44,22 @@ export const Navigation = styled.div`
   /* width: 100%; */
 
   /* 테블릿 */
-  @media (max-width: 768px) {
+  @media (max-width: 1248px) {
     /* max-width: 100%; */
+    min-width: 700px;
+    width: 100%;
+    padding: 0 24px;
     transition: max-width 0.5s ease;
   }
 
   /* 모바일 */
-  @media (max-width: 360px) {
-    /* width: 100%; */
+  @media (max-width: 768px) {
+    min-width: 327px;
+    width: 100%;
+    padding: 0;
     /* max-width: 100%; */
-    gap: 79px;
+
+    /* gap: 79px; */
 
     transition: max-width 0.5s ease;
   }

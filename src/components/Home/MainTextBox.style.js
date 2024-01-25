@@ -32,7 +32,18 @@ export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 288px;
   gap: 8px;
+
+  /* 테블릿 */
+  @media (max-width: 1248px) {
+    width: 100%;
+  }
+
+  /* 모바일 */
+  @media (max-width: 768px) {
+    width: 272px;
+  }
 `;
 
 export const Text = styled.div`
@@ -44,6 +55,16 @@ export const Text = styled.div`
   font-size: 24px;
   line-height: 36px; /* 150% */
   letter-spacing: -0.3px;
+
+  /* 테블릿 */
+  @media (max-width: 1248px) {
+    width: 100%;
+  }
+
+  /* 모바일 */
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const SubText = styled.div`
@@ -54,4 +75,9 @@ export const SubText = styled.div`
   font-size: 18px;
   line-height: 28px; /* 155.556% */
   letter-spacing: -0.2px;
+
+  /* 모바일 */
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 `;
