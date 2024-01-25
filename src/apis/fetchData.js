@@ -1,4 +1,4 @@
-const BASE_URL = 'https://rolling-api.vercel.app/3-1/'; // 추후 환경변수로 빼기
+const BASE_URL = 'https://rolling-api.vercel.app/'; // 추후 환경변수로 빼기
 
 /** BASE_URL + param 로 부터 데이터를 fetch해와서 responseBody를 반환하는 함수
  *

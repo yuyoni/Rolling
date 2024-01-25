@@ -6,21 +6,36 @@ import * as S from './List.style';
 import Error from '../Error/Error';
 
 export default function List() {
-  const { data, isLoading, isError } = useFetchData('recipients/', 'GET');
+  const {
+    data: dataOrderByMessageCount,
+    isLoading: isLoadingMessageCount,
+    isError: isErrorMessageCount
+  } = useFetchData('3-1/recipients/?sort=like&limit=50', 'GET');
+  const {
+    data: dataOrderByCreatedAt,
+    isLoading: isLoadingCreatedAt,
+    isError: isErrorCreatedAt
+  } = useFetchData('3-1/recipients/?limit=50', 'GET');
 
-  if (isLoading) {
+  if (isLoadingMessageCount || isLoadingCreatedAt) {
     return <Skeleton />;
   }
 
-  if (isError) {
+  if (isErrorMessageCount || isErrorCreatedAt) {
     return <Error />;
   }
 
   return (
     <S.Wrapper>
       <S.Container>
-        <PaperBox orderBy="messageCount" paperData={data.results} />
-        <PaperBox orderBy="createdAt" paperData={data.results} />
+        <PaperBox
+          orderBy="messageCount"
+          paperData={dataOrderByMessageCount.results}
+        />
+        <PaperBox
+          orderBy="createdAt"
+          paperData={dataOrderByCreatedAt.results}
+        />
         <Link to="/post">
           <S.Button>나도 만들어 보기</S.Button>
         </Link>

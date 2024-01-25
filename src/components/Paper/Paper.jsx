@@ -18,7 +18,7 @@ export default function Paper({ data }) {
       $backgroundImageURL={backgroundImageURL}
       $backgroundColor={backgroundColor}
     >
-      <S.PaperTitle>To. {name}</S.PaperTitle>
+      <S.PaperTitle $isWhite={backgroundImageURL}>To. {name}</S.PaperTitle>
       <ImageList recentMessages={recentMessages} messageCount={messageCount} />
       <MessageCount messageCount={messageCount} />
       <S.HorizonLine />
