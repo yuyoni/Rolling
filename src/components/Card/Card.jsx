@@ -1,3 +1,4 @@
+import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import * as S from './Card.style';
 import RelationBadge from './RelationBadge';
@@ -58,7 +59,11 @@ export default function Card({ card, cardType, isEditing, onDelete }) {
             )}
           </S.CardHeader>
           <S.HorizonLine />
-          <S.Content $font={font}>{content}</S.Content>
+          <S.Content $font={font}>
+            {React.createElement('div', {
+              dangerouslySetInnerHTML: { __html: content }
+            })}
+          </S.Content>
           <S.DateWrapper>{formattedDate}</S.DateWrapper>
         </S.Card>
       )}
