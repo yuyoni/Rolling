@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrap = styled.div`
+const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 15.25rem;
@@ -17,38 +17,39 @@ const ButtonOrigin = styled.button`
   justify-content: center;
 `;
 
-const CollorButton = styled(ButtonOrigin)`
-  color: ${({ $toggle }) =>
-    $toggle === 'collor' ? 'var(--purple-600, #9935FF)' : 'none'};
-  border: ${({ $toggle }) =>
-    $toggle === 'collor' ? '1px solid var(--purple-600, #9935FF)' : 'none'};
+const ColorButton = styled(ButtonOrigin)`
+  ${({ $toggle }) =>
+    $toggle === 'color'
+      ? `color: var(--purple-600, #9935FF); border: 1px solid var(--purple-600, #9935FF)`
+      : `none`}
 `;
-const ImgButton = styled(ButtonOrigin)`
-  color: ${({ $toggle }) =>
-    $toggle === 'img' ? 'var(--purple-600, #9935FF)' : 'none'};
-  border: ${({ $toggle }) =>
-    $toggle === 'img' ? '1px solid var(--purple-600, #9935FF)' : 'none'};
+
+const ImageButton = styled(ButtonOrigin)`
+  ${({ $toggle }) =>
+    $toggle === 'image'
+      ? `color: var(--purple-600, #9935FF); border: 1px solid var(--purple-600, #9935FF)`
+      : `none`}
 `;
 
 export default function BackgroundSelector({ toggle, toggleChange }) {
   return (
-    <Wrap>
-      <CollorButton
+    <ButtonWrapper>
+      <ColorButton
         onClick={() => {
-          if (toggle === 'img') toggleChange();
+          if (toggle === 'image') toggleChange();
         }}
         $toggle={toggle}
       >
         컬러
-      </CollorButton>
-      <ImgButton
+      </ColorButton>
+      <ImageButton
         onClick={() => {
-          if (toggle === 'collor') toggleChange();
+          if (toggle === 'color') toggleChange();
         }}
         $toggle={toggle}
       >
         이미지
-      </ImgButton>
-    </Wrap>
+      </ImageButton>
+    </ButtonWrapper>
   );
 }
