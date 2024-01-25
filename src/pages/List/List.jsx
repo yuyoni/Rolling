@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
+import LinkButton from '../../components/Button/LinkButton';
 import PaperBox from '../../components/Paper/PaperBox';
 import Skeleton from '../../components/Paper/Skeleton/Skeleton';
 import useFetchData from '../../hooks/useFetchData';
-import * as S from './List.style';
 import Error from '../Error/Error';
+import * as S from './List.style';
 
 export default function List() {
   const {
@@ -36,10 +36,8 @@ export default function List() {
           orderBy="createdAt"
           paperData={dataOrderByCreatedAt.results}
         />
-        <Link to="/post">
-          <S.Button>나도 만들어 보기</S.Button>
-        </Link>
       </S.Container>
+      <LinkButton value="나도 만들어 보기" link="/post" />
     </S.Wrapper>
   );
 }
