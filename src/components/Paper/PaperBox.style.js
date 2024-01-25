@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: flex-start;
   margin-top: 5rem;
@@ -16,4 +16,4 @@ const Container = styled.div`
   }
 `;
 
-export default Container;
+export default Wrapper;

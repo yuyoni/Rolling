@@ -27,21 +27,36 @@ const Button = styled.button`
   color: var(--white, #fff);
   text-align: center;
 
-  /* Font/18 Bold */
   font-family: Pretendard;
   font-size: 18px;
-  font-style: normal;
   font-weight: 700;
-  line-height: 28px; /* 155.556% */
+  line-height: 28px;
   letter-spacing: -0.18px;
+
+  &:hover {
+    background: var(--Purple-700);
+    transition: all 0.3s;
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const ButtonArea = styled.div`
   display: flex;
-  width: 1201px;
-  height: 104px;
+  width: 100%;
   padding: 24px 0px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    padding: 2.4rem;
+    a {
+      width: 100%;
+    }
+  }
 `;

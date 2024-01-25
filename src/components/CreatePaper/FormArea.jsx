@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import purple from '../../assetes/images/basket.jpg';
-import beige from '../../assetes/images/desert.jpg';
-import blue from '../../assetes/images/mokoko.png';
-import green from '../../assetes/images/sky.jpg';
+import purple from '../../assets/images/basket.jpg';
+import beige from '../../assets/images/desert.jpg';
+import blue from '../../assets/images/mokoko.png';
+import green from '../../assets/images/sky.jpg';
 import BackgroundBox from './BackgroundBox';
 import CreateButton from './CreateButton';
 import ColorImageContext from '../../contexts/ColorImageContext';
@@ -50,9 +50,8 @@ export default function FormArea() {
       );
       const result = await response.json();
       console.log(result);
-      // const { id } = result; 임시 주석처리
-      navigate(`/post`);
-      // navigate(`/post/${id}`); 임시 주석처리
+      const { id } = result;
+      navigate(`/post/${id}`);
     } catch (error) {
       console.error('오류', error);
     } finally {

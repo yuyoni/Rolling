@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-import Poppins from './assetes/fonts/Poppins-Bold.woff';
-import PretendardBold from './assetes/fonts/Pretendard-Bold.woff';
-import PretendardRegular from './assetes/fonts/Pretendard-Regular.woff';
+import Poppins from './assets/fonts/Poppins-Bold.woff';
+import PretendardBold from './assets/fonts/Pretendard-Bold.woff';
+import PretendardRegular from './assets/fonts/Pretendard-Regular.woff';
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -21,6 +21,8 @@ const GlobalStyles = createGlobalStyle`
     --Orange-300: #FFC583;
     --Orange-400: #FFAE65;
     --Orange-500: #FF8832;
+
+    --Beige-200: #ffe9bf;
 
     --Blue-100: #E2F5FF;
     --Blue-200: #B1E4FF;
@@ -82,8 +84,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
 
     margin: 0;
     font-family: "Pretendard"; 
@@ -95,6 +97,7 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color : var(--gray-700, #3A3A3A);
     cursor: pointer;
   }
 

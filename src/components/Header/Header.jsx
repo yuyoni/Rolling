@@ -1,51 +1,25 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link, useLocation } from 'react-router-dom';
+import * as S from './Header.style';
 
 import Logo from './Logo';
 
 export default function Header() {
+  const location = useLocation();
+  const isButtonPage =
+    location.pathname === '/' || location.pathname === '/list';
+
   return (
-    <Wrapper>
-      <Nav>
-        <div>
-          <Link to="/">
-            <Logo />
-          </Link>
-        </div>
-        <div>
+    <S.Wrapper>
+      <S.Navigation>
+        <Link to="/">
+          <Logo />
+        </Link>
+        {isButtonPage && (
           <Link to="/post">
-            <Button>롤링 페이퍼 만들기</Button>
+            <S.Button>롤링 페이퍼 만들기</S.Button>
           </Link>
-        </div>
-      </Nav>
-    </Wrapper>
+        )}
+      </S.Navigation>
+    </S.Wrapper>
   );
 }
-const Wrapper = styled.header`
-  display: flex;
-  width: 1920px;
-  height: 64px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1px;
-  flex-shrink: 0;
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  gap: 944px;
-`;
-const Button = styled.button`
-  display: flex;
-  height: 40px;
-  padding: 8px 16px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  border-radius: 6px;
-  border: 1px solid var(--gray-300, #ccc);
-  background: var(--white, #fff);
-`;

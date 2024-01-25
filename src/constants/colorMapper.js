@@ -17,4 +17,9 @@ export const BADGE_COLOR_MAPPER = {
   }
 };
 
-export default BADGE_COLOR_MAPPER;
+export const PAPER_COLOR_MAPPER = {
+  beige: 'var(--Beige-200)',
+  purple: 'var(--Purple-200)',
+  green: 'var(--Green-200)',
+  blue: 'var(--Blue-200)'
+};

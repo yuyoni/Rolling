@@ -1,11 +1,16 @@
+import Wrapper from './PaperBox.style';
 import PaperContainer from './PaperContainer';
-import Container from './PaperBox.style';
 
-export default function PaperBox({ title }) {
+export default function PaperBox({ orderBy, paperData }) {
+  const title = {
+    ReactionCount: '인기 롤링 페이퍼 🔥',
+    createdAt: '최근에 만든 롤링 페이퍼 ⭐️️'
+  };
+
   return (
-    <Container>
-      <span>{title}</span>
-      <PaperContainer />
-    </Container>
+    <Wrapper>
+      <span>{title[orderBy]}</span>
+      <PaperContainer paperData={paperData} />
+    </Wrapper>
   );
 }

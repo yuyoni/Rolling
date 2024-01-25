@@ -1,20 +1,40 @@
 import styled from 'styled-components';
+import { PAPER_COLOR_MAPPER } from '../../constants/colorMapper';
 
 export const Page = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1920px;
-  height: 1080px;
+  width: 100%;
 
-  background: var(--Orange-200, #ffe2ad);
+  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
-export const PageTemp = styled.div`
+export const CardBackgroundWrapper = styled.div`
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 
-  border-radius: 4px;
-  background: var(--Purple-100, #f8f0ff);
+  width: 100%;
+  background-image: ${props =>
+    props.$backgroundImageURL ? `url(${props.$backgroundImageURL})` : 'none'};
+  background: ${({ $backgroundColor }) =>
+    $backgroundColor
+      ? PAPER_COLOR_MAPPER[$backgroundColor]
+      : 'var(--Orange-200)'};
+
+  overflow-x: hidden;
+  overflow-y: auto;
+`;
+
+export const EditButton = styled.button`
+  position: absolute;
+  top: 5%;
+  right: 18%;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
 `;

@@ -1,6 +1,6 @@
 import * as S from './Editor.style';
 
-export default function Editor() {
+export default function Editor({ onChange }) {
   // WYSIWYG
   const modules = {
     toolbar: {
@@ -14,12 +14,17 @@ export default function Editor() {
     }
   };
 
+  const handleChange = content => {
+    onChange('content', content);
+  };
+
   return (
     <S.ReactQuillContainer>
       <S.StyledReactQuill
         modules={modules}
         className="ql-editor ql-container ql-toobar"
         style={{ padding: '0' }}
+        onChange={handleChange}
       />
     </S.ReactQuillContainer>
   );

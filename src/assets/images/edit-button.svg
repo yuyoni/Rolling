@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  viewBox="0,0,256,256" width="64px" height="64px">
+  <g fill="none"  stroke="#555555" stroke-width="16" stroke-linecap="butt"
+     stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+    font-family="none" style="mix-blend-mode: normal">
+    <path
+      d="M68.97983,246.04035c-32.59594,0 -59.02017,-26.42423 -59.02017,-59.02017v-118.04035c0,-32.59594 26.42423,-59.02017 59.02017,-59.02017h118.04035c32.59594,0 59.02017,26.42423 59.02017,59.02017v118.04035c0,32.59594 -26.42423,59.02017 -59.02017,59.02017z"
+      id="shape"></path>
+  </g>
+  <g fill="none" fill-rule="nonzero" stroke="#555555" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+    style="mix-blend-mode: normal">
+    <g transform="scale(4,4)">
+      <path
+        d="M45.17,15.426l-23.234,26.361c0,0 4.628,2.745 5.777,6.191c5.234,-6.383 25.851,-29.872 25.851,-29.872c4.117,-4.404 -5.745,-14.362 -11.362,-8.426c-5.617,6.128 -26.011,29.745 -26.011,29.745l-3.415,15.83l7.373,-3.255c0,0 -1.197,-3.878 -7.372,-5.17"></path>
+    </g>
+  </g>
+</svg>
