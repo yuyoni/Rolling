@@ -107,3 +107,9 @@ export const Image = styled.img`
     /* width: 80%; */
   }
 `;
+
+// 메인 두번째 박스 구역
+
+export const Image = styled.img`
+  width: 100%;
+`;
