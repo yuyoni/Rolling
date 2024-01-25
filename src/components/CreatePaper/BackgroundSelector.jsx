@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { useContext } from 'react';
+import ColorImageContext from '../../contexts/ColorImageContext';
 
-const Wrap = styled.div`
+const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 15.25rem;
@@ -17,38 +19,43 @@ const ButtonOrigin = styled.button`
   justify-content: center;
 `;
 
-const CollorButton = styled(ButtonOrigin)`
-  color: ${({ $toggle }) =>
-    $toggle === 'collor' ? 'var(--purple-600, #9935FF)' : 'none'};
-  border: ${({ $toggle }) =>
-    $toggle === 'collor' ? '1px solid var(--purple-600, #9935FF)' : 'none'};
-`;
-const ImgButton = styled(ButtonOrigin)`
-  color: ${({ $toggle }) =>
-    $toggle === 'img' ? 'var(--purple-600, #9935FF)' : 'none'};
-  border: ${({ $toggle }) =>
-    $toggle === 'img' ? '1px solid var(--purple-600, #9935FF)' : 'none'};
+const ColorButton = styled(ButtonOrigin)`
+  ${({ $background }) =>
+    $background === 'color'
+      ? `color: var(--purple-600, #9935FF); border: 1px solid var(--purple-600, #9935FF)`
+      : `none`}
 `;
 
-export default function BackgroundSelector({ toggle, toggleChange }) {
+const ImageButton = styled(ButtonOrigin)`
+  ${({ $background }) =>
+    $background === 'image'
+      ? `color: var(--purple-600, #9935FF); border: 1px solid var(--purple-600, #9935FF)`
+      : `none`}
+`;
+
+export default function BackgroundSelector() {
+  const { background, setBackground } = useContext(ColorImageContext);
+
   return (
-    <Wrap>
-      <CollorButton
+    <ButtonWrapper>
+      <ColorButton
         onClick={() => {
-          if (toggle === 'img') toggleChange();
+          setBackground('color');
         }}
-        $toggle={toggle}
+        $background={background}
+        type="button"
       >
         컬러
-      </CollorButton>
-      <ImgButton
+      </ColorButton>
+      <ImageButton
         onClick={() => {
-          if (toggle === 'collor') toggleChange();
+          setBackground('image');
         }}
-        $toggle={toggle}
+        $background={background}
+        type="button"
       >
         이미지
-      </ImgButton>
-    </Wrap>
+      </ImageButton>
+    </ButtonWrapper>
   );
 }

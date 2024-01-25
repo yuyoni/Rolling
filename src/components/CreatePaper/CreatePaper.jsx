@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FormContainer from './FormContainer';
+import FormArea from './FormArea';
 
 const Wrap = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ const Wrap = styled.div`
 export default function CreatePaper() {
   return (
     <Wrap>
-      <FormContainer />
+      <FormArea />
     </Wrap>
   );
 }

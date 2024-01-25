@@ -50,12 +50,16 @@ export default function RecipientInput({ placeholder }) {
     <>
       <Label htmlFor="recipient">To.</Label>
       <ErrorStyle
+        type="text"
         placeholder={placeholder}
         $showError={showError}
         onBlur={handleBlur}
         onFocus={handleFocus}
+        id="recipient"
+        name="name"
+        autoComplete="username"
       />
-      {showError ? <P>{showError}</P> : null}
+      {showError && <P>{showError}</P>}
     </>
   );
 }
