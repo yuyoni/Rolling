@@ -35,5 +35,6 @@ export const MainContainer = styled.div`
   @media (max-width: 768px) {
     /* width: 320px; */
     padding: 42px 20px 0 20px;
+    /* margin: 0 20px; */
   }
 `;

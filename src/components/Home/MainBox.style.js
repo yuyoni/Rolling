@@ -21,6 +21,8 @@ export const MainBox = styled.div`
   @media (max-width: 768px) {
     min-width: 320px;
     align-items: flex-start;
+    /* padding: 20px; */
+    /* margin: 20px; */
   }
 `;
 
@@ -40,7 +42,7 @@ export const MainBoxFirst = styled(MainBox)`
   /* 모바일 */
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 40px;
+    padding: 20px 10px;
     /* justify-content: center; */
     /* align-items: center; */
   }
@@ -60,7 +62,7 @@ export const MainBoxSecond = styled(MainBox)`
   /* 모바일 */
   @media (max-width: 768px) {
     flex-direction: column-reverse;
-    padding: 40px;
+    padding: 20px 10px;
 
     /* justify-content: center; */
     /* align-items: center; */
@@ -76,6 +78,7 @@ export const MainItemContainer = styled.div`
   padding: 21px 40px 21px 40px;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
   /* 테블릿 */
   @media (max-width: 1248px) {
@@ -84,9 +87,10 @@ export const MainItemContainer = styled.div`
 
   /* 모바일 */
   @media (max-width: 768px) {
-    margin: 20px;
+    /* margin: 20px; */
+    width: 100%;
     padding: 0;
-    height: 90px;
+    height: auto;
 
     /* justify-content: center; */
     /* align-items: center; */
