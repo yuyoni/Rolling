@@ -7,9 +7,9 @@ import Error from '../Error/Error';
 
 export default function List() {
   const {
-    data: dataOrderByMessageCount,
-    isLoading: isLoadingMessageCount,
-    isError: isErrorMessageCount
+    data: dataOrderByReactionCount,
+    isLoading: isLoadingReactionCount,
+    isError: isErrorReactionCount
   } = useFetchData('3-1/recipients/?sort=like&limit=50', 'GET');
   const {
     data: dataOrderByCreatedAt,
@@ -17,11 +17,11 @@ export default function List() {
     isError: isErrorCreatedAt
   } = useFetchData('3-1/recipients/?limit=50', 'GET');
 
-  if (isLoadingMessageCount || isLoadingCreatedAt) {
+  if (isLoadingReactionCount || isLoadingCreatedAt) {
     return <Skeleton />;
   }
 
-  if (isErrorMessageCount || isErrorCreatedAt) {
+  if (isErrorReactionCount || isErrorCreatedAt) {
     return <Error />;
   }
 
@@ -29,8 +29,8 @@ export default function List() {
     <S.Wrapper>
       <S.Container>
         <PaperBox
-          orderBy="messageCount"
-          paperData={dataOrderByMessageCount.results}
+          orderBy="ReactionCount"
+          paperData={dataOrderByReactionCount.results}
         />
         <PaperBox
           orderBy="createdAt"
