@@ -135,6 +135,11 @@ export const Line = styled.div`
   height: 1px;
   flex-shrink: 0;
   background: #e1e1e1;
+
+  /* 모바일 */
+  @media (max-width: 768px) {
+    width: 100px;
+  }
 `;
 
 export const SecondBox = styled.div`
