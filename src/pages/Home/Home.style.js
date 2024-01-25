@@ -2,39 +2,29 @@ import styled from 'styled-components';
 
 export const MainArea = styled.div`
   width: 100%;
-  height: 1080px;
+  height: 108rem;
   background: #fff;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 2.4rem;
 `;
 
 export const MainContainer = styled.div`
   display: flex;
-  width: 1200px;
+  width: 120rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 60px 0 0 0;
-  gap: 30px;
+  padding: 6rem 0 0 0;
+  gap: 3rem;
 
-  /* 수정중 */
-
-  /* 테블릿 */
   @media (max-width: 1248px) {
-    /* width: 720px; */
     width: 100%;
-    /* max-width: 720px; */
-    padding: 49px 24px 0 24px;
-    /* margin: 24px; */
+    padding: 4.9rem 2.4rem 0 2.4rem;
   }
 
-  /* 모바일 */
   @media (max-width: 768px) {
-    /* width: 320px; */
-    padding: 42px 20px 0 20px;
-    /* margin: 0 20px; */
+    padding: 4.2rem 2rem 0 2rem;
   }
 `;
