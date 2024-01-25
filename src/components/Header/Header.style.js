@@ -53,6 +53,7 @@ export const Navigation = styled.div`
   @media (max-width: 768px) {
     /* width: 100%; */
     /* max-width: 100%; */
+
     gap: 79px;
 
     transition: max-width 0.5s ease;

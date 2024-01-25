@@ -15,7 +15,7 @@ export default function MainItemBox({
 
           <S.WhoBox>
             <S.Name>From. {recipientId}</S.Name>
-            <div>{relationship}</div>
+            <S.rel>{relationship}</S.rel>
           </S.WhoBox>
         </S.InfoBox>
       </S.FirstBox>
@@ -23,7 +23,7 @@ export default function MainItemBox({
 
       <S.SecondBox>
         <S.Content>{content}</S.Content>
-        <div>{createdAt}</div>
+        <S.date>{createdAt}</S.date>
       </S.SecondBox>
     </S.ItemBox>
   );
