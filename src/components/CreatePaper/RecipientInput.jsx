@@ -27,9 +27,17 @@ const P = styled.p`
   letter-spacing: -0.06px;
 `;
 
-const Label = styled.label``;
+const Label = styled.label`
+  color: var(--gray-900, #181818);
+  font-family: Pretendard;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.625rem; /* 175% */
+  letter-spacing: -0.015rem;
+`;
 
-export default function RecipientInput({ placeholder }) {
+export default function RecipientInput({ placeholder, onChange }) {
   const [showError, setShowError] = useState('');
 
   // focus out 이벤트 발생 시
@@ -58,6 +66,7 @@ export default function RecipientInput({ placeholder }) {
         id="recipient"
         name="name"
         autoComplete="username"
+        onChange={onChange}
       />
       {showError && <P>{showError}</P>}
     </>

@@ -19,6 +19,7 @@ export default function FormArea() {
   /* eslint-disable no-console */
   const [color, setColor] = useState('beige');
   const [background, setBackground] = useState('color');
+  const [abled, setAbled] = useState(true);
   const memoizedValue = useMemo(
     () => ({ color, setColor, background, setBackground }),
     [color, setColor, background, setBackground]
@@ -65,12 +66,23 @@ export default function FormArea() {
     // }
   };
 
+  const handleInput = e => {
+    if (e.target.value) {
+      setAbled(false);
+    } else {
+      setAbled(true);
+    }
+  };
+
   return (
     <Forms id="itembox" onSubmit={submitEvent}>
       <ColorImageContext.Provider value={memoizedValue}>
-        <RecipientInput placeholder="받는 사람 이름을 입력해주세요" />
+        <RecipientInput
+          placeholder="받는 사람 이름을 입력해주세요"
+          onChange={handleInput}
+        />
         <BackgroundBox />
-        <CreateButton>생성하기</CreateButton>
+        <CreateButton abled={abled}>생성하기</CreateButton>
       </ColorImageContext.Provider>
     </Forms>
   );
