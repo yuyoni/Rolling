@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import deleteIcon from '../../assetes/images/delete-icon.svg';
-import plusIcon from '../../assetes/images/plus-icon.svg';
+import deleteIcon from '../../assets/images/delete-icon.svg';
+import plusIcon from '../../assets/images/plus-icon.svg';
 
 export const Card = styled.div`
   position: relative;

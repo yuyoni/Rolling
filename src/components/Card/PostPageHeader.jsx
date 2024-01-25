@@ -2,9 +2,9 @@ import EmojiList from '../Common/EmojiList';
 import ImageList from '../Common/ImageList';
 import MessageCount from '../Common/MessageCount';
 import * as S from './PostPageHeader.style';
-import arrowDown from '../../assetes/images/arrow-down.svg';
-import shareIcon from '../../assetes/images/share-icon.svg';
-import addEmoji from '../../assetes/images/add-emoji-icon.svg';
+import arrowDown from '../../assets/images/arrow-down.svg';
+import shareIcon from '../../assets/images/share-icon.svg';
+import addEmoji from '../../assets/images/add-emoji-icon.svg';
 
 export default function PostPageHeader({
   recentMessages,

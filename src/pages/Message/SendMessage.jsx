@@ -8,7 +8,7 @@ import SubmitButton from '../../components/Button/SubmitButton';
 import Editor from '../../components/Text/Editor';
 import ProfileImagesMain from '../../components/ProfileImages/ProfileImagesMain';
 import getProfileImages from '../../apis/profileApis';
-import defaultImage from '../../assetes/images/default-profile-image.png';
+import defaultImage from '../../assets/images/default-profile-image.png';
 import postMessage from '../../apis/recipientApis';
 
 const relationship = ['지인', '친구', '동료', '가족'];

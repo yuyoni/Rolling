@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import defaultImage from '../../assetes/images/default-profile-image.png';
+import defaultImage from '../../assets/images/default-profile-image.png';
 
 export const ProfileImageWrapper = styled.div`
   display: flex;

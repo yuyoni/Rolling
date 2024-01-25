@@ -1,6 +1,6 @@
-// import ProfileImageYH from '../../assetes/HomeItem/profile_img_yh.png';
-import ProfileImageSH from '../../assetes/HomeItem/profile_img_sh.png';
-import ProfileImageSY from '../../assetes/HomeItem/profile_img_sy.png';
+// import ProfileImageYH from '../../assets/HomeItem/profile_img_yh.png';
+import ProfileImageSH from '../../assets/HomeItem/profile_img_sh.png';
+import ProfileImageSY from '../../assets/HomeItem/profile_img_sy.png';
 import MainItemBox from './MainItemBox';
 import MainItemBasicBox from './MainItemBasicBox';
 import MainTextBox from './MainTextBox';

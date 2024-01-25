@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-import Poppins from './assetes/fonts/Poppins-Bold.woff';
-import PretendardBold from './assetes/fonts/Pretendard-Bold.woff';
-import PretendardRegular from './assetes/fonts/Pretendard-Regular.woff';
+import Poppins from './assets/fonts/Poppins-Bold.woff';
+import PretendardBold from './assets/fonts/Pretendard-Bold.woff';
+import PretendardRegular from './assets/fonts/Pretendard-Regular.woff';
 
 const GlobalStyles = createGlobalStyle`
   :root {

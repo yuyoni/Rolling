@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import basket from '../../assetes/images/basket.jpg';
-import check from '../../assetes/images/checkbgimg.svg';
-import desert from '../../assetes/images/desert.jpg';
-import mokoko from '../../assetes/images/mokoko.png';
-import sky from '../../assetes/images/sky.jpg';
+import basket from '../../assets/images/basket.jpg';
+import check from '../../assets/images/checkbgimg.svg';
+import desert from '../../assets/images/desert.jpg';
+import mokoko from '../../assets/images/mokoko.png';
+import sky from '../../assets/images/sky.jpg';
 
 const Wrap = styled.div`
   display: flex;
