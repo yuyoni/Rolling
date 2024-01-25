@@ -1,5 +1,5 @@
 import MainTextBox from './MainTextBox';
-import EmojiMainImage from '../../assetes/HomeItem/emoji-main.png';
+import EmojiMainImage from '../../assets/HomeItem/emoji-main.png';
 
 import * as S from './MainBox.style';
 

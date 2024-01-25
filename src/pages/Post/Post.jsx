@@ -7,7 +7,7 @@ import {
 } from '../../apis/postApis';
 import CardContainer from '../../components/Card/CardContainer';
 import PostPageHeader from '../../components/Card/PostPageHeader';
-import editButton from '../../assetes/images/edit-button.svg';
+import editButton from '../../assets/images/edit-button.svg';
 import * as S from './Post.stytle';
 
 export default function Post() {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import ArrowTop from '../../assetes/images/arrow-top.svg';
-import ArrowDown from '../../assetes/images/arrow-down.svg';
+import ArrowTop from '../../assets/images/arrow-top.svg';
+import ArrowDown from '../../assets/images/arrow-down.svg';
 import * as S from './ToggleButton.style';
 
 export function ToggleItems({ children, onClick }) {

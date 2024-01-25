@@ -1,8 +1,8 @@
 import * as S from './MainItemBox.style';
 
-import MousePointImage from '../../assetes/HomeItem/mouse-point.png';
-import EllipseImage from '../../assetes/HomeItem/ellipse.svg';
-import PlusImage from '../../assetes/HomeItem/plus.svg';
+import MousePointImage from '../../assets/HomeItem/mouse-point.png';
+import EllipseImage from '../../assets/HomeItem/ellipse.svg';
+import PlusImage from '../../assets/HomeItem/plus.svg';
 
 export default function MainItemBasicBox() {
   return (
