@@ -18,7 +18,7 @@ export default function SendMessage() {
   const { id: userId } = useParams();
   const navigate = useNavigate();
   const [profileImages, setProfileImages] = useState([]);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
   const [recipientPostData, setRecipientPostData] = useState({
     team: '3-1',
     recipientId: userId,
@@ -52,20 +52,20 @@ export default function SendMessage() {
   const handleSubmit = async event => {
     event.preventDefault();
     try {
-      setIsSuccess(false);
+      setIsSubmitSuccess(false);
       await postMessage(recipientPostData);
     } catch (error) {
       return;
     } finally {
-      setIsSuccess(true);
+      setIsSubmitSuccess(true);
     }
   };
 
   useEffect(() => {
-    if (isSuccess) {
+    if (isSubmitSuccess) {
       navigate(`/post/${userId}`);
     }
-  }, [isSuccess, userId, navigate]);
+  }, [isSubmitSuccess, userId]);
 
   return (
     <SendMessageForm>

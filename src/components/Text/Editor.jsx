@@ -14,8 +14,8 @@ export default function Editor({ onChange }) {
     }
   };
 
-  const handleChange = event => {
-    onChange('content', event);
+  const handleChange = content => {
+    onChange('content', content);
   };
 
   return (
