@@ -73,6 +73,16 @@ export const MainItemContainer = styled.div`
   padding: 21px 40px 21px 40px;
   justify-content: center;
   align-items: center;
+
+  /* 모바일 */
+  @media (max-width: 768px) {
+    margin: 20px;
+    padding: 0;
+    height: 90px;
+
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
 `;
 
 // 메인 두번째 박스 구역
