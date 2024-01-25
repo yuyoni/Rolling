@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom';
+import LinkButton from '../../components/Button/LinkButton';
 import PaperBox from '../../components/Paper/PaperBox';
 import Skeleton from '../../components/Paper/Skeleton/Skeleton';
 import useFetchData from '../../hooks/useFetchData';
-import * as S from './List.style';
 import Error from '../Error/Error';
+import * as S from './List.style';
 
 export default function List() {
   const {
-    data: dataOrderByMessageCount,
-    isLoading: isLoadingMessageCount,
-    isError: isErrorMessageCount
+    data: dataOrderByReactionCount,
+    isLoading: isLoadingReactionCount,
+    isError: isErrorReactionCount
   } = useFetchData('3-1/recipients/?sort=like&limit=50', 'GET');
   const {
     data: dataOrderByCreatedAt,
@@ -17,11 +17,11 @@ export default function List() {
     isError: isErrorCreatedAt
   } = useFetchData('3-1/recipients/?limit=50', 'GET');
 
-  if (isLoadingMessageCount || isLoadingCreatedAt) {
+  if (isLoadingReactionCount || isLoadingCreatedAt) {
     return <Skeleton />;
   }
 
-  if (isErrorMessageCount || isErrorCreatedAt) {
+  if (isErrorReactionCount || isErrorCreatedAt) {
     return <Error />;
   }
 
@@ -29,17 +29,15 @@ export default function List() {
     <S.Wrapper>
       <S.Container>
         <PaperBox
-          orderBy="messageCount"
-          paperData={dataOrderByMessageCount.results}
+          orderBy="ReactionCount"
+          paperData={dataOrderByReactionCount.results}
         />
         <PaperBox
           orderBy="createdAt"
           paperData={dataOrderByCreatedAt.results}
         />
-        <Link to="/post">
-          <S.Button>나도 만들어 보기</S.Button>
-        </Link>
       </S.Container>
+      <LinkButton value="나도 만들어 보기" link="/post" />
     </S.Wrapper>
   );
 }
