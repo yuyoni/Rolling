@@ -10,12 +10,12 @@ export default function List() {
     data: dataOrderByMessageCount,
     isLoading: isLoadingMessageCount,
     isError: isErrorMessageCount
-  } = useFetchData('3-1/recipients/?sort=like', 'GET');
+  } = useFetchData('3-1/recipients/?sort=like&limit=50', 'GET');
   const {
     data: dataOrderByCreatedAt,
     isLoading: isLoadingCreatedAt,
     isError: isErrorCreatedAt
-  } = useFetchData('3-1/recipients/', 'GET');
+  } = useFetchData('3-1/recipients/?limit=50', 'GET');
 
   if (isLoadingMessageCount || isLoadingCreatedAt) {
     return <Skeleton />;
