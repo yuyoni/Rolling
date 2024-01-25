@@ -11,12 +11,15 @@ export const MainBox = styled.div`
 
   /* 테블릿 */
   @media (max-width: 1248px) {
+    min-width: 700px;
+
     /* margin: 0 40px 0 40px; */
     align-items: flex-start;
   }
 
   /* 모바일 */
   @media (max-width: 768px) {
+    min-width: 320px;
     align-items: flex-start;
   }
 `;
@@ -74,6 +77,11 @@ export const MainItemContainer = styled.div`
   justify-content: center;
   align-items: center;
 
+  /* 테블릿 */
+  @media (max-width: 1248px) {
+    /* padding: 20px; */
+  }
+
   /* 모바일 */
   @media (max-width: 768px) {
     margin: 20px;
@@ -88,5 +96,8 @@ export const MainItemContainer = styled.div`
 // 메인 두번째 박스 구역
 
 export const Image = styled.img`
-  width: 100%;
+  /* 모바일 */
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
