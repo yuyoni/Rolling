@@ -12,6 +12,26 @@ export const ErrorStyle = styled.input`
       ? '1px solid var(--Error, #dc3a3a)'
       : '1px solid var(--gray-300, #ccc)'};
   background: var(--white, #fff);
+
+  &:disabled {
+    background: var(--gray-100, #f6f6f6);
+  }
+
+  &:hover {
+    border: 1px solid var(--gray-500, #555);
+    background: var(--white, #fff);
+  }
+
+  &:active {
+    border: 1px solid var(--gray-700, #3a3a3a);
+    background: var(--white, #fff);
+  }
+
+  &:focus {
+    outline: 1px solid var(--gray-500, #555);
+    background: var(--white, #fff);
+    color: var(--gray-900, #181818);
+  }
 `;
 
 export const P = styled.p`

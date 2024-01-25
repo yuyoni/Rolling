@@ -14,9 +14,8 @@ export default function Editor({ onChange }) {
     }
   };
 
-  const handleChange = event => {
-    const TextWithoutTag = event.slice(3, -4);
-    onChange('content', TextWithoutTag);
+  const handleChange = content => {
+    onChange('content', content);
   };
 
   return (

@@ -29,7 +29,6 @@ export default function InputFrom({ placeholder, onChange, target }) {
         onFocus={handleFocus}
         onChange={handleChange}
       />
-      {/* {showError ? <P>{showError}</P> : null} */}
       {showError && <S.P>{showError}</S.P>}
     </div>
   );

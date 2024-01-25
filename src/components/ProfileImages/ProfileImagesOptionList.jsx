@@ -8,14 +8,17 @@ export default function ProfileImagesOptionList({ profileImages, onChange }) {
     <S.ProfileImageListWrapper>
       <S.Subtitle>프로필 이미지를 선택해주세요!</S.Subtitle>
       <S.ProfileImageList>
-        {profileImages.map((urls, index) => (
-          <S.ProfileImageOptionItems
-            key={urls}
-            $urls={urls}
-            id={index}
-            onClick={handleChange}
-          />
-        ))}
+        {profileImages.map(
+          (urls, index) =>
+            index !== 0 && (
+              <S.ProfileImageOptionItems
+                key={urls}
+                $urls={urls}
+                id={index}
+                onClick={handleChange}
+              />
+            )
+        )}
       </S.ProfileImageList>
     </S.ProfileImageListWrapper>
   );
