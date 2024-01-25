@@ -79,6 +79,7 @@ export const MainItemContainer = styled.div`
 
   /* 테블릿 */
   @media (max-width: 1248px) {
+    padding: 0;
   }
 
   /* 모바일 */

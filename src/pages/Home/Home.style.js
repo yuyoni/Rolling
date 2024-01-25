@@ -28,7 +28,7 @@ export const MainContainer = styled.div`
     width: 100%;
     /* max-width: 720px; */
     padding: 49px 24px 0 24px;
-    margin: 24px;
+    /* margin: 24px; */
   }
 
   /* 모바일 */
