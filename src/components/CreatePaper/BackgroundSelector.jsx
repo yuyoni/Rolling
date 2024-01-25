@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { useContext } from 'react';
+import ColorImageContext from '../../contexts/ColorImageContext';
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -18,35 +20,39 @@ const ButtonOrigin = styled.button`
 `;
 
 const ColorButton = styled(ButtonOrigin)`
-  ${({ $toggle }) =>
-    $toggle === 'color'
+  ${({ $background }) =>
+    $background === 'color'
       ? `color: var(--purple-600, #9935FF); border: 1px solid var(--purple-600, #9935FF)`
       : `none`}
 `;
 
 const ImageButton = styled(ButtonOrigin)`
-  ${({ $toggle }) =>
-    $toggle === 'image'
+  ${({ $background }) =>
+    $background === 'image'
       ? `color: var(--purple-600, #9935FF); border: 1px solid var(--purple-600, #9935FF)`
       : `none`}
 `;
 
-export default function BackgroundSelector({ toggle, toggleChange }) {
+export default function BackgroundSelector() {
+  const { background, setBackground } = useContext(ColorImageContext);
+
   return (
     <ButtonWrapper>
       <ColorButton
         onClick={() => {
-          if (toggle === 'image') toggleChange();
+          setBackground('color');
         }}
-        $toggle={toggle}
+        $background={background}
+        type="button"
       >
         컬러
       </ColorButton>
       <ImageButton
         onClick={() => {
-          if (toggle === 'color') toggleChange();
+          setBackground('image');
         }}
-        $toggle={toggle}
+        $background={background}
+        type="button"
       >
         이미지
       </ImageButton>

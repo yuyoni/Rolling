@@ -59,7 +59,7 @@ export default function RecipientInput({ placeholder }) {
         name="name"
         autoComplete="username"
       />
-      {showError ? <P>{showError}</P> : null}
+      {showError && <P>{showError}</P>}
     </>
   );
 }
