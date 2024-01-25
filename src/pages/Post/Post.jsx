@@ -4,7 +4,7 @@ import CardContainer from '../../components/Card/CardContainer';
 import PostPageHeader from '../../components/Card/PostPageHeader';
 import ModalPortal from '../../components/Modal/ModalPortal';
 import CardModal from '../../components/Modal/CardModal';
-import editButton from '../../assetes/images/edit-button.svg';
+import editButton from '../../assets/images/edit-button.svg';
 import * as S from './Post.stytle';
 import {
   deleteCard,
@@ -79,8 +79,7 @@ export default function Post() {
   };
 
   /*
-   * useEffect
-   * 1. 페이지가 처음 렌더링 될 때, handleInit() 함수를 실행한다.
+   * useEffect : 페이지 초기화
    * */
   useEffect(() => {
     handleInit();

@@ -156,6 +156,7 @@ export const CardHeader = styled.div`
   height: 100px;
   flex-shrink: 0;
 `;
+
 export const DeleteButton = styled.button`
   position: absolute;
   top: 28px;
