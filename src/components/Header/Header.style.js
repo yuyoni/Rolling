@@ -56,6 +56,7 @@ export const Navigation = styled.div`
   @media (max-width: 768px) {
     min-width: 327px;
     width: 100%;
+    padding: 0;
     /* max-width: 100%; */
 
     /* gap: 79px; */

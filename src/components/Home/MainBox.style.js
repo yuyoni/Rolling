@@ -79,7 +79,6 @@ export const MainItemContainer = styled.div`
 
   /* 테블릿 */
   @media (max-width: 1248px) {
-    /* padding: 20px; */
   }
 
   /* 모바일 */
@@ -97,7 +96,13 @@ export const MainItemContainer = styled.div`
 
 export const Image = styled.img`
   /* 모바일 */
+  /* 테블릿 */
+  /* width: auto; */
+  @media (max-width: 1248px) {
+    max-width: 100%;
+  }
+
   @media (max-width: 768px) {
-    width: 100%;
+    /* width: 80%; */
   }
 `;
