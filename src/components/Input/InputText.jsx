@@ -1,21 +1,23 @@
 import { useState } from 'react';
 import * as S from './InputText.style';
 
-export default function InputFrom({ placeholder }) {
+export default function InputFrom({ placeholder, onChange, target }) {
   const [showError, setShowError] = useState('');
 
-  // focus out 이벤트 발생 시
-  const handleBlur = e => {
-    if (!e.target.value) {
+  const handleBlur = event => {
+    if (!event.target.value) {
       setShowError('이름을 입력해 주세요.');
     } else {
       setShowError('');
     }
   };
 
-  // focus시 초기화
   const handleFocus = () => {
     setShowError('');
+  };
+
+  const handleChange = event => {
+    onChange(target, event.target.value);
   };
 
   return (
@@ -25,6 +27,7 @@ export default function InputFrom({ placeholder }) {
         $showError={showError}
         onBlur={handleBlur}
         onFocus={handleFocus}
+        onChange={handleChange}
       />
       {/* {showError ? <P>{showError}</P> : null} */}
       {showError && <S.P>{showError}</S.P>}

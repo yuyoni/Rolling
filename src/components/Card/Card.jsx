@@ -1,17 +1,35 @@
+import { useLocation, useNavigate } from 'react-router-dom';
 import * as S from './Card.style';
 import RelationBadge from './RelationBadge';
 
-export default function Card({ card, cardType }) {
-  const { sender, profileImageURL, relationship, content, font, createdAt } =
-    card;
+export default function Card({ card, cardType, isEditing, onDelete }) {
+  const {
+    id,
+    sender,
+    profileImageURL,
+    relationship,
+    content,
+    font,
+    createdAt
+  } = card;
 
   const formattedDate = new Date(createdAt).toLocaleDateString();
+  const nextUrl = `${useLocation().pathname}/message`;
+  const navigate = useNavigate();
+
+  const handleClickAddCard = () => {
+    navigate(nextUrl);
+  };
+
+  const handleDeleteCard = () => {
+    onDelete(id);
+  };
 
   return (
     <div>
       {cardType === 'add' ? (
         <S.AddCard>
-          <S.AddCardButton>
+          <S.AddCardButton onClick={handleClickAddCard}>
             <S.IconWrapper>
               <S.AddIcon alt="add-button-icon" />
             </S.IconWrapper>
@@ -33,12 +51,14 @@ export default function Card({ card, cardType }) {
                 <RelationBadge relationship={relationship} />
               </S.SenderInfoBox>
             </S.SenderBox>
-            <S.DeleteButton>
-              <S.DeleteIcon alt="delete-button-icon" />
-            </S.DeleteButton>
+            {isEditing && (
+              <S.DeleteButton onClick={handleDeleteCard}>
+                <S.DeleteIcon alt="delete-button-icon" />
+              </S.DeleteButton>
+            )}
           </S.CardHeader>
           <S.HorizonLine />
-          <S.Content font={font}>{content}</S.Content>
+          <S.Content $font={font}>{content}</S.Content>
           <S.DateWrapper>{formattedDate}</S.DateWrapper>
         </S.Card>
       )}

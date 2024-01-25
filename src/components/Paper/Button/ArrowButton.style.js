@@ -17,16 +17,11 @@ export const ArrowBox = styled.div`
   justify-content: center;
   align-items: center;
 
+  ${props => `${props.$isLeft} : -2rem`};
+
   @media (max-width: 768px) {
     display: none;
   }
-`;
-
-export const LeftArrowBox = styled(ArrowBox)`
-  left: -2rem;
-`;
-export const RightArrowBox = styled(ArrowBox)`
-  right: -2rem;
 `;
 
 export const Arrow = styled.img`

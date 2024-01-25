@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import defaultImg from '../../assetes/images/default-profile-img.png';
+import defaultImage from '../../assetes/images/default-profile-image.png';
 
-export const ProfileImgContainer = styled.div`
+export const ProfileImageWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 3.2rem;
 `;
 
-export const SelectedProfileImg = styled.span`
+export const SelectedProfileImage = styled.span`
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -15,8 +15,8 @@ export const SelectedProfileImg = styled.span`
   width: 8rem;
   height: 8rem;
   border-radius: 10rem;
-  background: ${({ $selectedImg }) =>
-    $selectedImg ? `url(${$selectedImg})` : `url(${defaultImg})`};
+  background: ${({ $selectedImage }) =>
+    $selectedImage ? `url(${$selectedImage})` : `url(${defaultImage})`};
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
