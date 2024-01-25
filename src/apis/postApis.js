@@ -28,11 +28,9 @@ export async function getRecipientInformation(recipientId) {
   return data;
 }
 
-export async function deleteCard(cardId) {
-  const url = `https://rolling-api.vercel.app/3-1/recipients/${cardId}/messages/`;
-  const response = await fetch(url, { method: 'DELETE' });
-  const data = await response.json();
-  return data;
+export async function deleteCard(messageId) {
+  const url = `https://rolling-api.vercel.app/3-1/messages/${messageId}/`;
+  await fetch(url, { method: 'DELETE' });
 }
 
 /**

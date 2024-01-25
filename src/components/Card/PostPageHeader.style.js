@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const BackgroundArea = styled.div`
-  width: 100%;
+  width: 1200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 13px 360px;
+  padding: 13px 0;
   background: #fff;
 `;
 

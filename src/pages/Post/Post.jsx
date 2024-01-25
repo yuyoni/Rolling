@@ -1,21 +1,19 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-// eslint-disable-next-line no-unused-vars
 import {
-  // deleteCard,
+  deleteCard,
   getCardList,
   getRecipientInformation
 } from '../../apis/postApis';
 import CardContainer from '../../components/Card/CardContainer';
 import PostPageHeader from '../../components/Card/PostPageHeader';
+import editButton from '../../assetes/images/edit-button.svg';
 import * as S from './Post.stytle';
 
 export default function Post() {
   const { id: recipientId } = useParams();
 
   const [cards, setCards] = useState([]);
-  // eslint-disable-next-line no-unused-vars
-  const [count, setCount] = useState(0);
   const [recipientName, setRecipientName] = useState('');
   const [recentMessage, setRecentMessage] = useState([]);
   const [cardCount, setCardCount] = useState(0);
@@ -23,11 +21,8 @@ export default function Post() {
   const [backgroundURL, setBackgroundImageURL] = useState('');
   const [backgroundColors, setBackgroundColors] = useState('');
   // eslint-disable-next-line no-unused-vars
-  const [paperCreatedAt, setPaperCreatedAt] = useState('');
-  // eslint-disable-next-line no-unused-vars
-  const [paperUpdatedAt, setPaperUpdatedAt] = useState('');
-  // eslint-disable-next-line no-unused-vars
   const [reactionNum, setReactionNum] = useState(0);
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleInit = async () => {
     const cardResponse = await getCardList(recipientId);
@@ -37,7 +32,6 @@ export default function Post() {
       name,
       backgroundImageURL,
       backgroundColor,
-      createdAt,
       recentMessages,
       messageCount,
       reactionCount,
@@ -48,35 +42,53 @@ export default function Post() {
     setRecentMessage(recentMessages);
     setCardCount(messageCount);
     setTopReaction(topReactions);
+
     setBackgroundImageURL(backgroundImageURL);
     setBackgroundColors(backgroundColor);
-    setPaperCreatedAt(createdAt);
     setReactionNum(reactionCount);
 
     setCards([{}, ...cardResponse.results]);
-    setCount(cardResponse.count);
   };
-
-  // const handleDelete = async () => {
-  //   const response = await deleteCard(recipientId);
-  // };
 
   useEffect(() => {
     handleInit();
   }, []);
 
+  const handleIsEditing = () => {
+    setIsEditing(!isEditing);
+  };
+
+  const handleDelete = async cardId => {
+    await deleteCard(cardId);
+    const newCards = cards.filter(card => card.id !== cardId);
+    setCards([{}, newCards]);
+    handleInit();
+  };
+
   return (
-    <S.Page
-      $backgroundImageURL={backgroundURL}
-      $backgroundColor={backgroundColors}
-    >
+    <S.Page>
       <PostPageHeader
         recentMessages={recentMessage}
         name={recipientName}
         messageCount={cardCount}
         topReactions={topReaction}
       />
-      <CardContainer cards={cards} />
+      <S.CardBackgroundWrapper
+        $backgroundImageURL={backgroundURL}
+        $backgroundColor={backgroundColors}
+      >
+        <S.EditButton
+          $backgroundColor={backgroundColors}
+          onClick={handleIsEditing}
+        >
+          <img src={editButton} alt="edit-button" />
+        </S.EditButton>
+        <CardContainer
+          cards={cards}
+          isEditing={isEditing}
+          onDelete={handleDelete}
+        />
+      </S.CardBackgroundWrapper>
     </S.Page>
   );
 }
