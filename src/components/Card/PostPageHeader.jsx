@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import EmojiPicker from 'emoji-picker-react';
 import EmojiList from '../Common/EmojiList';
 import ImageList from '../Common/ImageList';
@@ -8,6 +8,7 @@ import arrowDown from '../../assets/images/arrow-down.svg';
 import shareIcon from '../../assets/images/share-icon.svg';
 import addEmoji from '../../assets/images/add-emoji-icon.svg';
 import fetchData from '../../apis/fetchData';
+import useClickOutside from '../../hooks/useClickOutside';
 
 export default function PostPageHeader({
   recipientId,
@@ -18,6 +19,7 @@ export default function PostPageHeader({
 }) {
   const [isEmojiPickerShow, setIsEmojiPickerShow] = useState(false);
   const [recentTopReactions, setRecentTopReactions] = useState(null);
+  const emojiRef = useRef(null);
 
   const handleReactionClick = async event => {
     const body = { emoji: event.emoji, type: 'increase' };
@@ -32,6 +34,8 @@ export default function PostPageHeader({
     }
   };
 
+  useClickOutside(emojiRef, setIsEmojiPickerShow);
+
   return (
     <S.BackgroundArea>
       <S.PaperTitle>To. {name}</S.PaperTitle>
@@ -44,17 +48,19 @@ export default function PostPageHeader({
         <S.HorizonLine $margin="1.6rem" />
         <EmojiList topReactions={recentTopReactions || topReactions} />
         <img src={arrowDown} alt="arrow-down" style={{ margin: '0.6rem' }} />
-        <button
-          type="button"
-          onClick={() => setIsEmojiPickerShow(!isEmojiPickerShow)}
-        >
-          <img src={addEmoji} alt="emoji-icon" />
-        </button>
-        {isEmojiPickerShow && (
-          <S.EmojiPickerBox>
-            <EmojiPicker onEmojiClick={event => handleReactionClick(event)} />
-          </S.EmojiPickerBox>
-        )}
+        <div ref={emojiRef}>
+          <button
+            type="button"
+            onClick={() => setIsEmojiPickerShow(!isEmojiPickerShow)}
+          >
+            <img src={addEmoji} alt="emoji-icon" />
+          </button>
+          {isEmojiPickerShow && (
+            <S.EmojiPickerBox>
+              <EmojiPicker onEmojiClick={event => handleReactionClick(event)} />
+            </S.EmojiPickerBox>
+          )}
+        </div>
         <S.HorizonLine />
         <img src={shareIcon} alt="share-icon" />
       </S.PaperBox>
