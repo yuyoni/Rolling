@@ -9,19 +9,19 @@ import Editor from '../../components/Text/Editor';
 import ProfileImagesMain from '../../components/ProfileImages/ProfileImagesMain';
 import getProfileImages from '../../apis/profileApis';
 import defaultImage from '../../assetes/images/default-profile-image.png';
-import PostMessage from '../../apis/recipientApis';
+import postMessage from '../../apis/recipientApis';
 
 const relationship = ['지인', '친구', '동료', '가족'];
 const font = ['Noto Sans', 'Pretendard', '나눔명조', '나눔손글씨 손편지체'];
 
 export default function SendMessage() {
-  const { userId } = useParams();
+  const { id: userId } = useParams();
   const navigate = useNavigate();
   const [profileImages, setProfileImages] = useState([]);
   const [isSuccess, setIsSuccess] = useState(false);
   const [recipientPostData, setRecipientPostData] = useState({
     team: '3-1',
-    recipientId: '2508',
+    recipientId: userId,
     sender: '',
     profileImageURL: defaultImage,
     relationship: '지인',
@@ -47,13 +47,13 @@ export default function SendMessage() {
 
   useEffect(() => {
     handleLoad();
-  }, [userId, navigate]);
+  }, []);
 
   const handleSubmit = async event => {
     event.preventDefault();
     try {
       setIsSuccess(false);
-      await PostMessage(recipientPostData);
+      await postMessage(recipientPostData);
     } catch (error) {
       return;
     } finally {
@@ -63,7 +63,7 @@ export default function SendMessage() {
 
   useEffect(() => {
     if (isSuccess) {
-      navigate(`/post/2508`);
+      navigate(`/post/${userId}`);
     }
   }, [isSuccess, userId, navigate]);
 

@@ -43,9 +43,8 @@ export default function ToggleButton({
       </S.ButtonDown>
       {show && (
         <S.ToggleUl>
-          {/* airbnb arrow-body-style */}
           {listItems.map(item => (
-            <S.ToggleList>
+            <S.ToggleList key={item}>
               <S.Button
                 key={item}
                 onClick={handleShow}

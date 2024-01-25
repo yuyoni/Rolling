@@ -13,6 +13,26 @@ export const ButtonDown = styled.button`
       ? '1px solid var(--Error, #dc3a3a)'
       : '1px solid var(--gray-300, #ccc)'};
   background: var(--white, #fff);
+
+  &:hover {
+    border: 1px solid var(--gray-500, #555);
+  }
+
+  &:active {
+    border: 2px solid var(--gray-700, #3a3a3a);
+    background: var(--white, #fff);
+  }
+
+  &:disabled {
+    border: 1px solid var(--gray-300, #ccc);
+    background: var(--gray-100, #f6f6f6);
+  }
+
+  &:focus {
+    border: 2px solid var(--gray-500, #555);
+    background: var(--white, #fff);
+    color: var(--gray-900, #181818);
+  }
 `;
 
 export const ToggleIcon = styled.img`
@@ -48,4 +68,9 @@ export const Button = styled.button`
   background: none;
   cursor: pointer;
   text-align: start;
+
+  &:hover {
+    background: var(--gray-100, #f6f6f6);
+    outline: none;
+  }
 `;
