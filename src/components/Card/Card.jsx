@@ -40,7 +40,7 @@ export default function Card({ card, cardType, isEditing, onDelete, onClick }) {
           </S.AddCardButton>
         </S.AddCard>
       ) : (
-        <S.Card onClick={handleClickCard}>
+        <S.Card>
           <S.CardHeader>
             <S.SenderBox>
               <S.ProfileImageWrapper>
