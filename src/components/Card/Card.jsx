@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import * as S from './Card.style';
 import RelationBadge from './RelationBadge';
 
-export default function Card({ card, cardType, isEditing, onDelete }) {
+export default function Card({ card, cardType, isEditing, onDelete, onClick }) {
   const {
     id,
     sender,
@@ -24,6 +24,9 @@ export default function Card({ card, cardType, isEditing, onDelete }) {
   const handleDeleteCard = () => {
     onDelete(id);
   };
+  const handleClickCard = () => {
+    onClick(id);
+  };
 
   return (
     <div>
@@ -36,7 +39,7 @@ export default function Card({ card, cardType, isEditing, onDelete }) {
           </S.AddCardButton>
         </S.AddCard>
       ) : (
-        <S.Card>
+        <S.Card onClick={handleClickCard}>
           <S.CardHeader>
             <S.SenderBox>
               <S.ProfileImageWrapper>
