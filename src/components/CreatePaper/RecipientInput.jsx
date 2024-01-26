@@ -22,9 +22,6 @@ const ErrorStyle = styled.input`
   font-weight: 400;
   line-height: 2.6rem; /* 162.5% */
   letter-spacing: -0.016rem;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
   &:disabled {
     background: var(--gray-100, #f6f6f6);
   }
@@ -67,9 +64,6 @@ const Label = styled.label`
 
 const Wrapper = styled.div`
   margin-top: 5.7rem;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
 `;
 
 export default function RecipientInput({ placeholder, onChange }) {
