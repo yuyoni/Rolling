@@ -2,7 +2,7 @@ import LinkButton from '../../components/Button/LinkButton';
 import PaperBox from '../../components/Paper/PaperBox';
 import Skeleton from '../../components/Paper/Skeleton/Skeleton';
 import useFetchData from '../../hooks/useFetchData';
-import Error from '../Error/Error';
+import NotFound from '../NotFound/NotFound';
 import * as S from './List.style';
 
 export default function List() {
@@ -22,7 +22,7 @@ export default function List() {
   }
 
   if (isErrorReactionCount || isErrorCreatedAt) {
-    return <Error />;
+    return <NotFound />;
   }
 
   return (
