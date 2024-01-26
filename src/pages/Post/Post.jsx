@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CardContainer from '../../components/Card/CardContainer';
 import PostPageHeader from '../../components/Card/PostPageHeader';
 import ModalPortal from '../../components/Modal/ModalPortal';
 import CardModal from '../../components/Modal/CardModal';
+import useAsync from '../../hooks/useAsync';
 import editButton from '../../assets/images/edit-button.svg';
 import * as S from './Post.stytle';
 import {
@@ -12,6 +13,8 @@ import {
   getRecipientInformation
 } from '../../apis/postApis';
 
+const UPDATE_LIMIT = 6;
+
 export default function Post() {
   /*
    * useState
@@ -19,10 +22,17 @@ export default function Post() {
    * recipientData : 롤페이퍼주인 정보객체
    * */
   const { id: recipientId } = useParams();
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([{}]);
   const [isEditing, setIsEditing] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
+
+  const [offset, setOffset] = useState(0);
+  // eslint-disable-next-line
+  const [hasNext, setHasNext] = useState(true);
+  // eslint-disable-next-line
+  const [isLoading, loadingError, getCardsAsync] = useAsync(getCardList);
+
   const [recipientData, setRecipientData] = useState({
     name: '',
     backgroundColor: '',
@@ -41,20 +51,45 @@ export default function Post() {
    * handleModalOpen : 모달 열기
    * handleModalClose : 모달 닫기
    * */
+  const handleLoadCards = useCallback(
+    async (id, options) => {
+      const result = await getCardsAsync(id, options);
+      if (!result) {
+        return;
+      }
+      const { results: cardList, next } = result;
+      if (next === null) {
+        setHasNext(false);
+        setIsModalOpen(true);
+      }
+
+      if (options.offset === 0) {
+        setCards([{}, ...cardList]);
+      } else {
+        setCards(prevItems => [...prevItems, ...cardList]);
+      }
+      setOffset(options.offset + UPDATE_LIMIT);
+      setHasNext(!!next);
+    },
+    [getCardsAsync]
+  );
+
+  useEffect(() => {
+    handleLoadCards(recipientId, { offset: 0 });
+  }, [handleLoadCards]);
 
   const fetchRecipientData = async () => {
     const recipientsResponse = await getRecipientInformation(recipientId);
     setRecipientData(recipientsResponse);
   };
 
-  const fetchCardList = async () => {
-    const cardResponse = await getCardList(recipientId);
-    setCards([{}, ...cardResponse.results]);
-  };
-
-  const handleInit = () => {
+  useEffect(() => {
     fetchRecipientData();
-    fetchCardList();
+  }, []);
+
+  // eslint-disable-next-line
+  const handleLoadMore = () => {
+    handleLoadCards(recipientId, { offset, limit: UPDATE_LIMIT });
   };
 
   const handleIsEditing = () => {
@@ -64,7 +99,7 @@ export default function Post() {
   const handleDelete = async cardId => {
     await deleteCard(cardId);
     setCards(prevCards => prevCards.filter(card => card.id !== cardId));
-    handleInit();
+    handleLoadCards(recipientId, { offset: 0, limit: UPDATE_LIMIT });
   };
 
   const handleModalOpen = id => {
@@ -77,13 +112,6 @@ export default function Post() {
     setIsModalOpen(false);
     setSelectedCard({});
   };
-
-  /*
-   * useEffect : 페이지 초기화
-   * */
-  useEffect(() => {
-    handleInit();
-  }, []);
 
   return (
     <>
