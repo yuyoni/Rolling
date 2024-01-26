@@ -40,6 +40,7 @@ const ErrorStyle = styled.input`
     outline: 1px solid var(--gray-500, #555);
     background: var(--white, #fff);
     color: var(--gray-900, #181818);
+  }
 `;
 
 const P = styled.p`
