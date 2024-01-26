@@ -4,7 +4,7 @@ export const ButtonDown = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  positive: relative;
+  position: relative;
   width: 32rem;
   padding: 1.2rem 1.6rem;
   margin-bottom: 0.8rem;
@@ -35,7 +35,7 @@ export const ButtonDown = styled.button`
     color: var(--gray-900, #181818);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     display: flex;
     align-items: center;
     width: 32rem;

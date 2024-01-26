@@ -53,7 +53,7 @@ export const Button = styled.button`
   border: 0.1rem solid var(--gray-300, #ccc);
   background: var(--white, #fff);
 
-  font-family: 'Pretendard';
+  font-family: Pretendard;
   font-weight: 700;
   line-height: 2.6rem;
   letter-spacing: -0.016rem;

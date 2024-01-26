@@ -19,7 +19,7 @@ export const PointBox = styled.div`
   background: var(--Purple-600, #9935ff);
   color: var(--white, #fff);
 
-  font-family: 'Pretendard';
+  font-family: Pretendard;
   font-weight: 700;
   font-size: 1.4rem;
   line-height: 2rem;
@@ -44,7 +44,7 @@ export const TextBox = styled.div`
 
 export const Text = styled.div`
   color: var(--gray-900, #181818);
-  font-family: 'Pretendard';
+  font-family: Pretendard;
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 3.6rem;
@@ -61,7 +61,7 @@ export const Text = styled.div`
 
 export const SubText = styled.div`
   color: var(--gray-500, #555);
-  font-family: 'Pretendard';
+  font-family: Pretendard;
   font-size: 1.8rem;
   line-height: 2.8rem;
   letter-spacing: -0.02rem;

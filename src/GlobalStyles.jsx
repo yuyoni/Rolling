@@ -109,11 +109,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    /* display: flex; */
-    /* justify-content: center; */
-
     margin: 0;
-    font-family: "Pretendard"; 
+    font-family: Pretendard; 
     font-weight: 400;
     font-size: 1.4rem;
     font-style: normal;

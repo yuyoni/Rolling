@@ -80,7 +80,7 @@ export const WhoBox = styled.div`
 
 export const Name = styled.div`
   color: #000;
-  font-family: 'Pretendard';
+  font-family: Pretendard;
   font-weight: 700;
   font-size: 1.2rem;
   line-height: 1.8rem;
@@ -131,7 +131,7 @@ export const Content = styled.div`
   color: #555;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-family: 'Pretendard';
+  font-family: Pretendard;
   font-size: 1.2rem;
   line-height: 1.8rem;
   letter-spacing: -0.06rem;
@@ -146,7 +146,7 @@ export const Content = styled.div`
 
 export const date = styled.div`
   color: #777;
-  font-family: 'Pretendard';
+  font-family: Pretendard;
   font-size: 1rem;
   line-height: 1.3rem;
 
