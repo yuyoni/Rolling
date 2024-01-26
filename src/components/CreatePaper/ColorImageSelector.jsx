@@ -15,18 +15,22 @@ const Wrap = styled.div`
 
 const ButtonOrigin = styled.button`
   display: flex;
-  width: 10rem;
-  height: 10rem;
+  width: 16.8rem;
+  height: 16.8rem;
   padding: 1.2rem 1.6rem;
-  border-radius: 1rem;
+  border-radius: 1.6rem;
   align-items: center;
   justify-content: center;
 `;
 
 const Img = styled.img`
   display: flex;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 4.4rem;
+  height: 4.4rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 10rem;
 `;
 
 const Button = styled(ButtonOrigin)`

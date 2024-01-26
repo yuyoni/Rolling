@@ -14,8 +14,14 @@ const ErrorStyle = styled.input`
       ? '1px solid var(--Error, #dc3a3a)'
       : '1px solid var(--gray-300, #ccc)'};
   background: var(--White, #ffffff);
-  border-radius: 0.5rem;
-  margin-top: 0.75rem;
+  border-radius: 0.8rem;
+  margin-top: 1.2rem;
+  font-family: Pretendard;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.6rem; /* 162.5% */
+  letter-spacing: -0.016rem;
 `;
 
 const P = styled.p`
@@ -31,15 +37,15 @@ const P = styled.p`
 const Label = styled.label`
   color: var(--gray-900, #181818);
   font-family: Pretendard;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 2.625rem; /* 175% */
-  letter-spacing: -0.015rem;
+  line-height: 4.2rem;
+  letter-spacing: -0.024rem;
 `;
 
 const Wrapper = styled.div`
-  margin-top: 3.56rem;
+  margin-top: 5.7rem;
 `;
 
 export default function RecipientInput({ placeholder, onChange }) {
