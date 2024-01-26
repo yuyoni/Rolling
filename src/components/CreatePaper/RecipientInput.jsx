@@ -9,12 +9,13 @@ const ErrorStyle = styled.input`
   padding: 1.2rem 1.6rem;
   align-items: center;
   gap: 1rem;
-  border-radius: 0.8rem;
   border: ${({ $showError }) =>
     $showError
       ? '1px solid var(--Error, #dc3a3a)'
       : '1px solid var(--gray-300, #ccc)'};
-  background: var(--white, #fff);
+  background: var(--White, #ffffff);
+  border-radius: 0.5rem;
+  margin-top: 0.75rem;
 `;
 
 const P = styled.p`
@@ -37,6 +38,10 @@ const Label = styled.label`
   letter-spacing: -0.015rem;
 `;
 
+const Wrapper = styled.div`
+  margin-top: 3.56rem;
+`;
+
 export default function RecipientInput({ placeholder, onChange }) {
   const [showError, setShowError] = useState('');
 
@@ -55,7 +60,7 @@ export default function RecipientInput({ placeholder, onChange }) {
   };
 
   return (
-    <>
+    <Wrapper>
       <Label htmlFor="recipient">To.</Label>
       <ErrorStyle
         type="text"
@@ -69,6 +74,6 @@ export default function RecipientInput({ placeholder, onChange }) {
         onChange={onChange}
       />
       {showError && <P>{showError}</P>}
-    </>
+    </Wrapper>
   );
 }

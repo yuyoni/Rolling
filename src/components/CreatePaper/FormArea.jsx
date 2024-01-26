@@ -12,6 +12,9 @@ import RecipientInput from './RecipientInput';
 
 const Forms = styled.form`
   width: 45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.81rem;
 `;
 
 export default function FormArea() {
@@ -33,7 +36,7 @@ export default function FormArea() {
     // 백그라운드컬러 값은 null이 안되고 값이 무조건있어야함
     console.log(color, image[color]);
     const backgroundImageURL =
-      background === 'image' ? `http://localhost:3000/${image[color]}` : null;
+      background === 'image' ? `http://localhost:3000${image[color]}` : null;
     // 임시주소부여
     const team = `3-1`;
     const data = { name, backgroundColor, backgroundImageURL, team };

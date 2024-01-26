@@ -5,8 +5,8 @@ const ButtonStyle = styled.button`
   font-weight: 700;
   line-height: 2.8rem;
   letter-spacing: -0.18px;
-  padding: 1.4rem 2.4rem;
-  border-radius: 1.2rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.75rem;
   font-style: normal;
   display: flex;
   text-align: center;
@@ -17,6 +17,8 @@ const ButtonStyle = styled.button`
   width: 45rem;
   justify-content: center;
   align-items: center;
+  gap: 0.625rem;
+  margin-top: 1.5rem;
   &:disabled {
     background: var(--gray-300, #ccc);
   }
