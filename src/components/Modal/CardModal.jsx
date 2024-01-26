@@ -1,3 +1,4 @@
+import React from 'react';
 import * as S from './CardModal.style';
 import RelationBadge from '../Card/RelationBadge';
 
@@ -31,7 +32,11 @@ export default function CardModal({ onClick, card }) {
 
           <S.HorizontalLine />
 
-          <S.Content $font={font}>{content}</S.Content>
+          <S.Content $font={font}>
+            {React.createElement('div', {
+              dangerouslySetInnerHTML: { __html: content }
+            })}
+          </S.Content>
           <S.Button onClick={onClick}>확인</S.Button>
         </S.ModalContent>
       </S.ModalBody>
