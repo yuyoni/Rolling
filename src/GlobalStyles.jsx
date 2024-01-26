@@ -3,6 +3,9 @@ import reset from 'styled-reset';
 import Poppins from './assets/fonts/Poppins-Bold.woff';
 import PretendardBold from './assets/fonts/Pretendard-Bold.woff';
 import PretendardRegular from './assets/fonts/Pretendard-Regular.woff';
+import NanumMyeongjo from './assets/fonts/NanumMyeongjo.woff';
+import NanumSonPyeonJiCe from './assets/fonts/NanumSonPyeonJiCe.woff';
+import NotoSansKR from './assets/fonts/NotoSansKR-Medium.woff';
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -74,6 +77,28 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     font-display: swap;
   }
+
+  @font-face {
+      font-family: "NanumMyeongjo";
+      src: url(${NanumMyeongjo}) format('woff'); 
+      font-weight: 700;
+      font-display: swap;
+  }
+
+  @font-face {
+      font-family: "나눔손글씨 손편지체";
+      src: url(${NanumSonPyeonJiCe}) format('woff'); 
+      font-weight: 700;
+      font-display: swap;
+  }
+
+  @font-face {
+      font-family: "Noto Sans KR";
+      src: url(${NotoSansKR}) format('woff'); 
+      font-weight: 700;
+      font-display: swap;
+  }
+    
 
   * {
     box-sizing: border-box;
