@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CardContainer from '../../components/Card/CardContainer';
 import PostPageHeader from '../../components/Card/PostPageHeader';
@@ -14,6 +14,12 @@ import {
 } from '../../apis/postApis';
 
 const UPDATE_LIMIT = 6;
+// eslint-disable-next-line
+const OBSERVER_OPTIONS = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 1
+};
 
 export default function Post() {
   /*
@@ -51,32 +57,6 @@ export default function Post() {
    * handleModalOpen : 모달 열기
    * handleModalClose : 모달 닫기
    * */
-  const handleLoadCards = useCallback(
-    async (id, options) => {
-      const result = await getCardsAsync(id, options);
-      if (!result) {
-        return;
-      }
-      const { results: cardList, next } = result;
-      if (next === null) {
-        setHasNext(false);
-        setIsModalOpen(true);
-      }
-
-      if (options.offset === 0) {
-        setCards([{}, ...cardList]);
-      } else {
-        setCards(prevItems => [...prevItems, ...cardList]);
-      }
-      setOffset(options.offset + UPDATE_LIMIT);
-      setHasNext(!!next);
-    },
-    [getCardsAsync]
-  );
-
-  useEffect(() => {
-    handleLoadCards(recipientId, { offset: 0 });
-  }, [handleLoadCards]);
 
   const fetchRecipientData = async () => {
     const recipientsResponse = await getRecipientInformation(recipientId);
@@ -87,10 +67,70 @@ export default function Post() {
     fetchRecipientData();
   }, []);
 
-  // eslint-disable-next-line
-  const handleLoadMore = () => {
-    handleLoadCards(recipientId, { offset, limit: UPDATE_LIMIT });
+  const handleLoadCards = useCallback(async (id, options) => {
+    const result = await getCardsAsync(id, options);
+
+    if (!result) {
+      return;
+    }
+
+    if (!hasNext) {
+      return;
+    }
+
+    const { results: cardList, next } = result;
+    if (next === null) {
+      setHasNext(!hasNext);
+    }
+
+    if (options.offset === 0) {
+      setCards(() => [{}, ...cardList]);
+    } else {
+      setCards(prevItems => [...prevItems, ...cardList]);
+    }
+    setOffset(() => options.offset + cardList.length);
+  }, []);
+
+  const handleLoadMore = async () => {
+    if (!hasNext) {
+      console.warn('no more cards'); // TODO: toast message로 해볼까?
+      return;
+    }
+    if (isLoading) {
+      return;
+    }
+    await handleLoadCards(recipientId, { offset, limit: UPDATE_LIMIT });
   };
+
+  useEffect(() => {
+    handleLoadCards(recipientId, { offset: 0, limit: 8 });
+  }, []);
+
+  /**
+   * @description: hh
+   * */
+  const observerRef = useRef();
+
+  const handleObserver = useCallback(
+    entries => {
+      const [target] = entries;
+      if (target.isIntersecting) {
+        handleLoadMore();
+      }
+    },
+    [handleLoadMore]
+  );
+  useEffect(() => {
+    const { current } = observerRef;
+    const observer = new IntersectionObserver(handleObserver, OBSERVER_OPTIONS);
+    if (current) {
+      observer.observe(current);
+      return () => {
+        observer.unobserve(current);
+      };
+    }
+    return () => {};
+  }, [handleObserver, handleLoadMore]);
 
   const handleIsEditing = () => {
     setIsEditing(!isEditing);
@@ -99,7 +139,7 @@ export default function Post() {
   const handleDelete = async cardId => {
     await deleteCard(cardId);
     setCards(prevCards => prevCards.filter(card => card.id !== cardId));
-    handleLoadCards(recipientId, { offset: 0, limit: UPDATE_LIMIT });
+    handleLoadCards(recipientId, { offset: 0, limit: 8 });
   };
 
   const handleModalOpen = id => {
@@ -112,6 +152,9 @@ export default function Post() {
     setIsModalOpen(false);
     setSelectedCard({});
   };
+
+  // TODO: 하단 div children 삭제시 오작동 문제 해결필요.
+  // TODO: EditButton 디자인 업그레이드
 
   return (
     <>
@@ -147,6 +190,9 @@ export default function Post() {
           <CardModal card={selectedCard} onClick={handleModalClose} />
         </ModalPortal>
       )}
+      <div ref={observerRef} style={{ height: '10px' }}>
+        dkdkdkdkdkdk
+      </div>
     </>
   );
 }
