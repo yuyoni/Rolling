@@ -5,6 +5,7 @@ import Home from '../pages/Home/Home';
 import List from '../pages/List/List';
 import SendMessage from '../pages/Message/SendMessage';
 import Post from '../pages/Post/Post';
+import Error from '../pages/Error/Error';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,8 @@ const router = createBrowserRouter([
       {
         path: 'post/:id/message',
         element: <SendMessage />
-      }
+      },
+      { path: '*', element: <Error /> }
     ]
   }
 ]);
