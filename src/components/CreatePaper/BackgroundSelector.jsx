@@ -5,27 +5,26 @@ import ColorImageContext from '../../contexts/ColorImageContext';
 const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  width: 15.25rem;
-  height: 2.5rem;
-  margin-bottom: 2.18rem;
+  width: 24.4rem;
+  height: 4rem;
+  margin-bottom: 4.5rem;
 `;
 
 const ButtonOrigin = styled.button`
   display: flex;
-  width: 100%;
+  width: 12.2rem;
   height: 100%;
-  padding: 1.2rem 1.6rem;
-  border-radius: 0.8rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 0.6rem;
   align-items: center;
   justify-content: center;
-  color: var(--Purple-700, #861dee);
   text-align: center;
   font-family: Pretendard;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.625rem;
-  letter-spacing: -0.01rem;
+  line-height: 2.6rem;
+  letter-spacing: -0.016rem;
 `;
 
 const ColorButton = styled(ButtonOrigin)`

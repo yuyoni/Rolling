@@ -11,10 +11,10 @@ import ColorImageContext from '../../contexts/ColorImageContext';
 import RecipientInput from './RecipientInput';
 
 const Forms = styled.form`
-  width: 45rem;
+  width: 72rem;
   display: flex;
   flex-direction: column;
-  gap: 2.81rem;
+  gap: 4.5rem;
 `;
 
 export default function FormArea() {
