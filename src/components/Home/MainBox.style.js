@@ -73,9 +73,3 @@ export const MainItemContainer = styled.div`
 export const Image = styled.img`
   max-width: 100%;
 `;
-
-// 메인 두번째 박스 구역
-
-export const Image = styled.img`
-  width: 100%;
-`;
