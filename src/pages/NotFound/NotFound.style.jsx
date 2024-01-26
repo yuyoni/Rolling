@@ -18,7 +18,6 @@ export const WrapperDiv = styled.div`
   align-items: center;
   padding: 2rem;
   gap: 2rem;
-  background: #fff;
   border-radius: 2rem;
   color: var(--gray-500, #555);
 

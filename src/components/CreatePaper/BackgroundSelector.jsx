@@ -30,14 +30,14 @@ const ButtonOrigin = styled.button`
 const ColorButton = styled(ButtonOrigin)`
   ${({ $background }) =>
     $background === 'color'
-      ? `color: var(--purple-600, #9935FF); border: 2px solid var(--purple-600, #9935FF); border-radius: 0.375rem;`
+      ? `color: var(--Purple-600, #9935FF); border: 2px solid var(--Purple-600, #9935FF); border-radius: 0.375rem;`
       : `background-color: var(--gray-100, #F6F6F6);`}
 `;
 
 const ImageButton = styled(ButtonOrigin)`
   ${({ $background }) =>
     $background === 'image'
-      ? `color: var(--purple-600, #9935FF); border: 2px solid var(--purple-600, #9935FF); border-radius: 0.375rem;`
+      ? `color: var(--Purple-600, #9935FF); border: 2px solid var(--Purple-600, #9935FF); border-radius: 0.375rem;`
       : `background-color: var(--gray-100, #F6F6F6);`}
 `;
 

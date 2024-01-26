@@ -38,12 +38,13 @@ const MessageForm = styled.form`
         margin-bottom: 6.2rem;
       }
     }
-    
+
     &__submit {
       left: 2.4rem;
       right: 2.4rem;
       bottom: 2.4rem;
     }
+  }
 `;
 
 export default MessageForm;

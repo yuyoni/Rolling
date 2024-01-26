@@ -49,7 +49,6 @@ export const MainBoxSecond = styled(MainBox)`
   }
 `;
 
-// 메인 첫번째 박스 구역
 export const MainItemContainer = styled.div`
   display: flex;
   gap: 1rem;
@@ -69,7 +68,6 @@ export const MainItemContainer = styled.div`
   }
 `;
 
-// 메인 두번째 박스 구역
 export const Image = styled.img`
   max-width: 100%;
 `;

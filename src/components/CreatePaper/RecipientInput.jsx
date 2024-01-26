@@ -20,7 +20,7 @@ const ErrorStyle = styled.input`
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 2.6rem; /* 162.5% */
+  line-height: 2.6rem;
   letter-spacing: -0.016rem;
   &:disabled {
     background: var(--gray-100, #f6f6f6);
@@ -40,16 +40,15 @@ const ErrorStyle = styled.input`
     outline: 1px solid var(--gray-500, #555);
     background: var(--white, #fff);
     color: var(--gray-900, #181818);
+  }
 `;
 
 const P = styled.p`
   color: var(--Error, #dc3a3a);
   font-family: Pretendard;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 150% */
-  letter-spacing: -0.06px;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  margin-top: 0.8rem;
 `;
 
 const Label = styled.label`
