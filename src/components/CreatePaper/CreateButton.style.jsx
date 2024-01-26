@@ -12,8 +12,12 @@ const ButtonStyle = styled.button`
   text-align: center;
   color: var(--white, #fff);
   border: none;
-  background: var(--Purple-600, #9935ff);
-  width: 72rem;
+  background: var(--purple-600, #9935ff);
+  cursor: pointer;
+  width: 100%;
+  background: var(--purple-600, #9935ff);
+  cursor: pointer;
+  width: 100%;
   justify-content: center;
   align-items: center;
   gap: 1rem;

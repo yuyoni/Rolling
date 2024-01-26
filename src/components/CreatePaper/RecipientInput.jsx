@@ -22,6 +22,24 @@ const ErrorStyle = styled.input`
   font-weight: 400;
   line-height: 2.6rem;
   letter-spacing: -0.016rem;
+  &:disabled {
+    background: var(--gray-100, #f6f6f6);
+  }
+
+  &:hover {
+    border: 1px solid var(--gray-500, #555);
+    background: var(--white, #fff);
+  }
+
+  &:active {
+    border: 1px solid var(--gray-700, #3a3a3a);
+    background: var(--white, #fff);
+  }
+
+  &:focus {
+    outline: 1px solid var(--gray-500, #555);
+    background: var(--white, #fff);
+    color: var(--gray-900, #181818);
 `;
 
 const P = styled.p`
