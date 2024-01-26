@@ -68,6 +68,7 @@ export default function Post() {
   return (
     <S.Page>
       <PostPageHeader
+        recipientId={recipientId}
         recentMessages={recentMessage}
         name={recipientName}
         messageCount={cardCount}
