@@ -18,7 +18,7 @@ const ButtonOrigin = styled.button`
   width: 10rem;
   height: 10rem;
   padding: 1.2rem 1.6rem;
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   align-items: center;
   justify-content: center;
 `;

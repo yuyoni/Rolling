@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const InputDiv = styled.div`
+  position: relative;
+`;
+
 export const ErrorStyle = styled.input`
   display: flex;
   width: 100%;

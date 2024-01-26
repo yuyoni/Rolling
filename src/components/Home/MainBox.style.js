@@ -2,110 +2,76 @@ import styled from 'styled-components';
 
 export const MainBox = styled.div`
   display: flex;
-  /* align-items: flex-start; */
   align-items: center;
-
-  border-radius: 16px;
+  border-radius: 1.6rem;
   background: var(--Surface, #f6f8ff);
   width: 100%;
 
-  /* 테블릿 */
   @media (max-width: 1248px) {
-    min-width: 700px;
-
-    /* margin: 0 40px 0 40px; */
+    min-width: 70rem;
     align-items: flex-start;
   }
 
-  /* 모바일 */
   @media (max-width: 768px) {
-    min-width: 320px;
-    align-items: flex-start;
+    min-width: 32rem;
   }
 `;
 
 export const MainBoxFirst = styled(MainBox)`
-  padding: 60px 0px 60px 60px;
+  padding: 6rem 0 6rem 6rem;
   justify-content: flex-end;
   width: 100%;
-  gap: 152px;
+  gap: 15.2rem;
 
-  /* 테블릿 */
   @media (max-width: 1248px) {
     flex-direction: column;
-    padding: 40px;
-    gap: 36px;
+    padding: 4rem;
+    gap: 3.6rem;
   }
 
-  /* 모바일 */
   @media (max-width: 768px) {
-    flex-direction: column;
-    padding: 40px;
-    /* justify-content: center; */
-    /* align-items: center; */
+    padding: 2rem 1rem;
   }
 `;
 
 export const MainBoxSecond = styled(MainBox)`
-  padding: 60px 192px 60px 0px;
+  padding: 6rem 19.2rem 6rem 0;
   width: 100%;
 
-  /* 테블릿 */
   @media (max-width: 1248px) {
     flex-direction: column-reverse;
-    padding: 40px;
-    gap: 36px;
+    padding: 4rem;
+    gap: 3.6rem;
   }
 
-  /* 모바일 */
   @media (max-width: 768px) {
-    flex-direction: column-reverse;
-    padding: 40px;
-
-    /* justify-content: center; */
-    /* align-items: center; */
+    padding: 2rem 1rem;
   }
 `;
 
 // 메인 첫번째 박스 구역
 export const MainItemContainer = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   width: 100%;
-  height: 204px;
-  padding: 21px 40px 21px 40px;
+  height: 20.4rem;
+  padding: 2.1rem 4rem 2.1rem 4rem;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
-  /* 테블릿 */
   @media (max-width: 1248px) {
     padding: 0;
   }
 
-  /* 모바일 */
   @media (max-width: 768px) {
-    margin: 20px;
-    padding: 0;
-    height: 90px;
-
-    /* justify-content: center; */
-    /* align-items: center; */
+    height: auto;
   }
 `;
 
 // 메인 두번째 박스 구역
-
 export const Image = styled.img`
-  /* 모바일 */
-  /* 테블릿 */
-  /* width: auto; */
-  @media (max-width: 1248px) {
-    max-width: 100%;
-  }
-
-  @media (max-width: 768px) {
-    /* width: 80%; */
-  }
+  max-width: 100%;
 `;
 
 // 메인 두번째 박스 구역

@@ -89,6 +89,7 @@ export default function Post() {
     <>
       <S.Page>
         <PostPageHeader
+          recipientId={recipientId}
           recentMessages={recipientData.recentMessages}
           name={recipientData.name}
           messageCount={recipientData.messageCount}
