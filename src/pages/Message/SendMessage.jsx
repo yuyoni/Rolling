@@ -8,8 +8,8 @@ import SubmitButton from '../../components/Button/SubmitButton';
 import Editor from '../../components/Text/Editor';
 import ProfileImagesMain from '../../components/ProfileImages/ProfileImagesMain';
 import getProfileImages from '../../apis/profileApis';
-import defaultImage from '../../assets/images/default-profile-image.png';
 import postMessage from '../../apis/recipientApis';
+import { defaultImage } from '../../components/ProfileImages/ProfileImagesMain.style';
 
 const relationship = ['지인', '친구', '동료', '가족'];
 const font = ['Noto Sans', 'Pretendard', '나눔명조', '나눔손글씨 손편지체'];
