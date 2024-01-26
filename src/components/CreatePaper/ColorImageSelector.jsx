@@ -8,9 +8,10 @@ import sky from '../../assets/images/sky.jpg';
 import ColorImageContext from '../../contexts/ColorImageContext';
 
 const Wrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  flex-wrap: wrap;
 `;
 
 const ButtonOrigin = styled.button`

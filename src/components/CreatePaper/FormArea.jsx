@@ -11,10 +11,16 @@ import ColorImageContext from '../../contexts/ColorImageContext';
 import RecipientInput from './RecipientInput';
 
 const Forms = styled.form`
-  width: 72rem;
   display: flex;
   flex-direction: column;
   gap: 4.5rem;
+  width: 72rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0 2rem 0 2rem;
+    min-width: 400px;
+    // 줄이 버튼 줄갯수가 더이상 안늘어나게 width 제한함
+  }
 `;
 
 export default function FormArea() {

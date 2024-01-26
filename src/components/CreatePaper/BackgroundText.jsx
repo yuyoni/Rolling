@@ -6,7 +6,7 @@ const Guide = styled.div`
   font-size: 2.4rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 4.2rem;
+  line-height: 3.6rem;
   letter-spacing: -0.024rem;
 `;
 const AssistantGuide = styled.div`
