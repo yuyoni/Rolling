@@ -38,7 +38,7 @@ export default function FormArea() {
     const data = { name, backgroundColor, backgroundImageURL, team };
 
     try {
-      const result = await fetchData('3-1/recipients/', 'post', data);
+      const result = await fetchData('3-1/recipients/', 'POST', data);
       console.log(result);
       const { id } = result;
       navigate(`/post/${id}`);
