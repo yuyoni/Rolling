@@ -20,7 +20,7 @@ export const EmojiCount = styled.div`
   background: rgba(0, 0, 0, 0.54);
 
   p {
-    color: var(--white);
+    color: var(--white, #fff);
     font-size: 1.6rem;
   }
 

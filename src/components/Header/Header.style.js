@@ -2,85 +2,60 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  /* width: 1920px; */
-  height: 64px;
-  /* flex-direction: column; */
+  height: 6.4rem;
   justify-content: center;
   align-items: center;
-  /* gap: 1px; */
-  /* flex-shrink: 0; */
-
-  /* 수정중 */
   width: 100%;
-  /* padding: 0 360px; */
-  // position: fixed;
-  // top: 0;
-  // background-color: #ffffff;
-  // z-index: 20;
 
-  /* 테블릿 */
   @media (max-width: 768px) {
-    padding: 11px 24px;
+    padding: 1.1rem 2.4rem;
   }
 
-  /* 모바일 */
   @media (max-width: 360px) {
-    padding: 12px 20px;
+    padding: 1.2rem 2rem;
   }
 `;
 
 export const Navigation = styled.div`
   display: flex;
-
   align-items: center;
-  /* justify-content: center; */
-  min-width: 1200px;
-  padding: 11px 0px;
-  /* gap: 944px; */
-
-  /* 수정중 */
-  height: 62px;
+  min-width: 120rem;
+  padding: 1.1rem 0;
+  height: 6.2rem;
   justify-content: space-between;
-  /* width: 100%; */
 
-  /* 테블릿 */
   @media (max-width: 1248px) {
-    /* max-width: 100%; */
-    min-width: 700px;
+    min-width: 70rem;
     width: 100%;
-    padding: 0 24px;
+    padding: 0 2.4rem;
     transition: max-width 0.5s ease;
   }
 
-  /* 모바일 */
   @media (max-width: 768px) {
-    min-width: 327px;
-    width: 100%;
+    min-width: 32.7rem;
     padding: 0;
-    /* max-width: 100%; */
-
-    /* gap: 79px; */
-
     transition: max-width 0.5s ease;
+
+    &.navNoShow {
+      display: none;
+    }
   }
 `;
 
 export const Button = styled.button`
   display: flex;
-  height: 40px;
-  padding: 8px 16px;
-  /* justify-content: center; */
+  height: 4rem;
+  padding: 0.8rem 1.6rem;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
 
-  border-radius: 6px;
-  border: 1px solid var(--gray-300, #ccc);
+  border-radius: 0.6rem;
+  border: 0.1rem solid var(--gray-300, #ccc);
   background: var(--white, #fff);
 
-  font-family: 'Pretendard';
-  // font-size: 16px;
+  font-family: Pretendard;
   font-weight: 700;
-  line-height: 26px; /* 162.5% */
-  letter-spacing: -0.16px;
+  line-height: 2.6rem;
+  letter-spacing: -0.016rem;
   color: var(--gray-900, #181818);
 `;

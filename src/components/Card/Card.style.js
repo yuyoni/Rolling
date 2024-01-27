@@ -91,6 +91,11 @@ export const SenderNameWrapper = styled.div`
   line-height: 24px; /* 120% */
 `;
 export const Sender = styled.span`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+
   color: #000;
   font-size: 20px;
   font-style: normal;
@@ -151,6 +156,7 @@ export const CardHeader = styled.div`
   height: 100px;
   flex-shrink: 0;
 `;
+
 export const DeleteButton = styled.button`
   position: absolute;
   top: 28px;
