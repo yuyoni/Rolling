@@ -42,6 +42,6 @@ export const P = styled.p`
   color: var(--Error, #dc3a3a);
   font-family: Pretendard;
   font-size: 1.2rem;
-  line-height: 1.8rem; /* 150% */
+  line-height: 1.8rem;
   letter-spacing: -0.006rem;
 `;
