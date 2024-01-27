@@ -41,7 +41,8 @@ export default function SendMessage() {
       const result = await getProfileImages();
       setProfileImages([...result]);
     } catch (error) {
-      /* empty */
+      // eslint-disable-next-line no-alert
+      alert('프로필 이미지 목록 불러오기 실패');
     }
   };
 

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const MainDiv = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
   padding: 2rem;
   background: var(--Surface, #f6f8ff);
 `;

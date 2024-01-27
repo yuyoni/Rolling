@@ -25,7 +25,7 @@ export const StyledReactQuill = styled(ReactQuill)`
 
 export const ReactQuillContainer = styled.div`
   border-radius: 0.8rem;
-  border: 1px solid var(--gray-300, #ccc);
+  border: 0.1rem solid var(--gray-300, #ccc);
   overflow: hidden;
 
   @media screen and (min-width: 375px) {

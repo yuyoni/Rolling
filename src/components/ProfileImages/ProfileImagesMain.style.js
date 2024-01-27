@@ -20,13 +20,13 @@ export const ProfileImageWrapper = styled.div`
 `;
 
 export const SelectedProfileImage = styled.span`
+  width: 8rem;
+  height: 8rem;
   display: flex;
   flex-shrink: 0;
   align-items: flex-start;
-  gap: 1rem;
   padding: 2.4rem;
-  width: 8rem;
-  height: 8rem;
+  gap: 1rem;
   border-radius: 10rem;
   background: ${({ $selectedImage }) =>
     $selectedImage ? `url(${$selectedImage})` : `url(${defaultImage})`};
