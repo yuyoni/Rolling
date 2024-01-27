@@ -67,7 +67,7 @@ export default function PostPageHeader({
     const response = await fetchData(
       `3-1/recipients/${recipientId}/reactions/?limit=9`
     );
-    setArrow(previous => (previous === arrowDown ? arrowTop : arrowDown));
+    setArrow(previous => (previous === arrowTop ? arrowDown : arrowTop));
     setRecentReactions(response.results);
     setIsEmojiListShow(!isEmojiListShow);
   };
