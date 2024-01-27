@@ -7,9 +7,8 @@ import ToggleButton from '../../components/Button/ToggleButton';
 import SubmitButton from '../../components/Button/SubmitButton';
 import Editor from '../../components/Text/Editor';
 import ProfileImagesMain from '../../components/ProfileImages/ProfileImagesMain';
-import getProfileImages from '../../apis/profileApis';
-import postMessage from '../../apis/recipientApis';
 import { defaultImage } from '../../components/ProfileImages/ProfileImagesMain.style';
+import fetchData from '../../apis/fetchData';
 
 const relationship = ['지인', '친구', '동료', '가족'];
 const font = ['Noto Sans', 'Pretendard', '나눔명조', '나눔손글씨 손편지체'];
@@ -38,8 +37,9 @@ export default function SendMessage() {
 
   const handleLoad = async () => {
     try {
-      const result = await getProfileImages();
-      setProfileImages([...result]);
+      const result = await fetchData('profile-images/');
+      const imageUrlList = result.imageUrls;
+      setProfileImages([...imageUrlList]);
     } catch (error) {
       // eslint-disable-next-line no-alert
       alert('프로필 이미지 목록 불러오기 실패');
@@ -54,7 +54,11 @@ export default function SendMessage() {
     event.preventDefault();
     try {
       setIsSubmitSuccess(false);
-      await postMessage(recipientPostData);
+      await fetchData(
+        `3-1/recipients/${userId}/messages/`,
+        'POST',
+        recipientPostData
+      );
     } catch (error) {
       return;
     } finally {

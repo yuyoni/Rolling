@@ -22,6 +22,10 @@ export default async function fetchData(param, method = 'GET', data = null) {
 
   try {
     const response = await fetch(url, options);
+
+    if (method === 'DELETE') {
+      return response;
+    }
     const responseBody = await response.json();
     return responseBody;
   } catch (error) {

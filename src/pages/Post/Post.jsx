@@ -7,14 +7,11 @@ import CardModal from '../../components/Modal/CardModal';
 import useAsync from '../../hooks/useAsync';
 import editButton from '../../assets/images/edit-button.svg';
 import * as S from './Post.stytle';
-import {
-  deleteCard,
-  getCardList,
-  getRecipientInformation
-} from '../../apis/postApis';
+import getCardList from '../../apis/postApis';
 import ToastPortal from '../../components/Toast/ToastlPortal';
 import ToastContainer from '../../components/Toast/ToastContainer';
 import useToast from '../../hooks/useToast';
+import fetchData from '../../apis/fetchData';
 
 const UPDATE_LIMIT = 6;
 // eslint-disable-next-line
@@ -66,7 +63,9 @@ export default function Post() {
    * */
 
   const fetchRecipientData = async () => {
-    const recipientsResponse = await getRecipientInformation(recipientId);
+    const recipientsResponse = await fetchData(
+      `3-1/recipients/${recipientId}/`
+    );
     setRecipientData(recipientsResponse);
   };
 
@@ -149,7 +148,7 @@ export default function Post() {
   };
 
   const handleDelete = async cardId => {
-    await deleteCard(cardId);
+    await fetchData(`3-1/messages/${cardId}/`, 'DELETE');
     setCards(prevCards => prevCards.filter(card => card.id !== cardId));
     handleLoadCards(recipientId, { offset: 0, limit: 8 });
   };
