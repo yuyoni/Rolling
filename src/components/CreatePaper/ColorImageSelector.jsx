@@ -7,6 +7,8 @@ import mokoko from '../../assets/images/mokoko.png';
 import sky from '../../assets/images/sky.jpg';
 import ColorImageContext from '../../contexts/ColorImageContext';
 
+// 리팩토링 고민중이라 아직 스타일 분리하지않음
+
 const Wrap = styled.div`
   display: inline-flex;
   align-items: flex-start;

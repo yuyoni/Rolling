@@ -17,3 +17,5 @@ export default function BackgroundBox() {
     </div>
   );
 }
+
+// 이 컴포넌트가 필요한지 고민중
