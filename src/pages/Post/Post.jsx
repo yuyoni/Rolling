@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CardContainer from '../../components/Card/CardContainer';
 import PostPageHeader from '../../components/Card/PostPageHeader';
 import ModalPortal from '../../components/Modal/ModalPortal';
 import CardModal from '../../components/Modal/CardModal';
+import useAsync from '../../hooks/useAsync';
 import editButton from '../../assets/images/edit-button.svg';
 import * as S from './Post.stytle';
 import {
@@ -11,6 +12,17 @@ import {
   getCardList,
   getRecipientInformation
 } from '../../apis/postApis';
+import ToastPortal from '../../components/Toast/ToastlPortal';
+import ToastContainer from '../../components/Toast/ToastContainer';
+import useToast from '../../hooks/useToast';
+
+const UPDATE_LIMIT = 6;
+// eslint-disable-next-line
+const OBSERVER_OPTIONS = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 1
+};
 
 export default function Post() {
   /*
@@ -19,10 +31,21 @@ export default function Post() {
    * recipientData : 롤페이퍼주인 정보객체
    * */
   const { id: recipientId } = useParams();
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([{}]);
   const [isEditing, setIsEditing] = useState(false);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
+
+  const [offset, setOffset] = useState(0);
+  const [hasNext, setHasNext] = useState(true);
+
+  const [toast, setToast] = useState(false);
+  const { toastList, addToast, removeToast } = useToast();
+
+  // eslint-disable-next-line
+  const [isLoading, loadingError, getCardsAsync] = useAsync(getCardList);
+
   const [recipientData, setRecipientData] = useState({
     name: '',
     backgroundColor: '',
@@ -47,15 +70,79 @@ export default function Post() {
     setRecipientData(recipientsResponse);
   };
 
-  const fetchCardList = async () => {
-    const cardResponse = await getCardList(recipientId);
-    setCards([{}, ...cardResponse.results]);
+  useEffect(() => {
+    fetchRecipientData();
+  }, []);
+
+  const handleLoadCards = useCallback(async (id, options) => {
+    const result = await getCardsAsync(id, options);
+
+    if (!result) {
+      return;
+    }
+
+    if (!hasNext) {
+      return;
+    }
+
+    const { results: cardList, next } = result;
+    if (next === null) {
+      setHasNext(!hasNext);
+    }
+
+    if (options.offset === 0) {
+      setCards(() => [{}, ...cardList]);
+    } else {
+      setCards(prevItems => [...prevItems, ...cardList]);
+    }
+    setOffset(() => options.offset + cardList.length);
+  }, []);
+
+  const handleLoadMore = async () => {
+    if (!hasNext) {
+      addToast('error', '더 이상 카드가 없습니다.');
+      return;
+    }
+    if (isLoading) {
+      return;
+    }
+    await handleLoadCards(recipientId, { offset, limit: UPDATE_LIMIT });
   };
 
-  const handleInit = () => {
-    fetchRecipientData();
-    fetchCardList();
+  useEffect(() => {
+    handleLoadCards(recipientId, { offset: 0, limit: 8 });
+  }, []);
+
+  /**
+   * @description: hh
+   * */
+  const observerRef = useRef();
+
+  const handleObserver = useCallback(
+    entries => {
+      const [target] = entries;
+      if (target.isIntersecting) {
+        handleLoadMore();
+      }
+    },
+    [handleLoadMore]
+  );
+
+  const test = () => {
+    addToast('info', '테스트중입니다.');
   };
+
+  useEffect(() => {
+    const { current } = observerRef;
+    const observer = new IntersectionObserver(handleObserver, OBSERVER_OPTIONS);
+    if (current) {
+      observer.observe(current);
+      return () => {
+        observer.unobserve(current);
+      };
+    }
+    return () => {};
+  }, [handleObserver, handleLoadMore]);
 
   const handleIsEditing = () => {
     setIsEditing(!isEditing);
@@ -64,7 +151,7 @@ export default function Post() {
   const handleDelete = async cardId => {
     await deleteCard(cardId);
     setCards(prevCards => prevCards.filter(card => card.id !== cardId));
-    handleInit();
+    handleLoadCards(recipientId, { offset: 0, limit: 8 });
   };
 
   const handleModalOpen = id => {
@@ -78,12 +165,16 @@ export default function Post() {
     setSelectedCard({});
   };
 
-  /*
-   * useEffect : 페이지 초기화
-   * */
   useEffect(() => {
-    handleInit();
-  }, []);
+    if (toastList.length > 0) {
+      setToast(true);
+      return;
+    }
+    setToast(false);
+  }, [toastList]);
+
+  // TODO: 하단 div children 삭제시 오작동 문제 해결필요.
+  // TODO: EditButton 디자인 업그레이드
 
   return (
     <>
@@ -94,8 +185,10 @@ export default function Post() {
           name={recipientData.name}
           messageCount={recipientData.messageCount}
           topReactions={recipientData.topReactions}
+          addToast={addToast}
         />
         <S.CardBackgroundWrapper
+          onClick={test}
           $backgroundImageURL={recipientData.backgroundImageURL}
           $backgroundColor={recipientData.backgroundColor}
         >
@@ -119,6 +212,15 @@ export default function Post() {
           <CardModal card={selectedCard} onClick={handleModalClose} />
         </ModalPortal>
       )}
+      {toast && (
+        <ToastPortal>
+          <ToastContainer toastList={toastList} removeToast={removeToast} />
+        </ToastPortal>
+      )}
+
+      <div ref={observerRef} style={{ height: '10px' }}>
+        dkdkdkdkdkdk
+      </div>
     </>
   );
 }

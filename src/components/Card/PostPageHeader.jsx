@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import EmojiPicker from 'emoji-picker-react';
 import EmojiList from '../Common/EmojiList';
 import ImageList from '../Common/ImageList';
@@ -9,6 +10,7 @@ import shareIcon from '../../assets/images/share-icon.svg';
 import addEmoji from '../../assets/images/add-emoji-icon.svg';
 import fetchData from '../../apis/fetchData';
 import useClickOutside from '../../hooks/useClickOutside';
+import Dropdown from './Dropdown';
 import ImageButton from '../Button/ImageButton';
 import ScrollToTopButton from '../Button/ScrollToTopButton';
 
@@ -17,11 +19,27 @@ export default function PostPageHeader({
   recentMessages,
   name,
   messageCount,
-  topReactions
+  topReactions,
+  addToast
 }) {
   const [isEmojiPickerShow, setIsEmojiPickerShow] = useState(false);
   const [isEmojiListShow, setIsEmojiListShow] = useState(false);
   const [recentTopReactions, setRecentTopReactions] = useState(null);
+  const [dropdown, setDropdown] = useState(false);
+
+  const currentPath = useLocation();
+
+  const handleDropdown = () => {
+    setDropdown(true);
+  };
+  const handleClickShareURL = async () => {
+    addToast('success', '링크가 복사되었습니다.');
+    console.log(currentPath);
+    // 복사로직 추가필요
+  };
+
+  const emojiRef = useRef(null);
+  const shareRef = useRef(null);
   const [recentReactions, setRecentReactions] = useState(null);
 
   const emojiListRef = useRef(null);
@@ -40,6 +58,9 @@ export default function PostPageHeader({
     }
   };
 
+  useClickOutside(emojiRef, setIsEmojiPickerShow);
+  useClickOutside(shareRef, setDropdown);
+
   const handleReactionListClick = async () => {
     const response = await fetchData(
       `3-1/recipients/${recipientId}/reactions/?limit=9`
@@ -50,6 +71,7 @@ export default function PostPageHeader({
 
   useClickOutside(emojiListRef, setIsEmojiListShow);
   useClickOutside(emojiPickerRef, setIsEmojiPickerShow);
+  useClickOutside(shareRef, setDropdown);
 
   return (
     <S.BackgroundArea>
@@ -87,7 +109,12 @@ export default function PostPageHeader({
           )}
         </div>
         <S.HorizonLine />
-        <img src={shareIcon} alt="share-icon" />
+        <S.DropdownWrapper ref={shareRef}>
+          <button type="button" onClick={handleDropdown}>
+            <img src={shareIcon} alt="share-icon" />
+          </button>
+          {dropdown && <Dropdown onClick={handleClickShareURL} />}
+        </S.DropdownWrapper>
       </S.PaperBox>
       <ScrollToTopButton />
     </S.BackgroundArea>
