@@ -110,9 +110,11 @@ export default function PostPageHeader({
         </div>
         <S.HorizonLine />
         <S.DropdownWrapper ref={shareRef}>
-          <button type="button" onClick={handleDropdown}>
-            <img src={shareIcon} alt="share-icon" />
-          </button>
+          <ImageButton
+            imageURL={shareIcon}
+            imageAlt="share-icon"
+            handleClick={handleDropdown}
+          />
           {dropdown && <Dropdown onClick={handleClickShareURL} />}
         </S.DropdownWrapper>
       </S.PaperBox>
