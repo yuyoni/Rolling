@@ -85,3 +85,7 @@ export const Button = styled.button`
     outline: none;
   }
 `;
+
+export const FontName = styled.span`
+  font-family: ${({ $font }) => `${$font}`};
+`;

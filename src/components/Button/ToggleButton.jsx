@@ -35,7 +35,7 @@ export default function ToggleButton({
   return (
     <div onBlur={handleBlur}>
       <S.ButtonDown nav={nav} type="button" onClick={handleShow}>
-        <span>{children}</span>
+        <S.FontName $font={children}>{children}</S.FontName>
         <S.ToggleIcon
           src={show ? ArrowTop : ArrowDown}
           alt="토글 이미지 아이콘"
