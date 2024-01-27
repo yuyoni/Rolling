@@ -10,6 +10,7 @@ import addEmoji from '../../assets/images/add-emoji-icon.svg';
 import fetchData from '../../apis/fetchData';
 import useClickOutside from '../../hooks/useClickOutside';
 import ImageButton from '../Button/ImageButton';
+import ScrollToTopButton from '../Button/ScrollToTopButton';
 
 export default function PostPageHeader({
   recipientId,
@@ -88,6 +89,7 @@ export default function PostPageHeader({
         <S.HorizonLine />
         <img src={shareIcon} alt="share-icon" />
       </S.PaperBox>
+      <ScrollToTopButton />
     </S.BackgroundArea>
   );
 }
