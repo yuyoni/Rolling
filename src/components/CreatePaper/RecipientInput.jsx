@@ -1,70 +1,5 @@
 import { useState } from 'react';
-import styled from 'styled-components';
-
-// 나중에 따로 분리
-// 변수 선언 후 에러 상태 스타일링
-const ErrorStyle = styled.input`
-  display: flex;
-  width: 100%;
-  padding: 1.2rem 1.6rem;
-  align-items: center;
-  gap: 1rem;
-  border: ${({ $showError }) =>
-    $showError
-      ? '1px solid var(--Error, #dc3a3a)'
-      : '1px solid var(--gray-300, #ccc)'};
-  background: var(--White, #ffffff);
-  border-radius: 0.8rem;
-  margin-top: 1.2rem;
-  font-family: Pretendard;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2.6rem; /* 162.5% */
-  letter-spacing: -0.016rem;
-  &:disabled {
-    background: var(--gray-100, #f6f6f6);
-  }
-
-  &:hover {
-    border: 1px solid var(--gray-500, #555);
-    background: var(--white, #fff);
-  }
-
-  &:active {
-    border: 1px solid var(--gray-700, #3a3a3a);
-    background: var(--white, #fff);
-  }
-
-  &:focus {
-    outline: 1px solid var(--gray-500, #555);
-    background: var(--white, #fff);
-    color: var(--gray-900, #181818);
-`;
-
-const P = styled.p`
-  color: var(--Error, #dc3a3a);
-  font-family: Pretendard;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 150% */
-  letter-spacing: -0.06px;
-`;
-
-const Label = styled.label`
-  color: var(--gray-900, #181818);
-  font-family: Pretendard;
-  font-size: 2.4rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 4.2rem;
-  letter-spacing: -0.024rem;
-`;
-
-const Wrapper = styled.div`
-  margin-top: 5.7rem;
-`;
+import * as S from './RecipientInput.style';
 
 export default function RecipientInput({ placeholder, onChange }) {
   const [showError, setShowError] = useState('');
@@ -84,9 +19,9 @@ export default function RecipientInput({ placeholder, onChange }) {
   };
 
   return (
-    <Wrapper>
-      <Label htmlFor="recipient">To.</Label>
-      <ErrorStyle
+    <S.Wrapper>
+      <S.Label htmlFor="recipient">To.</S.Label>
+      <S.ErrorStyle
         type="text"
         placeholder={placeholder}
         $showError={showError}
@@ -97,7 +32,7 @@ export default function RecipientInput({ placeholder, onChange }) {
         autoComplete="username"
         onChange={onChange}
       />
-      {showError && <P>{showError}</P>}
-    </Wrapper>
+      {showError && <S.P>{showError}</S.P>}
+    </S.Wrapper>
   );
 }

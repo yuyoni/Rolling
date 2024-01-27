@@ -1,27 +1,14 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import purple from '../../assets/images/basket.jpg';
 import beige from '../../assets/images/desert.jpg';
 import blue from '../../assets/images/mokoko.png';
 import green from '../../assets/images/sky.jpg';
+import ColorImageContext from '../../contexts/ColorImageContext';
 import BackgroundBox from './BackgroundBox';
 import CreateButton from './CreateButton';
-import ColorImageContext from '../../contexts/ColorImageContext';
+import Forms from './FormArea.style';
 import RecipientInput from './RecipientInput';
-
-const Forms = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 4.5rem;
-  width: 72rem;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    padding: 0 2rem 0 2rem;
-    min-width: 400px;
-    // 줄이 버튼 줄갯수가 더이상 안늘어나게 width 제한함
-  }
-`;
 
 export default function FormArea() {
   const navigate = useNavigate();
