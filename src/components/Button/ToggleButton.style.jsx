@@ -4,6 +4,7 @@ export const ButtonDown = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   width: 32rem;
   padding: 1.2rem 1.6rem;
   margin-bottom: 0.8rem;
@@ -32,6 +33,14 @@ export const ButtonDown = styled.button`
     border: 2px solid var(--gray-500, #555);
     background: var(--white, #fff);
     color: var(--gray-900, #181818);
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    width: 32rem;
+    padding: 1.2rem 1.6rem;
+    gap: 1rem;
   }
 `;
 
