@@ -11,6 +11,12 @@ export const Card = styled.div`
   border-radius: 16px;
   background: var(--white, #fff);
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+    transition: 0.2s ease-in-out;
+  }
 `;
 
 export const AddCard = styled.div`
@@ -24,6 +30,13 @@ export const AddCard = styled.div`
   border-radius: 16px;
   background: var(--white, #fff);
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.3s;
+    transform: scale(1.01);
+    background-color: var(--gray-200, #eeeeee);
+  }
 `;
 
 export const AddCardButton = styled.button`
