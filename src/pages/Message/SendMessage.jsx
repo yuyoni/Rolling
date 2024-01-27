@@ -78,7 +78,7 @@ export default function SendMessage() {
           target="sender"
         />
       </div>
-      <div className="MessagePage__profileImg">
+      <div className="MessagePage__profileImage">
         <Heading>프로필 이미지</Heading>
         <ProfileImagesMain
           profileImages={profileImages}
