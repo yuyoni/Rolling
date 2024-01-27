@@ -5,10 +5,10 @@ export const InputDiv = styled.div`
 `;
 
 export const ErrorStyle = styled.input`
-  display: flex;
   width: 100%;
-  padding: 1.2rem 1.6rem;
+  display: flex;
   align-items: center;
+  padding: 1.2rem 1.6rem;
   gap: 1rem;
   border-radius: 0.8rem;
   border: ${({ $showError }) =>
@@ -22,17 +22,17 @@ export const ErrorStyle = styled.input`
   }
 
   &:hover {
-    border: 1px solid var(--gray-500, #555);
+    border: 0.1rem solid var(--gray-500, #555);
     background: var(--white, #fff);
   }
 
   &:active {
-    border: 1px solid var(--gray-700, #3a3a3a);
+    border: 0.1rem solid var(--gray-700, #3a3a3a);
     background: var(--white, #fff);
   }
 
   &:focus {
-    outline: 1px solid var(--gray-500, #555);
+    outline: 0.1rem solid var(--gray-500, #555);
     background: var(--white, #fff);
     color: var(--gray-900, #181818);
   }
@@ -41,9 +41,7 @@ export const ErrorStyle = styled.input`
 export const P = styled.p`
   color: var(--Error, #dc3a3a);
   font-family: Pretendard;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 150% */
-  letter-spacing: -0.06px;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  letter-spacing: -0.006rem;
 `;

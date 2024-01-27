@@ -18,7 +18,7 @@ const MessageForm = styled.form`
 
   .MessagePage {
     &__input,
-    &__profileImg,
+    &__profileImage,
     &__relationship,
     &__content,
     &__font,
