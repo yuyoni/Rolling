@@ -41,3 +41,7 @@ export const EmojiPickerBox = styled.div`
   right: 0;
   z-index: 1;
 `;
+
+export const DropdownWrapper = styled.div`
+  position: relative;
+`;

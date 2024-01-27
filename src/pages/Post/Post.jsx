@@ -101,7 +101,6 @@ export default function Post() {
   const handleLoadMore = async () => {
     if (!hasNext) {
       addToast('error', '더 이상 카드가 없습니다.');
-      console.warn('no more cards'); // TODO: toast message로 해볼까?
       return;
     }
     if (isLoading) {
@@ -179,15 +178,17 @@ export default function Post() {
 
   return (
     <>
-      <S.Page onClick={test}>
+      <S.Page>
         <PostPageHeader
           recipientId={recipientId}
           recentMessages={recipientData.recentMessages}
           name={recipientData.name}
           messageCount={recipientData.messageCount}
           topReactions={recipientData.topReactions}
+          addToast={addToast}
         />
         <S.CardBackgroundWrapper
+          onClick={test}
           $backgroundImageURL={recipientData.backgroundImageURL}
           $backgroundColor={recipientData.backgroundColor}
         >
