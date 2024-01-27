@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--white, #fff);
   display: flex;
   height: 6.4rem;
   justify-content: center;
   align-items: center;
   width: 100%;
+  border-bottom: 0.1rem solid var(--gray-200, #eeeeee);
 
   @media (max-width: 768px) {
     padding: 1.1rem 2.4rem;
