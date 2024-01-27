@@ -71,6 +71,7 @@ export default function PostPageHeader({
 
   useClickOutside(emojiListRef, setIsEmojiListShow);
   useClickOutside(emojiPickerRef, setIsEmojiPickerShow);
+  useClickOutside(shareRef, setDropdown);
 
   return (
     <S.BackgroundArea>
