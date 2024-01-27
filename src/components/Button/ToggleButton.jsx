@@ -49,7 +49,8 @@ export default function ToggleButton({
                 key={item}
                 onClick={handleShow}
                 onMouseOver={handleChange}
-                $dataValue={item}
+                data-value={item}
+                $font={item}
                 type="button"
               >
                 {item}

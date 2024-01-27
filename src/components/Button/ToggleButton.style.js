@@ -78,7 +78,7 @@ export const Button = styled.button`
   text-align: start;
   background: none;
   cursor: pointer;
-  font-family: ${({ $dataValue }) => `${$dataValue}`};
+  font-family: ${({ $font }) => `${$font}`};
 
   &:hover {
     background: var(--gray-100, #f6f6f6);
