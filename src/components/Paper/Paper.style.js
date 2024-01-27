@@ -43,7 +43,8 @@ export const PaperTitle = styled.span`
   text-overflow: ellipsis;
   white-space: nowrap;
 
-  font-family: Pretendard-Bold;
+  font-family: Poppins;
+  font-weight: 700;
   font-size: 2.4rem;
   line-height: 3.6rem;
   ${({ $isWhite }) => $isWhite && 'color: white;'}
