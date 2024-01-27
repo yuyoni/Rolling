@@ -1,4 +1,4 @@
-const BASE_URL = 'https://rolling-api.vercel.app/'; // 추후 환경변수로 빼기
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 /** BASE_URL + param 로 부터 데이터를 fetch해와서 responseBody를 반환하는 함수
  *
@@ -22,6 +22,10 @@ export default async function fetchData(param, method = 'GET', data = null) {
 
   try {
     const response = await fetch(url, options);
+
+    if (method === 'DELETE') {
+      return response;
+    }
     const responseBody = await response.json();
     return responseBody;
   } catch (error) {
