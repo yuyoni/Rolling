@@ -9,6 +9,7 @@ import shareIcon from '../../assets/images/share-icon.svg';
 import addEmoji from '../../assets/images/add-emoji-icon.svg';
 import fetchData from '../../apis/fetchData';
 import useClickOutside from '../../hooks/useClickOutside';
+import ImageButton from '../Button/ImageButton';
 
 export default function PostPageHeader({
   recipientId,
@@ -61,13 +62,11 @@ export default function PostPageHeader({
         <S.HorizonLine $margin="1.6rem" />
         <EmojiList topReactions={recentTopReactions || topReactions} />
         <div ref={emojiListRef}>
-          <button type="button" onClick={handleReactionListClick}>
-            <img
-              src={arrowDown}
-              alt="arrow-down"
-              style={{ margin: '0.6rem' }}
-            />
-          </button>
+          <ImageButton
+            imageURL={arrowDown}
+            imageAlt="arrow-down"
+            handleClick={handleReactionListClick}
+          />
           {isEmojiListShow && (
             <S.EmojiListBox>
               <EmojiList topReactions={recentReactions} />
@@ -75,12 +74,11 @@ export default function PostPageHeader({
           )}
         </div>
         <div ref={emojiPickerRef}>
-          <button
-            type="button"
-            onClick={() => setIsEmojiPickerShow(!isEmojiPickerShow)}
-          >
-            <img src={addEmoji} alt="emoji-icon" />
-          </button>
+          <ImageButton
+            imageURL={addEmoji}
+            imageAlt="emoji-icon"
+            handleClick={() => setIsEmojiPickerShow(!isEmojiPickerShow)}
+          />
           {isEmojiPickerShow && (
             <S.EmojiPickerBox>
               <EmojiPicker onEmojiClick={event => handleReactionClick(event)} />
