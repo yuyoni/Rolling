@@ -41,3 +41,21 @@ export const EmojiPickerBox = styled.div`
   right: 0;
   z-index: 1;
 `;
+
+export const EmojiListBox = styled.div`
+  position: absolute;
+  top: 5.6rem;
+  right: 20rem;
+  z-index: 1;
+  padding: 2.8rem;
+  border-radius: 0.9rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow: 0px 0.2rem 1.4rem 0px rgba(0, 0, 0, 0.08);
+
+  & > div {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+`;

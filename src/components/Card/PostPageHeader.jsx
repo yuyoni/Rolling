@@ -18,8 +18,12 @@ export default function PostPageHeader({
   topReactions
 }) {
   const [isEmojiPickerShow, setIsEmojiPickerShow] = useState(false);
+  const [isEmojiListShow, setIsEmojiListShow] = useState(false);
   const [recentTopReactions, setRecentTopReactions] = useState(null);
-  const emojiRef = useRef(null);
+  const [recentReactions, setRecentReactions] = useState(null);
+
+  const emojiListRef = useRef(null);
+  const emojiPickerRef = useRef(null);
 
   const handleReactionClick = async event => {
     const body = { emoji: event.emoji, type: 'increase' };
@@ -34,7 +38,16 @@ export default function PostPageHeader({
     }
   };
 
-  useClickOutside(emojiRef, setIsEmojiPickerShow);
+  const handleReactionListClick = async () => {
+    const response = await fetchData(
+      `3-1/recipients/${recipientId}/reactions/?limit=9`
+    );
+    setRecentReactions(response.results);
+    setIsEmojiListShow(!isEmojiListShow);
+  };
+
+  useClickOutside(emojiListRef, setIsEmojiListShow);
+  useClickOutside(emojiPickerRef, setIsEmojiPickerShow);
 
   return (
     <S.BackgroundArea>
@@ -47,8 +60,21 @@ export default function PostPageHeader({
         <MessageCount messageCount={messageCount} />
         <S.HorizonLine $margin="1.6rem" />
         <EmojiList topReactions={recentTopReactions || topReactions} />
-        <img src={arrowDown} alt="arrow-down" style={{ margin: '0.6rem' }} />
-        <div ref={emojiRef}>
+        <div ref={emojiListRef}>
+          <button type="button" onClick={handleReactionListClick}>
+            <img
+              src={arrowDown}
+              alt="arrow-down"
+              style={{ margin: '0.6rem' }}
+            />
+          </button>
+          {isEmojiListShow && (
+            <S.EmojiListBox>
+              <EmojiList topReactions={recentReactions} />
+            </S.EmojiListBox>
+          )}
+        </div>
+        <div ref={emojiPickerRef}>
           <button
             type="button"
             onClick={() => setIsEmojiPickerShow(!isEmojiPickerShow)}
