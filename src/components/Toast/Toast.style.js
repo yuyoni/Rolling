@@ -51,15 +51,9 @@ export const Box = styled.div`
   height: 10rem;
   border-radius: 0.5rem 0.5rem 0 0;
   padding: 0.7em;
-
   background-color: ${({ $messageType }) =>
     $messageType ? ToastTheme[$messageType].backgroundColor : 'black'};
-
-  & > svg {
-    fill: ${({ $messageType }) =>
-      $messageType ? ToastTheme[$messageType].color : 'var(--Orange-200)'};
-    margin-right: 0.5em;
-  }
+}
 `;
 export const IconContainer = styled.div`
   & > svg {
