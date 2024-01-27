@@ -2,32 +2,29 @@ import styled from 'styled-components';
 
 export const MainArea = styled.div`
   width: 100%;
-  height: 1080px;
+  height: 108rem;
   background: #fff;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 2.4rem;
 `;
 
 export const MainContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: 120rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-items: flex-start;
-  padding: 60px 0 0 0;
-  gap: 30px;
+  padding: 6rem 0 0 0;
+  gap: 3rem;
 
-  /* 테블릿 */
-  @media (max-width: 768px) {
+  @media (max-width: 1248px) {
     width: 100%;
+    padding: 4.9rem 2.4rem 0 2.4rem;
   }
 
-  /* 모바일 */
-  @media (max-width: 360px) {
-    width: 100%;
+  @media (max-width: 768px) {
+    padding: 4.2rem 2rem 0 2rem;
   }
 `;

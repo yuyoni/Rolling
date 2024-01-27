@@ -8,20 +8,20 @@ import SubmitButton from '../../components/Button/SubmitButton';
 import Editor from '../../components/Text/Editor';
 import ProfileImagesMain from '../../components/ProfileImages/ProfileImagesMain';
 import getProfileImages from '../../apis/profileApis';
-import defaultImage from '../../assetes/images/default-profile-image.png';
-import PostMessage from '../../apis/recipientApis';
+import postMessage from '../../apis/recipientApis';
+import { defaultImage } from '../../components/ProfileImages/ProfileImagesMain.style';
 
 const relationship = ['지인', '친구', '동료', '가족'];
 const font = ['Noto Sans', 'Pretendard', '나눔명조', '나눔손글씨 손편지체'];
 
 export default function SendMessage() {
-  const { userId } = useParams();
+  const { id: userId } = useParams();
   const navigate = useNavigate();
   const [profileImages, setProfileImages] = useState([]);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
   const [recipientPostData, setRecipientPostData] = useState({
     team: '3-1',
-    recipientId: '2508',
+    recipientId: userId,
     sender: '',
     profileImageURL: defaultImage,
     relationship: '지인',
@@ -41,31 +41,32 @@ export default function SendMessage() {
       const result = await getProfileImages();
       setProfileImages([...result]);
     } catch (error) {
-      /* empty */
+      // eslint-disable-next-line no-alert
+      alert('프로필 이미지 목록 불러오기 실패');
     }
   };
 
   useEffect(() => {
     handleLoad();
-  }, [userId, navigate]);
+  }, []);
 
   const handleSubmit = async event => {
     event.preventDefault();
     try {
-      setIsSuccess(false);
-      await PostMessage(recipientPostData);
+      setIsSubmitSuccess(false);
+      await postMessage(recipientPostData);
     } catch (error) {
       return;
     } finally {
-      setIsSuccess(true);
+      setIsSubmitSuccess(true);
     }
   };
 
   useEffect(() => {
-    if (isSuccess) {
-      navigate(`/post/2508`);
+    if (isSubmitSuccess) {
+      navigate(`/post/${userId}`);
     }
-  }, [isSuccess, userId, navigate]);
+  }, [isSubmitSuccess, userId]);
 
   return (
     <SendMessageForm>
@@ -77,7 +78,7 @@ export default function SendMessage() {
           target="sender"
         />
       </div>
-      <div className="MessagePage__profileImg">
+      <div className="MessagePage__profileImage">
         <Heading>프로필 이미지</Heading>
         <ProfileImagesMain
           profileImages={profileImages}

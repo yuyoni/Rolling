@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 
 export const Page = styled.div`
   flex: 1;
-  max-width: 1200px;
+  max-width: 1920px;
   @media (max-width: 768px) {
     max-width: 768px;
   }

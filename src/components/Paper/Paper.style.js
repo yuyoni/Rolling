@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { PAPER_COLOR_MAPPER } from '../../constants/colorMapper';
 
-/* color 부분 css 변수이름과 달라서 일시적으로 복잡하게 변환해놓음 - 추후 스타일 변수명 변경 제안 */
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,8 +13,8 @@ export const Wrapper = styled.div`
   ${({ $backgroundImageURL, $backgroundColor }) =>
     `${
       $backgroundImageURL
-        ? `background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url(${$backgroundImageURL});`
-        : `background-color: var(--${$backgroundColor[0].toUpperCase() + $backgroundColor.slice(1)}-200)`
+        ? `background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${$backgroundImageURL}); color:white;`
+        : `background-color: ${PAPER_COLOR_MAPPER[$backgroundColor]}`
     }`};
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,7 +24,8 @@ export const Wrapper = styled.div`
 
   @media (min-width: 768px) {
     &:hover {
-      transform: translateY(-0.5rem);
+      filter: brightness(95%);
+      transition: all 0.2s;
     }
   }
 
@@ -45,6 +46,7 @@ export const PaperTitle = styled.span`
   font-family: Pretendard-Bold;
   font-size: 2.4rem;
   line-height: 3.6rem;
+  ${({ $isWhite }) => $isWhite && 'color: white;'}
 
   @media (max-width: 360px) {
     font-size: 1.8rem;

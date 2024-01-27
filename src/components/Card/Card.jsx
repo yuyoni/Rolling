@@ -1,8 +1,9 @@
+import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import * as S from './Card.style';
 import RelationBadge from './RelationBadge';
 
-export default function Card({ card, cardType, isEditing, onDelete }) {
+export default function Card({ card, cardType, isEditing, onDelete, onClick }) {
   const {
     id,
     sender,
@@ -23,6 +24,9 @@ export default function Card({ card, cardType, isEditing, onDelete }) {
 
   const handleDeleteCard = () => {
     onDelete(id);
+  };
+  const handleClickCard = () => {
+    onClick(id);
   };
 
   return (
@@ -58,7 +62,11 @@ export default function Card({ card, cardType, isEditing, onDelete }) {
             )}
           </S.CardHeader>
           <S.HorizonLine />
-          <S.Content $font={font}>{content}</S.Content>
+          <S.Content $font={font} onClick={handleClickCard}>
+            {React.createElement('div', {
+              dangerouslySetInnerHTML: { __html: content }
+            })}
+          </S.Content>
           <S.DateWrapper>{formattedDate}</S.DateWrapper>
         </S.Card>
       )}

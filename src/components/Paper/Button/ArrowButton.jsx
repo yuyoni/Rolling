@@ -1,5 +1,5 @@
-import leftArrow from '../../../assetes/images/arrow-left.svg';
-import rightArrow from '../../../assetes/images/arrow-right.svg';
+import leftArrow from '../../../assets/images/arrow-left.svg';
+import rightArrow from '../../../assets/images/arrow-right.svg';
 import { SLIDE_CONTAINER_SIZE } from '../../../constants/paperConstants';
 import getCarouselIndex from '../../../utils/getCarouselIndex';
 import * as S from './ArrowButton.style';

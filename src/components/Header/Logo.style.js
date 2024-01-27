@@ -3,18 +3,17 @@ import styled from 'styled-components';
 export const LogoStyle = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.8rem;
 `;
 
 export const LogoText = styled.div`
-  color: var(--gray-light-gray-90, #4a494f);
-  font-size: 20px;
-  font-family: 'Pretendard';
+  color: #4a494f;
+  font-size: 2rem;
+  font-family: 'Poppins';
   font-weight: 700;
 `;
 
 export const LogoImage = styled.div`
-  width: 28px;
-  height: 28px;
-  fill: var(--primary-purple-50, #a64eff);
+  width: 2.8rem;
+  height: 2.8rem;
 `;

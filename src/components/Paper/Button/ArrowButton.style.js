@@ -5,7 +5,7 @@ export const ArrowBox = styled.div`
   top: 11rem;
   z-index: 2;
 
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   width: 4rem;
   height: 4rem;
   border: 0.1rem solid #dadcdf;
@@ -18,6 +18,12 @@ export const ArrowBox = styled.div`
   align-items: center;
 
   ${props => `${props.$isLeft} : -2rem`};
+
+  &:hover {
+    transition: all 0.3s;
+    transform: scale(1.1);
+    background-color: white;
+  }
 
   @media (max-width: 768px) {
     display: none;

@@ -21,7 +21,7 @@ export default function InputFrom({ placeholder, onChange, target }) {
   };
 
   return (
-    <div>
+    <S.InputDiv>
       <S.ErrorStyle
         placeholder={placeholder}
         $showError={showError}
@@ -29,8 +29,7 @@ export default function InputFrom({ placeholder, onChange, target }) {
         onFocus={handleFocus}
         onChange={handleChange}
       />
-      {/* {showError ? <P>{showError}</P> : null} */}
       {showError && <S.P>{showError}</S.P>}
-    </div>
+    </S.InputDiv>
   );
 }

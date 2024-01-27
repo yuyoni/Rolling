@@ -1,8 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-import Poppins from './assetes/fonts/Poppins-Bold.woff';
-import PretendardBold from './assetes/fonts/Pretendard-Bold.woff';
-import PretendardRegular from './assetes/fonts/Pretendard-Regular.woff';
+import Poppins from './assets/fonts/Poppins-Bold.woff';
+import PretendardBold from './assets/fonts/Pretendard-Bold.woff';
+import PretendardRegular from './assets/fonts/Pretendard-Regular.woff';
+import NanumMyeongjo from './assets/fonts/NanumMyeongjo.woff';
+import NanumSonPyeonJiCe from './assets/fonts/NanumSonPyeonJiCe.woff';
+import NotoSansKR from './assets/fonts/NotoSansKR-Medium.woff';
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -75,6 +78,28 @@ const GlobalStyles = createGlobalStyle`
     font-display: swap;
   }
 
+  @font-face {
+      font-family: "NanumMyeongjo";
+      src: url(${NanumMyeongjo}) format('woff'); 
+      font-weight: 700;
+      font-display: swap;
+  }
+
+  @font-face {
+      font-family: "나눔손글씨 손편지체";
+      src: url(${NanumSonPyeonJiCe}) format('woff'); 
+      font-weight: 700;
+      font-display: swap;
+  }
+
+  @font-face {
+      font-family: "Noto Sans KR";
+      src: url(${NotoSansKR}) format('woff'); 
+      font-weight: 700;
+      font-display: swap;
+  }
+    
+
   * {
     box-sizing: border-box;
   }
@@ -84,11 +109,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    /* display: flex; */
-    /* justify-content: center; */
-
     margin: 0;
-    font-family: "Pretendard"; 
+    font-family: Pretendard; 
     font-weight: 400;
     font-size: 1.4rem;
     font-style: normal;
