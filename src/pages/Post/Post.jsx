@@ -12,6 +12,9 @@ import {
   getCardList,
   getRecipientInformation
 } from '../../apis/postApis';
+import ToastPortal from '../../components/Toast/ToastlPortal';
+import ToastContainer from '../../components/Toast/ToastContainer';
+import useToast from '../../hooks/useToast';
 
 const UPDATE_LIMIT = 6;
 // eslint-disable-next-line
@@ -30,12 +33,16 @@ export default function Post() {
   const { id: recipientId } = useParams();
   const [cards, setCards] = useState([{}]);
   const [isEditing, setIsEditing] = useState(false);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
 
   const [offset, setOffset] = useState(0);
-  // eslint-disable-next-line
   const [hasNext, setHasNext] = useState(true);
+
+  const [toast, setToast] = useState(false);
+  const { toastList, addToast, removeToast } = useToast();
+
   // eslint-disable-next-line
   const [isLoading, loadingError, getCardsAsync] = useAsync(getCardList);
 
@@ -93,6 +100,7 @@ export default function Post() {
 
   const handleLoadMore = async () => {
     if (!hasNext) {
+      addToast('error', '더 이상 카드가 없습니다.');
       console.warn('no more cards'); // TODO: toast message로 해볼까?
       return;
     }
@@ -120,6 +128,11 @@ export default function Post() {
     },
     [handleLoadMore]
   );
+
+  const test = () => {
+    addToast('info', '테스트중입니다.');
+  };
+
   useEffect(() => {
     const { current } = observerRef;
     const observer = new IntersectionObserver(handleObserver, OBSERVER_OPTIONS);
@@ -153,12 +166,20 @@ export default function Post() {
     setSelectedCard({});
   };
 
+  useEffect(() => {
+    if (toastList.length > 0) {
+      setToast(true);
+      return;
+    }
+    setToast(false);
+  }, [toastList]);
+
   // TODO: 하단 div children 삭제시 오작동 문제 해결필요.
   // TODO: EditButton 디자인 업그레이드
 
   return (
     <>
-      <S.Page>
+      <S.Page onClick={test}>
         <PostPageHeader
           recipientId={recipientId}
           recentMessages={recipientData.recentMessages}
@@ -190,6 +211,12 @@ export default function Post() {
           <CardModal card={selectedCard} onClick={handleModalClose} />
         </ModalPortal>
       )}
+      {toast && (
+        <ToastPortal>
+          <ToastContainer toastList={toastList} removeToast={removeToast} />
+        </ToastPortal>
+      )}
+
       <div ref={observerRef} style={{ height: '10px' }}>
         dkdkdkdkdkdk
       </div>

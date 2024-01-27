@@ -17,6 +17,7 @@ export const CardBackgroundWrapper = styled.div`
   justify-content: center;
 
   width: 100%;
+  min-height: 130rem;
   background-image: ${props =>
     props.$backgroundImageURL ? `url(${props.$backgroundImageURL})` : 'none'};
   background: ${({ $backgroundColor }) =>
