@@ -9,6 +9,7 @@ import BackgroundBox from './BackgroundBox';
 import CreateButton from './CreateButton';
 import Forms from './FormArea.style';
 import RecipientInput from './RecipientInput';
+import fetchData from '../../apis/fetchData';
 
 export default function FormArea() {
   const navigate = useNavigate();
@@ -29,23 +30,15 @@ export default function FormArea() {
     // 백그라운드컬러 값은 null이 안되고 값이 무조건있어야함
     console.log(color, image[color]);
     const backgroundImageURL =
-      background === 'image' ? `http://localhost:3000${image[color]}` : null;
+      background === 'image'
+        ? `https://rolling-team1.netlify.app${image[color]}`
+        : null;
     // 임시주소부여
     const team = `3-1`;
     const data = { name, backgroundColor, backgroundImageURL, team };
 
     try {
-      const response = await fetch(
-        'https://rolling-api.vercel.app/3-1/recipients/',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        }
-      );
-      const result = await response.json();
+      const result = await fetchData('3-1/recipients/', 'post', data);
       console.log(result);
       const { id } = result;
       navigate(`/post/${id}`);
