@@ -13,10 +13,7 @@ export const ErrorStyle = styled.input`
   background: var(--White, #ffffff);
   border-radius: 0.8rem;
   margin-top: 1.2rem;
-  font-family: Pretendard;
   font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
   line-height: 2.6rem;
   letter-spacing: -0.016rem;
   &:disabled {
@@ -42,19 +39,14 @@ export const ErrorStyle = styled.input`
 
 export const P = styled.p`
   color: var(--Error, #dc3a3a);
-  font-family: Pretendard;
   font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 150% */
+  line-height: 18px;
   letter-spacing: -0.06px;
 `;
 
 export const Label = styled.label`
   color: var(--gray-900, #181818);
-  font-family: Pretendard;
   font-size: 2.4rem;
-  font-style: normal;
   font-weight: 700;
   line-height: 4.2rem;
   letter-spacing: -0.024rem;
