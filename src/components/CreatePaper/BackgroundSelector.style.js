@@ -17,7 +17,6 @@ export const ButtonOrigin = styled.button`
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 700;

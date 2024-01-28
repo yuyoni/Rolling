@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   width: 100%;
 
   & > span {
-    font-family: Pretendard;
     font-weight: 700;
     font-size: 2.4rem;
     padding-left: 2rem;

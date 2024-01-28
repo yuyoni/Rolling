@@ -50,6 +50,7 @@ export const ToggleIcon = styled.img`
 `;
 
 export const ToggleUl = styled.ul`
+  position: absolute;
   width: ${({ nav }) => (nav ? 'auto' : '32rem')};
   display: inline-flex;
   flex-direction: column;
@@ -77,9 +78,14 @@ export const Button = styled.button`
   text-align: start;
   background: none;
   cursor: pointer;
+  font-family: ${({ $font }) => `${$font}`};
 
   &:hover {
     background: var(--gray-100, #f6f6f6);
     outline: none;
   }
+`;
+
+export const FontName = styled.span`
+  font-family: ${({ $font }) => `${$font}`};
 `;
