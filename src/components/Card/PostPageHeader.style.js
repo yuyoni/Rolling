@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const BackgroundArea = styled.div`
   position: relative;
-  width: 1200px;
+  width: 120rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 13px 0;
+  padding: 1.3rem 0;
   background: #fff;
 `;
 
@@ -14,7 +14,7 @@ export const PaperTitle = styled.div`
   margin-right: 26.3rem;
   color: var(--gray-800, #2b2b2b);
   font-family: Poppins;
-  font-size: 28px;
+  font-size: 2.8rem;
   font-weight: 700;
 `;
 

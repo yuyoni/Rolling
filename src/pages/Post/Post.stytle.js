@@ -37,7 +37,7 @@ export const EditButton = styled.button`
   right: 18%;
 
   img {
-    width: 40px;
-    height: 40px;
+    width: 4rem;
+    height: 4rem;
   }
 `;
