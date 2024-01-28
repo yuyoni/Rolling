@@ -116,7 +116,7 @@ export default function PostPageHeader({
             imageAlt="share-icon"
             handleClick={handleDropdown}
           />
-          {dropdown && <Dropdown onClick={handleClickShareURL} />}
+          {dropdown && <Dropdown name={name} onClick={handleClickShareURL} />}
         </S.DropdownWrapper>
       </S.PaperBox>
       <ScrollToTopButton />

@@ -214,9 +214,7 @@ export default function Post() {
         </ToastPortal>
       )}
 
-      <div ref={observerRef} style={{ height: '10px' }}>
-        dkdkdkdkdkdk
-      </div>
+      <div ref={observerRef} style={{ height: '10px' }} />
     </>
   );
 }
