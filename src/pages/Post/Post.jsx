@@ -128,10 +128,6 @@ export default function Post() {
     [handleLoadMore]
   );
 
-  const test = () => {
-    addToast('info', '테스트중입니다.');
-  };
-
   useEffect(() => {
     const { current } = observerRef;
     const observer = new IntersectionObserver(handleObserver, OBSERVER_OPTIONS);
@@ -188,7 +184,6 @@ export default function Post() {
           addToast={addToast}
         />
         <S.CardBackgroundWrapper
-          onClick={test}
           $backgroundImageURL={recipientData.backgroundImageURL}
           $backgroundColor={recipientData.backgroundColor}
         >

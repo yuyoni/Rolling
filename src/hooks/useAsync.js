@@ -15,9 +15,10 @@ function useAsync(asyncFunction) {
         setError(errors);
         return null;
       } finally {
+        //fixme: this is a hack to make sure the loading indicator is visible
         setTimeout(() => {
           setPending(false);
-        }, 3000);
+        }, 1500);
       }
     },
     [asyncFunction]
