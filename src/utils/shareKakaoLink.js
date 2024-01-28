@@ -10,7 +10,7 @@ const shareKakao = (route, title) => {
       content: {
         title,
         description: '🌟내 롤링퍼에 놀러와!🙏',
-        imageUrl: `https://rolling-team1.netlify.app/static/media/logo-icon.17cb44e5591fcdf3a92a8d3f89f31c26.svg`,
+        imageUrl: `https://raw.githubusercontent.com/Dev-Duke-Seo/rolling_team1/1aa9c580f2b1145d6766a9add03b628b5e1489fd/src/assets/images/main_image.png`,
         link: {
           mobileWebUrl: route,
           webUrl: route
