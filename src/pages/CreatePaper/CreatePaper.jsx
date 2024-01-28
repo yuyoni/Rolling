@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import SEOMetatag from '../../SEOMetaTag';
 import FormArea from '../../components/CreatePaper/FormArea';
 
 const Wrap = styled.div`
@@ -11,6 +12,7 @@ const Wrap = styled.div`
 export default function CreatePaper() {
   return (
     <Wrap>
+      <SEOMetatag title="Rolling - 내 롤링 페이퍼 만들기" />
       <FormArea />
     </Wrap>
   );
