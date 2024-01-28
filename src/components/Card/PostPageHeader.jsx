@@ -34,6 +34,8 @@ export default function PostPageHeader({
   };
   const handleClickShareURL = async () => {
     addToast('success', '링크가 복사되었습니다.');
+
+    // eslint-disable-next-line
     console.log(currentPath);
     // 복사로직 추가필요
   };
