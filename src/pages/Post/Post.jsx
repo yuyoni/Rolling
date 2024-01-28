@@ -1,17 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import SEOMetaTag from '../../SEOMetaTag';
+import fetchData from '../../apis/fetchData';
+import getCardList from '../../apis/postApis';
+import editButton from '../../assets/images/edit-button.svg';
 import CardContainer from '../../components/Card/CardContainer';
 import PostPageHeader from '../../components/Card/PostPageHeader';
-import ModalPortal from '../../components/Modal/ModalPortal';
 import CardModal from '../../components/Modal/CardModal';
-import useAsync from '../../hooks/useAsync';
-import editButton from '../../assets/images/edit-button.svg';
-import * as S from './Post.stytle';
-import getCardList from '../../apis/postApis';
-import ToastPortal from '../../components/Toast/ToastlPortal';
+import ModalPortal from '../../components/Modal/ModalPortal';
 import ToastContainer from '../../components/Toast/ToastContainer';
+import ToastPortal from '../../components/Toast/ToastlPortal';
+import useAsync from '../../hooks/useAsync';
 import useToast from '../../hooks/useToast';
-import fetchData from '../../apis/fetchData';
+import * as S from './Post.stytle';
 
 const UPDATE_LIMIT = 6;
 // eslint-disable-next-line
@@ -177,6 +178,7 @@ export default function Post() {
 
   return (
     <>
+      <SEOMetaTag title={`Rolling - ${recipientData.name}의 롤링 페이퍼`} />
       <S.Page>
         <PostPageHeader
           recipientId={recipientId}
