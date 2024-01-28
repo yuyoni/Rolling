@@ -6,6 +6,7 @@ import ImageList from '../Common/ImageList';
 import MessageCount from '../Common/MessageCount';
 import * as S from './PostPageHeader.style';
 import arrowDown from '../../assets/images/arrow-down.svg';
+import arrowTop from '../../assets/images/arrow-top.svg';
 import shareIcon from '../../assets/images/share-icon.svg';
 import addEmoji from '../../assets/images/add-emoji-icon.svg';
 import fetchData from '../../apis/fetchData';
@@ -25,6 +26,7 @@ export default function PostPageHeader({
   const [isEmojiPickerShow, setIsEmojiPickerShow] = useState(false);
   const [isEmojiListShow, setIsEmojiListShow] = useState(false);
   const [recentTopReactions, setRecentTopReactions] = useState(null);
+  const [arrow, setArrow] = useState(arrowDown);
   const [dropdown, setDropdown] = useState(false);
 
   const currentPath = useLocation();
@@ -67,6 +69,7 @@ export default function PostPageHeader({
     const response = await fetchData(
       `3-1/recipients/${recipientId}/reactions/?limit=9`
     );
+    setArrow(previous => (previous === arrowTop ? arrowDown : arrowTop));
     setRecentReactions(response.results);
     setIsEmojiListShow(!isEmojiListShow);
   };
@@ -88,7 +91,7 @@ export default function PostPageHeader({
         <EmojiList topReactions={recentTopReactions || topReactions} />
         <div ref={emojiListRef}>
           <ImageButton
-            imageURL={arrowDown}
+            imageURL={arrow}
             imageAlt="arrow-down"
             handleClick={handleReactionListClick}
           />
@@ -112,9 +115,11 @@ export default function PostPageHeader({
         </div>
         <S.HorizonLine />
         <S.DropdownWrapper ref={shareRef}>
-          <button type="button" onClick={handleDropdown}>
-            <img src={shareIcon} alt="share-icon" />
-          </button>
+          <ImageButton
+            imageURL={shareIcon}
+            imageAlt="share-icon"
+            handleClick={handleDropdown}
+          />
           {dropdown && <Dropdown onClick={handleClickShareURL} />}
         </S.DropdownWrapper>
       </S.PaperBox>

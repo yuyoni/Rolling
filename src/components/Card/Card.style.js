@@ -11,6 +11,12 @@ export const Card = styled.div`
   border-radius: 16px;
   background: var(--white, #fff);
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+    transition: 0.2s ease-in-out;
+  }
 `;
 
 export const AddCard = styled.div`
@@ -24,6 +30,13 @@ export const AddCard = styled.div`
   border-radius: 16px;
   background: var(--white, #fff);
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.3s;
+    transform: scale(1.01);
+    background-color: var(--gray-200, #eeeeee);
+  }
 `;
 
 export const AddCardButton = styled.button`
@@ -86,9 +99,7 @@ export const SenderNameWrapper = styled.div`
 
   color: #000;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 120% */
+  line-height: 24px;
 `;
 export const Sender = styled.span`
   white-space: nowrap;
@@ -98,7 +109,6 @@ export const Sender = styled.span`
 
   color: #000;
   font-size: 20px;
-  font-style: normal;
   font-weight: 700;
   line-height: 24px; /* 120% */
 `;
@@ -107,6 +117,7 @@ export const SenderBox = styled.div`
   position: absolute;
   top: 28px;
   left: 24px;
+  font-family: Poppins;
   display: inline-flex;
   align-items: flex-start;
   gap: 14px;
@@ -130,9 +141,7 @@ export const Content = styled.div`
 
   font-family: ${props => props.$font || 'Pretendard'};
   font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 28px; /* 155.556% */
+  line-height: 28px;
   letter-spacing: -0.18px;
 `;
 
@@ -144,8 +153,6 @@ export const DateWrapper = styled.p`
   color: var(--gray-400, #999);
 
   font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 18px;
   letter-spacing: -0.06px;
 `;
