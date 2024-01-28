@@ -15,7 +15,9 @@ function useAsync(asyncFunction) {
         setError(errors);
         return null;
       } finally {
-        setPending(false);
+        setTimeout(() => {
+          setPending(false);
+        }, 3000);
       }
     },
     [asyncFunction]

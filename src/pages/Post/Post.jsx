@@ -103,6 +103,7 @@ export default function Post() {
       return;
     }
     if (isLoading) {
+      addToast('warning', '로딩중입니다.');
       return;
     }
     await handleLoadCards(recipientId, { offset, limit: UPDATE_LIMIT });
@@ -206,11 +207,12 @@ export default function Post() {
         </S.CardBackgroundWrapper>
       </S.Page>
 
-      {isModalOpen && (
+      {isModalOpen && selectedCard && (
         <ModalPortal>
           <CardModal card={selectedCard} onClick={handleModalClose} />
         </ModalPortal>
       )}
+
       {toast && (
         <ToastPortal>
           <ToastContainer toastList={toastList} removeToast={removeToast} />
