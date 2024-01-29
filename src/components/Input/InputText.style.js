@@ -13,8 +13,8 @@ export const ErrorStyle = styled.input`
   border-radius: 0.8rem;
   border: ${({ $showError }) =>
     $showError
-      ? '1px solid var(--Error, #dc3a3a)'
-      : '1px solid var(--gray-300, #ccc)'};
+      ? '0.1rem solid var(--Error, #dc3a3a)'
+      : '0.1rem solid var(--gray-300, #ccc)'};
   background: var(--white, #fff);
 
   &:disabled {
@@ -43,4 +43,25 @@ export const P = styled.p`
   font-size: 1.2rem;
   line-height: 1.8rem;
   letter-spacing: -0.006rem;
+
+  animation: shake 0.7s ease;
+
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-3px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(3px);
+    }
 `;
