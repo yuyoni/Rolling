@@ -13,14 +13,14 @@ import useClickOutside from '../../hooks/useClickOutside';
 import Dropdown from './Dropdown';
 import ImageButton from '../Button/ImageButton';
 import ScrollToTopButton from '../Button/ScrollToTopButton';
+import toast from '../Toast/Toast';
 
 export default function PostPageHeader({
   recipientId,
   recentMessages,
   name,
   messageCount,
-  topReactions,
-  addToast
+  topReactions
 }) {
   const [isEmojiPickerShow, setIsEmojiPickerShow] = useState(false);
   const [isEmojiListShow, setIsEmojiListShow] = useState(false);
@@ -35,7 +35,7 @@ export default function PostPageHeader({
   const handleClickShareURL = async () => {
     const url = window.location.href;
     await navigator.clipboard.writeText(url);
-    addToast('success', '링크가 복사되었습니다.');
+    toast.addSuccess('URL이 복사되었습니다.');
   };
 
   const emojiRef = useRef(null);
