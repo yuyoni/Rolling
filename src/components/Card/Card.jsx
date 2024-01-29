@@ -25,6 +25,7 @@ export default function Card({ card, cardType, isEditing, onDelete, onClick }) {
   const handleDeleteCard = () => {
     onDelete(id);
   };
+
   const handleClickCard = () => {
     onClick(id);
   };
