@@ -34,6 +34,7 @@ export const CardBackgroundWrapper = styled.div`
 export const EditButton = styled.button`
   position: absolute;
   background-color: white;
+  border: 0.1rem solid gray;
   border-radius: 1.2rem;
   padding-top: 0.5rem;
   top: 2%;
