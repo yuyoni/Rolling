@@ -1,6 +1,3 @@
-// TODO: Error 처리.
-// TODO: API 주소를 환경변수로 빼기.
-
 import fetchData from './fetchData';
 
 /**

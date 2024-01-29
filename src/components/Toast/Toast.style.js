@@ -44,6 +44,7 @@ export const Liner = styled.div`
 `;
 
 export const Box = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   margin-bottom: 1rem;

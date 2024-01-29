@@ -1,20 +1,19 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import SEOMetaTag from '../../SEOMetaTag';
+import fetchData from '../../apis/fetchData';
+import getCardList from '../../apis/postApis';
+import editButton from '../../assets/images/edit-button.svg';
 import CardContainer from '../../components/Card/CardContainer';
 import PostPageHeader from '../../components/Card/PostPageHeader';
-import ModalPortal from '../../components/Modal/ModalPortal';
 import CardModal from '../../components/Modal/CardModal';
+import ModalPortal from '../../components/Modal/ModalPortal';
 import useAsync from '../../hooks/useAsync';
-import editButton from '../../assets/images/edit-button.svg';
 import * as S from './Post.stytle';
-import getCardList from '../../apis/postApis';
-import ToastPortal from '../../components/Toast/ToastlPortal';
-import ToastContainer from '../../components/Toast/ToastContainer';
-import useToast from '../../hooks/useToast';
-import fetchData from '../../apis/fetchData';
+import toast from '../../components/Toast/Toast';
+
 
 const UPDATE_LIMIT = 6;
-// eslint-disable-next-line
 const OBSERVER_OPTIONS = {
   root: null,
   rootMargin: '0px',
@@ -36,9 +35,6 @@ export default function Post() {
 
   const [offset, setOffset] = useState(0);
   const [hasNext, setHasNext] = useState(true);
-
-  const [toast, setToast] = useState(false);
-  const { toastList, addToast, removeToast } = useToast();
 
   // eslint-disable-next-line
   const [isLoading, loadingError, getCardsAsync] = useAsync(getCardList);
@@ -87,6 +83,7 @@ export default function Post() {
     const { results: cardList, next } = result;
     if (next === null) {
       setHasNext(!hasNext);
+      toast.addInfo('모든 카드를 불러왔습니다.');
     }
 
     if (options.offset === 0) {
@@ -99,10 +96,11 @@ export default function Post() {
 
   const handleLoadMore = async () => {
     if (!hasNext) {
-      addToast('error', '더 이상 카드가 없습니다.');
+      toast.addInfo('더 불러올 카드가 없습니다.');
       return;
     }
     if (isLoading) {
+      toast.addWarning('로딩중입니다.');
       return;
     }
     await handleLoadCards(recipientId, { offset, limit: UPDATE_LIMIT });
@@ -112,9 +110,6 @@ export default function Post() {
     handleLoadCards(recipientId, { offset: 0, limit: 8 });
   }, []);
 
-  /**
-   * @description: hh
-   * */
   const observerRef = useRef();
 
   const handleObserver = useCallback(
@@ -126,10 +121,6 @@ export default function Post() {
     },
     [handleLoadMore]
   );
-
-  const test = () => {
-    addToast('info', '테스트중입니다.');
-  };
 
   useEffect(() => {
     const { current } = observerRef;
@@ -164,19 +155,11 @@ export default function Post() {
     setSelectedCard({});
   };
 
-  useEffect(() => {
-    if (toastList.length > 0) {
-      setToast(true);
-      return;
-    }
-    setToast(false);
-  }, [toastList]);
-
-  // TODO: 하단 div children 삭제시 오작동 문제 해결필요.
   // TODO: EditButton 디자인 업그레이드
 
   return (
     <>
+      <SEOMetaTag title={`Rolling - ${recipientData.name}의 롤링 페이퍼`} />
       <S.Page>
         <PostPageHeader
           recipientId={recipientId}
@@ -184,17 +167,12 @@ export default function Post() {
           name={recipientData.name}
           messageCount={recipientData.messageCount}
           topReactions={recipientData.topReactions}
-          addToast={addToast}
         />
         <S.CardBackgroundWrapper
-          onClick={test}
           $backgroundImageURL={recipientData.backgroundImageURL}
           $backgroundColor={recipientData.backgroundColor}
         >
-          <S.EditButton
-            $backgroundColor={recipientData.backgroundColor}
-            onClick={handleIsEditing}
-          >
+          <S.EditButton onClick={handleIsEditing}>
             <img src={editButton} alt="edit-button" />
           </S.EditButton>
           <CardContainer
@@ -206,20 +184,13 @@ export default function Post() {
         </S.CardBackgroundWrapper>
       </S.Page>
 
-      {isModalOpen && (
+      {isModalOpen && selectedCard && (
         <ModalPortal>
           <CardModal card={selectedCard} onClick={handleModalClose} />
         </ModalPortal>
       )}
-      {toast && (
-        <ToastPortal>
-          <ToastContainer toastList={toastList} removeToast={removeToast} />
-        </ToastPortal>
-      )}
 
-      <div ref={observerRef} style={{ height: '10px' }}>
-        dkdkdkdkdkdk
-      </div>
+      <div ref={observerRef} style={{ height: '10px' }} />
     </>
   );
 }
