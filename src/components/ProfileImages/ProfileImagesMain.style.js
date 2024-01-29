@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-// 아래 변수도 .env 파일에서 작성해야 할 것 같습니다.
-// 우선은 현재 파일에서 사용
 export const defaultImage =
   'https://learn-codeit-kr-static.s3.ap-northeast-2.amazonaws.com/sprint-proj-image/default_avatar.png';
 
