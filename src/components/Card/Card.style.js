@@ -50,8 +50,6 @@ export const AddCardButton = styled.button`
   border-radius: 1rem;
 `;
 
-// ... (Previous code)
-
 export const IconWrapper = styled.div`
   display: flex;
   padding: 1.6rem;
