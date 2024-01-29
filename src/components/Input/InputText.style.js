@@ -56,12 +56,12 @@ export const P = styled.p`
     50%,
     70%,
     90% {
-      transform: translateX(-3px);
+      transform: translateX(-0.3rem);
     }
     20%,
     40%,
     60%,
     80% {
-      transform: translateX(3px);
+      transform: translateX(0.3rem);
     }
 `;
