@@ -12,7 +12,6 @@ import useAsync from '../../hooks/useAsync';
 import * as S from './Post.stytle';
 import toast from '../../components/Toast/Toast';
 
-
 const UPDATE_LIMIT = 6;
 const OBSERVER_OPTIONS = {
   root: null,
