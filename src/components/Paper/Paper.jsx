@@ -36,12 +36,17 @@ export default function Paper({ data }) {
           alt={`${colorPattern[backgroundColor]}`}
         />
       )}
-      <S.PaperTitle $isWhite={backgroundImageURL}>To. {name}</S.PaperTitle>
-      <ImageList recentMessages={recentMessages} messageCount={messageCount} />
-      <MessageCount messageCount={messageCount} />
-      <S.HorizonLine />
+      <S.ContentsBox>
+        <S.PaperTitle $isWhite={backgroundImageURL}>To. {name}</S.PaperTitle>
+        <ImageList
+          recentMessages={recentMessages}
+          messageCount={messageCount}
+        />
+        <MessageCount messageCount={messageCount} />
+        <S.HorizonLine />
 
-      <EmojiList topReactions={topReactions} />
+        <EmojiList topReactions={topReactions} />
+      </S.ContentsBox>
     </S.Wrapper>
   );
 }
