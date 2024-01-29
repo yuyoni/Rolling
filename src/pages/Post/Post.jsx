@@ -12,6 +12,7 @@ import useAsync from '../../hooks/useAsync';
 import * as S from './Post.stytle';
 import toast from '../../components/Toast/Toast';
 
+
 const UPDATE_LIMIT = 6;
 const OBSERVER_OPTIONS = {
   root: null,
@@ -109,9 +110,6 @@ export default function Post() {
     handleLoadCards(recipientId, { offset: 0, limit: 8 });
   }, []);
 
-  /**
-   * @description: hh
-   * */
   const observerRef = useRef();
 
   const handleObserver = useCallback(
