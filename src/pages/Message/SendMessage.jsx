@@ -9,7 +9,7 @@ import ProfileImagesMain from '../../components/ProfileImages/ProfileImagesMain'
 import { defaultImage } from '../../components/ProfileImages/ProfileImagesMain.style';
 import Editor from '../../components/Text/Editor';
 import Heading from '../../components/Text/Heading';
-import SendMessageForm from './SendMessageForm';
+import * as S from './SendMessage.style';
 
 const relationship = ['지인', '친구', '동료', '가족'];
 const font = ['Noto Sans', 'Pretendard', '나눔명조', '나눔손글씨 손편지체'];
@@ -74,25 +74,25 @@ export default function SendMessage() {
   }, [isSubmitSuccess, userId]);
 
   return (
-    <SendMessageForm>
+    <S.MessageForm>
       <SEOMetatag title="Rolling - 메세지 보내기" />
-      <div className="MessagePage__input">
+      <S.DivStyle>
         <Heading>From.</Heading>
         <InputText
           placeholder="이름을 입력해 주세요"
           onChange={handleChange}
           target="sender"
         />
-      </div>
-      <div className="MessagePage__profileImage">
+      </S.DivStyle>
+      <S.DivStyle>
         <Heading>프로필 이미지</Heading>
         <ProfileImagesMain
           profileImages={profileImages}
           onChange={handleChange}
           selectedProfileImage={recipientPostData.profileImageURL}
         />
-      </div>
-      <div className="MessagePage__relationship">
+      </S.DivStyle>
+      <S.DivStyle>
         <Heading>상대와의 관계</Heading>
         <ToggleButton
           listItems={relationship}
@@ -101,25 +101,25 @@ export default function SendMessage() {
         >
           {recipientPostData.relationship}
         </ToggleButton>
-      </div>
-      <div className="MessagePage__content">
+      </S.DivStyle>
+      <S.DivStyle>
         <Heading>내용을 입력해 주세요</Heading>
         <Editor onChange={handleChange} />
-      </div>
-      <div className="MessagePage__font">
+      </S.DivStyle>
+      <S.FontStyle>
         <Heading>폰트 선택</Heading>
         <ToggleButton listItems={font} onChange={handleChange} target="font">
           {recipientPostData.font}
         </ToggleButton>
-      </div>
-      <div className="MessagePage__submit">
+      </S.FontStyle>
+      <S.SubmitStyle>
         <SubmitButton
           disabled={!recipientPostData.sender || !recipientPostData.content}
           onClick={handleSubmit}
         >
           생성하기
         </SubmitButton>
-      </div>
-    </SendMessageForm>
+      </S.SubmitStyle>
+    </S.MessageForm>
   );
 }
