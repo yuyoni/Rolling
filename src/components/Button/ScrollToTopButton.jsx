@@ -10,8 +10,8 @@ export default function ScrollToTopButton() {
   };
 
   return (
-    <S.Wrapper>
-      <button type="button" onClick={scrollToTop}>
+    <S.Wrapper onClick={scrollToTop}>
+      <button type="button">
         <S.Arrow src={arrowTop} alt="arrow-top" />
       </button>
     </S.Wrapper>
