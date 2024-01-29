@@ -104,6 +104,7 @@ export default function Post() {
       return;
     }
     if (isLoading) {
+      addToast('warning', '로딩중입니다.');
       return;
     }
     await handleLoadCards(recipientId, { offset, limit: UPDATE_LIMIT });
@@ -127,10 +128,6 @@ export default function Post() {
     },
     [handleLoadMore]
   );
-
-  const test = () => {
-    addToast('info', '테스트중입니다.');
-  };
 
   useEffect(() => {
     const { current } = observerRef;
@@ -189,7 +186,6 @@ export default function Post() {
           addToast={addToast}
         />
         <S.CardBackgroundWrapper
-          onClick={test}
           $backgroundImageURL={recipientData.backgroundImageURL}
           $backgroundColor={recipientData.backgroundColor}
         >
@@ -208,20 +204,19 @@ export default function Post() {
         </S.CardBackgroundWrapper>
       </S.Page>
 
-      {isModalOpen && (
+      {isModalOpen && selectedCard && (
         <ModalPortal>
           <CardModal card={selectedCard} onClick={handleModalClose} />
         </ModalPortal>
       )}
+
       {toast && (
         <ToastPortal>
           <ToastContainer toastList={toastList} removeToast={removeToast} />
         </ToastPortal>
       )}
 
-      <div ref={observerRef} style={{ height: '10px' }}>
-        dkdkdkdkdkdk
-      </div>
+      <div ref={observerRef} style={{ height: '10px' }} />
     </>
   );
 }

@@ -2,20 +2,20 @@ import styled from 'styled-components';
 
 export const RelationshipWrapper = styled.div`
   display: flex;
-  padding: 0 8px;
+  padding: 0 0.8rem;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
 
-  border-radius: 4px;
+  border-radius: 0.4rem;
   background: ${props => props.color};
 `;
 export const Relationship = styled.p`
   color: ${props => props.color};
 
-  font-size: 14px;
+  font-size: 1.4rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
-  letter-spacing: -0.07px;
+  line-height: 2rem;
+  letter-spacing: -0.007rem;
 `;

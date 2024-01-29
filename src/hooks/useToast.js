@@ -8,7 +8,7 @@ export default function useToast() {
     setIsLock(true);
     setTimeout(() => {
       setIsLock(false);
-    }, 4000);
+    }, 2000);
   };
 
   useEffect(() => {
