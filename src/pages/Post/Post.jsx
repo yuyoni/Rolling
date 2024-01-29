@@ -109,9 +109,6 @@ export default function Post() {
     handleLoadCards(recipientId, { offset: 0, limit: 8 });
   }, []);
 
-  /**
-   * @description: hh
-   * */
   const observerRef = useRef();
 
   const handleObserver = useCallback(
@@ -174,10 +171,7 @@ export default function Post() {
           $backgroundImageURL={recipientData.backgroundImageURL}
           $backgroundColor={recipientData.backgroundColor}
         >
-          <S.EditButton
-            $backgroundColor={recipientData.backgroundColor}
-            onClick={handleIsEditing}
-          >
+          <S.EditButton onClick={handleIsEditing}>
             <img src={editButton} alt="edit-button" />
           </S.EditButton>
           <CardContainer

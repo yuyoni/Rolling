@@ -5,6 +5,7 @@ export default function Editor({ onChange }) {
   const modules = {
     toolbar: {
       container: [
+        ['link'],
         ['bold', 'italic', 'underline', 'strike'],
         [{ align: 'center' }, { align: 'right' }, { align: 'justify' }],
         [{ list: 'bullet' }, { list: 'ordered' }],

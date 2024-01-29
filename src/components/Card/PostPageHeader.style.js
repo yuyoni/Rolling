@@ -47,16 +47,16 @@ export const EmojiListBox = styled.div`
   top: 5.6rem;
   right: 20rem;
   z-index: 1;
-  padding: 2.8rem;
+  padding: 2.4rem;
   border-radius: 0.9rem;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0.2rem 1.4rem 0 rgba(0, 0, 0, 0.08);
 
   & > div {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
