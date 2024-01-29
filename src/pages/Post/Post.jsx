@@ -8,14 +8,11 @@ import CardContainer from '../../components/Card/CardContainer';
 import PostPageHeader from '../../components/Card/PostPageHeader';
 import CardModal from '../../components/Modal/CardModal';
 import ModalPortal from '../../components/Modal/ModalPortal';
-import ToastContainer from '../../components/Toast/ToastContainer';
-import ToastPortal from '../../components/Toast/ToastlPortal';
 import useAsync from '../../hooks/useAsync';
-import useToast from '../../hooks/useToast';
 import * as S from './Post.stytle';
+import toast from '../../components/Toast/Toast';
 
 const UPDATE_LIMIT = 6;
-// eslint-disable-next-line
 const OBSERVER_OPTIONS = {
   root: null,
   rootMargin: '0px',
@@ -37,9 +34,6 @@ export default function Post() {
 
   const [offset, setOffset] = useState(0);
   const [hasNext, setHasNext] = useState(true);
-
-  const [toast, setToast] = useState(false);
-  const { toastList, addToast, removeToast } = useToast();
 
   // eslint-disable-next-line
   const [isLoading, loadingError, getCardsAsync] = useAsync(getCardList);
@@ -88,6 +82,7 @@ export default function Post() {
     const { results: cardList, next } = result;
     if (next === null) {
       setHasNext(!hasNext);
+      toast.addInfo('모든 카드를 불러왔습니다.');
     }
 
     if (options.offset === 0) {
@@ -100,11 +95,11 @@ export default function Post() {
 
   const handleLoadMore = async () => {
     if (!hasNext) {
-      addToast('error', '더 이상 카드가 없습니다.');
+      toast.addInfo('더 불러올 카드가 없습니다.');
       return;
     }
     if (isLoading) {
-      addToast('warning', '로딩중입니다.');
+      toast.addWarning('로딩중입니다.');
       return;
     }
     await handleLoadCards(recipientId, { offset, limit: UPDATE_LIMIT });
@@ -162,15 +157,6 @@ export default function Post() {
     setSelectedCard({});
   };
 
-  useEffect(() => {
-    if (toastList.length > 0) {
-      setToast(true);
-      return;
-    }
-    setToast(false);
-  }, [toastList]);
-
-  // TODO: 하단 div children 삭제시 오작동 문제 해결필요.
   // TODO: EditButton 디자인 업그레이드
 
   return (
@@ -183,7 +169,6 @@ export default function Post() {
           name={recipientData.name}
           messageCount={recipientData.messageCount}
           topReactions={recipientData.topReactions}
-          addToast={addToast}
         />
         <S.CardBackgroundWrapper
           $backgroundImageURL={recipientData.backgroundImageURL}
@@ -208,12 +193,6 @@ export default function Post() {
         <ModalPortal>
           <CardModal card={selectedCard} onClick={handleModalClose} />
         </ModalPortal>
-      )}
-
-      {toast && (
-        <ToastPortal>
-          <ToastContainer toastList={toastList} removeToast={removeToast} />
-        </ToastPortal>
       )}
 
       <div ref={observerRef} style={{ height: '10px' }} />
