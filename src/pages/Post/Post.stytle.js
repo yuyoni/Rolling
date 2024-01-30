@@ -12,11 +12,13 @@ export const Page = styled.div`
 `;
 
 export const CardBackgroundWrapper = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
   min-height: 130rem;
   ${({ $backgroundImageURL, $backgroundColor }) =>
     `${
@@ -29,19 +31,4 @@ export const CardBackgroundWrapper = styled.div`
 
   overflow-x: hidden;
   overflow-y: auto;
-`;
-
-export const EditButton = styled.button`
-  position: absolute;
-  background-color: white;
-  border: 0.1rem solid gray;
-  border-radius: 1.2rem;
-  padding-top: 0.5rem;
-  top: 2%;
-  right: 10%;
-
-  img {
-    width: 4rem;
-    height: 4rem;
-  }
 `;
