@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
 export const Background = styled.div`
+  z-index: 999;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  z-index: 3;
+  inset: 0;
 
   display: flex;
   flex-direction: column;
@@ -18,6 +17,23 @@ export const ModalBody = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+`;
+
+export const ImageWrapper = styled.div`
+  display: flex;
+  width: 10rem;
+  height: 10rem;
+  align-items: center;
+  border-radius: 1rem;
+  background: white;
+  //background opacity
+  opacity: 0.8;
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
+  }
 `;
 
 export const ModalContent = styled.div`
@@ -113,23 +129,24 @@ export const Content = styled.div`
   overflow: scroll;
   color: #5a5a5a;
 
-  font-family: ${props => props.$font || 'Pretendard'};
+  font-family: ${({ $font }) => $font || 'Pretendard'};
   font-size: 1.8rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 2.8rem; 
+  line-height: 2.8rem;
   letter-spacing: -0.018rem;
 
   &::-webkit-scrollbar {
-    width: .8rem;
-    height: .8rem;
-    border-radius: .6rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 0.6rem;
     background: rgba(255, 255, 255, 0.4);
   }
 
   &::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.3);
-    border-radius: .6rem;
+    border-radius: 0.6rem;
+  }
 `;
 
 export const HorizontalLine = styled.div`

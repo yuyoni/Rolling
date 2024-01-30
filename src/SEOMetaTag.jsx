@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import main from './assets/images/main_image.png';
+import main from './assets/images/main-image.png';
 
 export default function MetaTag({ title }) {
   return (

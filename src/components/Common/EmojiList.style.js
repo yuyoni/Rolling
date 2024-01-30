@@ -12,6 +12,8 @@ export const EmojiList = styled.div`
 
 export const EmojiCount = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   padding: 0.8rem 1.2rem;
   width: 6.5rem;
   height: 3.6rem;
