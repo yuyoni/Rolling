@@ -4,8 +4,8 @@ import * as S from './RecipientInput.style';
 export default function RecipientInput({ placeholder, onChange }) {
   const [showError, setShowError] = useState('');
 
-  const handleBlur = e => {
-    if (!e.target.value) {
+  const handleBlur = event => {
+    if (!event.target.value) {
       setShowError('값을 입력해주세요.');
     } else {
       setShowError('');
