@@ -25,6 +25,7 @@ export default function Card({ card, cardType, isEditing, onDelete, onClick }) {
   const handleDeleteCard = () => {
     onDelete(id);
   };
+
   const handleClickCard = () => {
     onClick(id);
   };
@@ -40,7 +41,7 @@ export default function Card({ card, cardType, isEditing, onDelete, onClick }) {
           </S.AddCardButton>
         </S.AddCard>
       ) : (
-        <S.Card>
+        <S.Card onClick={handleClickCard}>
           <S.CardHeader>
             <S.SenderBox>
               <S.ProfileImageWrapper>
@@ -62,7 +63,7 @@ export default function Card({ card, cardType, isEditing, onDelete, onClick }) {
             )}
           </S.CardHeader>
           <S.HorizonLine />
-          <S.Content $font={font} onClick={handleClickCard}>
+          <S.Content $font={font}>
             {React.createElement('div', {
               dangerouslySetInnerHTML: { __html: content }
             })}

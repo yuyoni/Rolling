@@ -5,6 +5,7 @@ export default function Editor({ onChange }) {
   const modules = {
     toolbar: {
       container: [
+        ['link'],
         ['bold', 'italic', 'underline', 'strike'],
         [{ align: 'center' }, { align: 'right' }, { align: 'justify' }],
         [{ list: 'bullet' }, { list: 'ordered' }],
@@ -22,7 +23,7 @@ export default function Editor({ onChange }) {
     <S.ReactQuillContainer>
       <S.StyledReactQuill
         modules={modules}
-        className="ql-editor ql-container ql-toobar"
+        className="ql-editor"
         style={{ padding: '0' }}
         onChange={handleChange}
       />

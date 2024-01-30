@@ -4,8 +4,7 @@ import { PAPER_COLOR_MAPPER } from '../../constants/colorMapper';
 export const Wrapper = styled.div`
   position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+
   width: 27.5rem;
   height: 26rem;
   flex-shrink: 0;
@@ -22,11 +21,10 @@ export const Wrapper = styled.div`
 
   box-shadow: 0 0.2rem 1.2rem 0 rgba(0, 0, 0, 0.08);
   padding: 2.4rem;
-  z-index: -2;
 
   @media (min-width: 768px) {
     &:hover {
-      filter: brightness(95%);
+      filter: brightness(90%);
       transition: all 0.2s;
     }
   }
@@ -35,6 +33,20 @@ export const Wrapper = styled.div`
     width: 20.8rem;
     height: 23.2rem;
   }
+`;
+
+export const ColorPattern = styled.img`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+`;
+
+export const ContentsBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  z-index: 1;
 `;
 
 export const PaperTitle = styled.span`
@@ -66,11 +78,4 @@ export const HorizonLine = styled.div`
   @media (max-width: 360px) {
     margin-top: 2.1rem;
   }
-`;
-
-export const ColorPattern = styled.img`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
 `;

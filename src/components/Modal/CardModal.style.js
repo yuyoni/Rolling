@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
 export const Background = styled.div`
+  z-index: 999;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  z-index: 3;
+  inset: 0;
 
   display: flex;
   flex-direction: column;
@@ -20,33 +19,50 @@ export const ModalBody = styled.div`
   transform: translate(-50%, -50%);
 `;
 
+export const ImageWrapper = styled.div`
+  display: flex;
+  width: 10rem;
+  height: 10rem;
+  align-items: center;
+  border-radius: 1rem;
+  background: white;
+  //background opacity
+  opacity: 0.8;
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
+  }
+`;
+
 export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 600px;
-  height: 476px;
+  width: 60rem;
+  height: 47.6rem;
 
-  border-radius: 16px;
+  border-radius: 1.6rem;
   background: #fff;
 `;
 export const ProfileImageWrapper = styled.div`
   display: flex;
-  width: 56px;
-  height: 56px;
+  width: 5.6rem;
+  height: 5.6rem;
   align-items: center;
-  border-radius: 100px;
-  border: 1px solid var(--gray-200, #eee);
+  border-radius: 10rem;
+  border: 0.1rem solid var(--gray-200, #eee);
   background: var(--white, #fff);
 `;
 
 export const ProfileImage = styled.img`
-  border-radius: 100px;
-  border: 1px solid var(--gray-200, #eee);
+  border-radius: 10rem;
+  border: 0.1rem solid var(--gray-200, #eee);
   background: var(--white, #fff);
-  width: 56px;
-  height: 56px;
+  width: 5.6rem;
+  height: 5.6rem;
   flex-shrink: 0;
   background: lightgray 50% / cover no-repeat;
 `;
@@ -55,85 +71,87 @@ export const SenderInfoBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 6px;
+  gap: 0.6rem;
 `;
 export const SenderNameWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  gap: 6px;
+  gap: 0.6rem;
 
   color: #000;
-  font-size: 20px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 120% */
+  line-height: 2.4rem;
 `;
 export const Sender = styled.span`
-  max-width: 200px;
+  max-width: 20rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 200px;
+  width: 20rem;
 
   color: #000;
-  font-size: 20px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 24px; /* 120% */
+  line-height: 2.4rem;
 `;
 
 export const SenderBox = styled.div`
   position: absolute;
-  left: 40px;
+  left: 4rem;
   display: inline-flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 1.4rem;
 `;
 
 export const DateWrapper = styled.p`
   position: absolute;
-  right: 45px;
+  right: 4.5rem;
 
   color: var(--gray-400, #999);
 
-  font-size: 12px;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px;
-  letter-spacing: -0.06px;
+  line-height: 1.8rem;
+  letter-spacing: -0.006rem;
 `;
 
 export const Content = styled.div`
-  margin-top: 16px;
+  margin-top: 1.6rem;
 
-  width: 500px;
-  height: 240px;
+  width: 50rem;
+  height: 24rem;
   flex-shrink: 0;
 
   overflow: scroll;
   color: #5a5a5a;
 
-  font-family: ${props => props.$font || 'Pretendard'};
-  font-size: 18px;
+  font-family: ${({ $font }) => $font || 'Pretendard'};
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 28px; /* 155.556% */
-  letter-spacing: -0.18px;
+  line-height: 2.8rem;
+  letter-spacing: -0.018rem;
 
   &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-    border-radius: 6px;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 0.6rem;
     background: rgba(255, 255, 255, 0.4);
   }
+
   &::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.3);
-    border-radius: 6px;
+    border-radius: 0.6rem;
+  }
 `;
 
 export const HorizontalLine = styled.div`
-  width: 520px;
-  height: 1px;
+  width: 52rem;
+  height: 0.1rem;
   flex-shrink: 0;
   background: var(--gray-200, #eee);
 `;
@@ -141,31 +159,30 @@ export const HorizontalLine = styled.div`
 export const ContentHeader = styled.div`
   display: flex;
   align-items: center;
-  height: 116px;
-  padding: 0 40px;
+  height: 11.6rem;
+  padding: 0 4rem;
 `;
 
 export const Button = styled.button`
   position: absolute;
-  bottom: 40px;
+  bottom: 4rem;
 
   display: flex;
-  width: 120px;
-  padding: 7px 16px;
+  width: 12rem;
+  padding: 0.7rem 1.6rem;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
 
-  border-radius: 6px;
+  border-radius: 0.6rem;
   background: var(--Purple-600, #9935ff);
 
   color: var(--white, #fff);
   text-align: center;
 
-  /* Font/16 Regular */
-  font-size: 16px;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 26px; /* 162.5% */
-  letter-spacing: -0.16px;
+  line-height: 2.6rem;
+  letter-spacing: -0.016rem;
 `;
