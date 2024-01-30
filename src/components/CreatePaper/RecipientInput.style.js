@@ -61,7 +61,7 @@ export const P = styled.p`
   font-size: 1.2rem;
   line-height: 1.8rem;
   letter-spacing: -0.006rem;
-`;
+
 
 export const Label = styled.label`
   color: var(--gray-900, #181818);

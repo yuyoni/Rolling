@@ -17,12 +17,15 @@ export const CardBackgroundWrapper = styled.div`
   justify-content: center;
 
   width: 100%;
-  background-image: ${props =>
-    props.$backgroundImageURL ? `url(${props.$backgroundImageURL})` : 'none'};
-  background: ${({ $backgroundColor }) =>
-    $backgroundColor
-      ? PAPER_COLOR_MAPPER[$backgroundColor]
-      : 'var(--Orange-200)'};
+  min-height: 130rem;
+  ${({ $backgroundImageURL, $backgroundColor }) =>
+    `${
+      $backgroundImageURL
+        ? `background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${$backgroundImageURL}); color:white;`
+        : `background-color: ${PAPER_COLOR_MAPPER[$backgroundColor]}`
+    }`};
+  background-repeat: no-repeat;
+  background-size: cover;
 
   overflow-x: hidden;
   overflow-y: auto;
@@ -30,11 +33,15 @@ export const CardBackgroundWrapper = styled.div`
 
 export const EditButton = styled.button`
   position: absolute;
-  top: 5%;
-  right: 18%;
+  background-color: white;
+  border: 0.1rem solid gray;
+  border-radius: 1.2rem;
+  padding-top: 0.5rem;
+  top: 2%;
+  right: 10%;
 
   img {
-    width: 40px;
-    height: 40px;
+    width: 4rem;
+    height: 4rem;
   }
 `;
