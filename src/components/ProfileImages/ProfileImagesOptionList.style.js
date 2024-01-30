@@ -33,4 +33,12 @@ export const ProfileImageOptionItems = styled.li`
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+
+  &:hover {
+    border: 0.1rem solid var(--gray-500, #555);
+  }
+
+  &:active {
+    border: 0.2rem solid var(--gray-700, #3a3a3a);
+  }
 `;

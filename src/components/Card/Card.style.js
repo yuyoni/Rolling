@@ -56,7 +56,7 @@ export const IconWrapper = styled.div`
   align-items: flex-start;
   gap: 1rem;
 
-  border-radius: 1rem;
+  border-radius: 10rem;
   background: var(--gray-500, #555);
 `;
 
@@ -72,14 +72,12 @@ export const ProfileImageWrapper = styled.div`
   height: 5.6rem;
   align-items: center;
   border-radius: 1rem;
-  border: 0.1rem solid var(--gray-200, #eee);
   background: var(--white, #fff);
 `;
 
 export const ProfileImage = styled.img`
-  border-radius: 1rem;
+  border-radius: 10rem;
   border: 0.1rem solid var(--gray-200, #eee);
-  background: var(--white, #fff);
   width: 5.6rem;
   height: 5.6rem;
   flex-shrink: 0;
