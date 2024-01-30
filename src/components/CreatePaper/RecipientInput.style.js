@@ -35,6 +35,13 @@ export const ErrorStyle = styled.input`
     background: var(--white, #fff);
     color: var(--gray-900, #181818);
   }
+`;
+
+export const P = styled.p`
+  color: var(--Error, #dc3a3a);
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  letter-spacing: -0.006rem;
   animation: shake 0.7s ease;
   @keyframes shake {
     0%,
@@ -55,13 +62,6 @@ export const ErrorStyle = styled.input`
       transform: translateX(0.3rem);
     }
 `;
-
-export const P = styled.p`
-  color: var(--Error, #dc3a3a);
-  font-size: 1.2rem;
-  line-height: 1.8rem;
-  letter-spacing: -0.006rem;
-
 
 export const Label = styled.label`
   color: var(--gray-900, #181818);
