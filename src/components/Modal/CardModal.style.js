@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Background = styled.div`
+  z-index: 999;
   position: fixed;
   z-index: 3;
   inset: 0;
@@ -16,6 +17,23 @@ export const ModalBody = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+`;
+
+export const ImageWrapper = styled.div`
+  display: flex;
+  width: 10rem;
+  height: 10rem;
+  align-items: center;
+  border-radius: 1rem;
+  background: white;
+  //background opacity
+  opacity: 0.8;
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
+  }
 `;
 
 export const ModalContent = styled.div`
