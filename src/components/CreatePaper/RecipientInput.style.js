@@ -8,8 +8,8 @@ export const ErrorStyle = styled.input`
   gap: 1rem;
   border: ${({ $showError }) =>
     $showError
-      ? '1px solid var(--Error, #dc3a3a)'
-      : '1px solid var(--gray-300, #ccc)'};
+      ? '0.1rem solid var(--Error, #dc3a3a)'
+      : '0.1rem solid var(--gray-300, #ccc)'};
   background: var(--White, #ffffff);
   border-radius: 0.8rem;
   margin-top: 1.2rem;
@@ -21,28 +21,47 @@ export const ErrorStyle = styled.input`
   }
 
   &:hover {
-    border: 1px solid var(--gray-500, #555);
+    border: 0.1rem solid var(--gray-500, #555);
     background: var(--white, #fff);
   }
 
   &:active {
-    border: 1px solid var(--gray-700, #3a3a3a);
+    border: 0.1rem solid var(--gray-700, #3a3a3a);
     background: var(--white, #fff);
   }
 
   &:focus {
-    outline: 1px solid var(--gray-500, #555);
+    outline: 0.1rem solid var(--gray-500, #555);
     background: var(--white, #fff);
     color: var(--gray-900, #181818);
   }
+  animation: shake 0.7s ease;
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-0.3rem);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(0.3rem);
+    }
 `;
 
 export const P = styled.p`
   color: var(--Error, #dc3a3a);
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: -0.06px;
-`;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  letter-spacing: -0.006rem;
+
 
 export const Label = styled.label`
   color: var(--gray-900, #181818);
