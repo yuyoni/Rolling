@@ -13,7 +13,6 @@ import fetchData from '../../apis/fetchData';
 
 export default function FormArea() {
   const navigate = useNavigate();
-  /* eslint-disable no-console */
   const [color, setColor] = useState('beige');
   const [background, setBackground] = useState('color');
   const [abled, setAbled] = useState(true);
@@ -28,31 +27,22 @@ export default function FormArea() {
     const name = event.target[0].value;
     const backgroundColor = color;
     // 백그라운드컬러 값은 null이 안되고 값이 무조건있어야함
-    console.log(color, image[color]);
     const backgroundImageURL =
       background === 'image'
         ? `https://rolling-team1.netlify.app${image[color]}`
         : null;
-    // 임시주소부여
     const team = `3-1`;
     const data = { name, backgroundColor, backgroundImageURL, team };
 
     try {
       const result = await fetchData('3-1/recipients/', 'POST', data);
-      console.log(result);
       const { id } = result;
       navigate(`/post/${id}`);
     } catch (error) {
-      console.error('오류', error);
+      throw new Error(error);
     } finally {
       event.target.reset();
-      // 필요한지모르겠음
     }
-
-    // const data={
-    //   name: e.target[0].value,
-    //   backgroundCorlor: e.target
-    // }
   };
 
   const handleInput = e => {

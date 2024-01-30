@@ -17,9 +17,7 @@ export const ButtonOrigin = styled.button`
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.6rem;
-  font-style: normal;
   font-weight: 700;
   line-height: 2.6rem;
   letter-spacing: -0.016rem;
@@ -28,13 +26,13 @@ export const ButtonOrigin = styled.button`
 export const ColorButton = styled(ButtonOrigin)`
   ${({ $background }) =>
     $background === 'color'
-      ? `color: var(--purple-600, #9935FF); border: 2px solid var(--purple-600, #9935FF); border-radius: 0.375rem;`
+      ? `color: var(--purple-600, #9935FF); border: 0.2rem solid var(--purple-600, #9935FF); border-radius: 0.375rem;`
       : `background-color: var(--gray-100, #F6F6F6);`}
 `;
 
 export const ImageButton = styled(ButtonOrigin)`
   ${({ $background }) =>
     $background === 'image'
-      ? `color: var(--purple-600, #9935FF); border: 2px solid var(--purple-600, #9935FF); border-radius: 0.375rem;`
+      ? `color: var(--purple-600, #9935FF); border: 0.2rem solid var(--purple-600, #9935FF); border-radius: 0.375rem;`
       : `background-color: var(--gray-100, #F6F6F6);`}
 `;
