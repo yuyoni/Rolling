@@ -147,11 +147,13 @@ export default function Post() {
     setIsModalOpen(true);
     const filteredCard = cards.filter(card => id === card.id)[0];
     setSelectedCard(filteredCard);
+    document.body.style.overflow = 'hidden';
   };
 
   const handleModalClose = () => {
     setIsModalOpen(false);
     setSelectedCard({});
+    document.body.style.overflow = 'unset';
   };
 
   // TODO: EditButton 디자인 업그레이드
