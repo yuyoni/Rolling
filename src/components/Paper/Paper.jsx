@@ -1,10 +1,10 @@
 import EmojiList from '../Common/EmojiList';
 import ImageList from '../Common/ImageList';
 import MessageCount from '../Common/MessageCount';
-import beige from '../../assets/images/yellow_pattern.svg';
-import purple from '../../assets/images/purple_pattern.svg';
-import green from '../../assets/images/green_pattern.svg';
-import blue from '../../assets/images/blue_pattern.svg';
+import beige from '../../assets/images/yellow-pattern.svg';
+import purple from '../../assets/images/purple-pattern.svg';
+import green from '../../assets/images/green-pattern.svg';
+import blue from '../../assets/images/blue-pattern.svg';
 import * as S from './Paper.style';
 
 export default function Paper({ data }) {
