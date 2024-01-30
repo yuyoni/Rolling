@@ -16,6 +16,7 @@ export const ErrorStyle = styled.input`
   font-size: 1.6rem;
   line-height: 2.6rem;
   letter-spacing: -0.016rem;
+
   &:disabled {
     background: var(--gray-100, #f6f6f6);
   }
@@ -35,6 +36,7 @@ export const ErrorStyle = styled.input`
     background: var(--white, #fff);
     color: var(--gray-900, #181818);
   }
+
   animation: shake 0.7s ease;
   @keyframes shake {
     0%,
@@ -61,7 +63,7 @@ export const P = styled.p`
   font-size: 1.2rem;
   line-height: 1.8rem;
   letter-spacing: -0.006rem;
-
+`;
 
 export const Label = styled.label`
   color: var(--gray-900, #181818);
