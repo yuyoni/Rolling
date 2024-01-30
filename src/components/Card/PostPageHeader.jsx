@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import EmojiPicker from 'emoji-picker-react';
 import EmojiList from '../Common/EmojiList';
 import ImageList from '../Common/ImageList';
@@ -28,8 +27,6 @@ export default function PostPageHeader({
   const [recentTopReactions, setRecentTopReactions] = useState(null);
   const [arrow, setArrow] = useState(arrowDown);
   const [dropdown, setDropdown] = useState(false);
-
-  const currentPath = useLocation();
 
   const handleDropdown = () => {
     setDropdown(true);
