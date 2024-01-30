@@ -1,3 +1,4 @@
+import SEOMetaTag from '../../SEOMetaTag';
 import LinkButton from '../../components/Button/LinkButton';
 import PaperBox from '../../components/Paper/PaperBox';
 import Skeleton from '../../components/Paper/Skeleton/Skeleton';
@@ -27,6 +28,7 @@ export default function List() {
 
   return (
     <S.Wrapper>
+      <SEOMetaTag title="Rolling - 롤링 페이퍼 구경하기" />
       <S.Container>
         <PaperBox
           orderBy="ReactionCount"

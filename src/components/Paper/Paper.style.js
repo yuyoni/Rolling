@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { PAPER_COLOR_MAPPER } from '../../constants/colorMapper';
 
 export const Wrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -21,6 +22,7 @@ export const Wrapper = styled.div`
 
   box-shadow: 0 0.2rem 1.2rem 0 rgba(0, 0, 0, 0.08);
   padding: 2.4rem;
+  z-index: -2;
 
   @media (min-width: 768px) {
     &:hover {
@@ -43,7 +45,8 @@ export const PaperTitle = styled.span`
   text-overflow: ellipsis;
   white-space: nowrap;
 
-  font-family: Pretendard-Bold;
+  font-family: Poppins;
+  font-weight: 700;
   font-size: 2.4rem;
   line-height: 3.6rem;
   ${({ $isWhite }) => $isWhite && 'color: white;'}
@@ -63,4 +66,11 @@ export const HorizonLine = styled.div`
   @media (max-width: 360px) {
     margin-top: 2.1rem;
   }
+`;
+
+export const ColorPattern = styled.img`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 `;

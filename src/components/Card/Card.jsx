@@ -25,6 +25,7 @@ export default function Card({ card, cardType, isEditing, onDelete, onClick }) {
   const handleDeleteCard = () => {
     onDelete(id);
   };
+
   const handleClickCard = () => {
     onClick(id);
   };
@@ -32,8 +33,8 @@ export default function Card({ card, cardType, isEditing, onDelete, onClick }) {
   return (
     <div>
       {cardType === 'add' ? (
-        <S.AddCard>
-          <S.AddCardButton onClick={handleClickAddCard}>
+        <S.AddCard onClick={handleClickAddCard}>
+          <S.AddCardButton>
             <S.IconWrapper>
               <S.AddIcon alt="add-button-icon" />
             </S.IconWrapper>
