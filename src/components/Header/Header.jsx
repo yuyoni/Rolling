@@ -7,10 +7,14 @@ export default function Header() {
   const location = useLocation();
   const isButtonPage =
     location.pathname === '/' || location.pathname === '/list';
-  const navigationClass = !isButtonPage && 'navNoShow';
+
+  if (!isButtonPage) {
+    return null;
+  }
+
   return (
     <S.Wrapper>
-      <S.Navigation className={navigationClass}>
+      <S.Navigation>
         <Link to="/">
           <Logo />
         </Link>
