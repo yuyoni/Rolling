@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import SEOMetaTag from '../../SEOMetaTag';
+import MetaTag from '../../MetaTag';
 import fetchData from '../../apis/fetchData';
 import getCardList from '../../apis/postApis';
 import editButton from '../../assets/images/edit-button.svg';
@@ -158,7 +158,10 @@ export default function Post() {
 
   return (
     <>
-      <SEOMetaTag title={`Rolling - ${recipientData.name}의 롤링 페이퍼`} />
+      <MetaTag
+        title={`Rolling - ${recipientData.name}의 롤링 페이퍼`}
+        description={`${recipientData.name}의 롤링 페이퍼에 리액션과 메시지를 남겨보세요`}
+      />
       <S.Page>
         <PostPageHeader
           recipientId={recipientId}
