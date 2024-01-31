@@ -7,7 +7,9 @@ import * as S from './PostPageHeader.style';
 import arrowDown from '../../assets/images/arrow-down.svg';
 import arrowTop from '../../assets/images/arrow-top.svg';
 import shareIcon from '../../assets/images/share-icon.svg';
+import shareIconSmall from '../../assets/images/share-icon-small.svg';
 import addEmoji from '../../assets/images/add-emoji-icon.svg';
+import addEmojiSmall from '../../assets/images/add-emoji-icon-small.svg';
 import fetchData from '../../apis/fetchData';
 import useClickOutside from '../../hooks/useClickOutside';
 import Dropdown from './Dropdown';
@@ -75,51 +77,65 @@ export default function PostPageHeader({
   useClickOutside(shareRef, setDropdown);
 
   return (
-    <S.BackgroundArea>
-      <S.PaperTitle>To. {name}</S.PaperTitle>
-      <S.PaperBox>
-        <ImageList
-          recentMessages={recentMessages}
-          messageCount={messageCount}
-        />
-        <MessageCount messageCount={messageCount} />
-        <S.HorizonLine $margin="1.6rem" />
-        <EmojiList topReactions={recentTopReactions || topReactions} />
-        <div ref={emojiListRef}>
-          <ImageButton
-            imageURL={arrow}
-            imageAlt="arrow-down"
-            handleClick={handleReactionListClick}
+    <S.Liner>
+      <S.BackgroundArea>
+        <S.PaperTitle>To. {name}</S.PaperTitle>
+        <S.ConditionalVisibleLine />
+        <S.PaperBox>
+          <ImageList
+            recentMessages={recentMessages}
+            messageCount={messageCount}
+            usePostPage
           />
-          {isEmojiListShow && (
-            <S.EmojiListBox>
-              <EmojiList topReactions={recentReactions} />
-            </S.EmojiListBox>
-          )}
-        </div>
-        <div ref={emojiPickerRef}>
-          <ImageButton
-            imageURL={addEmoji}
-            imageAlt="emoji-icon"
-            handleClick={() => setIsEmojiPickerShow(!isEmojiPickerShow)}
-          />
-          {isEmojiPickerShow && (
-            <S.EmojiPickerBox>
-              <EmojiPicker onEmojiClick={event => handleReactionClick(event)} />
-            </S.EmojiPickerBox>
-          )}
-        </div>
-        <S.HorizonLine />
-        <S.DropdownWrapper ref={shareRef}>
-          <ImageButton
-            imageURL={shareIcon}
-            imageAlt="share-icon"
-            handleClick={handleDropdown}
-          />
-          {dropdown && <Dropdown name={name} onClick={handleClickShareURL} />}
-        </S.DropdownWrapper>
-      </S.PaperBox>
-      <ScrollToTopButton />
-    </S.BackgroundArea>
+          <MessageCount messageCount={messageCount} />
+          <S.HorizonLineDisplay $margin="1.6rem" />
+          <EmojiList topReactions={recentTopReactions || topReactions} />
+          <div ref={emojiListRef}>
+            <ImageButton
+              imageURL={arrow}
+              imageAlt="arrow-down"
+              handleClick={handleReactionListClick}
+              smallImageUrl={arrow}
+            />
+            {isEmojiListShow && (
+              <>
+                <S.EmojiListBox>
+                  <EmojiList topReactions={recentReactions} />
+                </S.EmojiListBox>
+                <S.SmallEmojiListBox>
+                  <EmojiList topReactions={recentReactions} isSmall />
+                </S.SmallEmojiListBox>
+              </>
+            )}
+          </div>
+          <div ref={emojiPickerRef}>
+            <ImageButton
+              imageURL={addEmoji}
+              imageAlt="emoji-icon"
+              handleClick={() => setIsEmojiPickerShow(!isEmojiPickerShow)}
+              smallImageUrl={addEmojiSmall}
+            />
+            {isEmojiPickerShow && (
+              <S.EmojiPickerBox>
+                <EmojiPicker
+                  onEmojiClick={event => handleReactionClick(event)}
+                />
+              </S.EmojiPickerBox>
+            )}
+          </div>
+          <S.HorizonLine />
+          <S.DropdownWrapper ref={shareRef}>
+            <ImageButton
+              imageURL={shareIcon}
+              imageAlt="share-icon"
+              handleClick={handleDropdown}
+              smallImageUrl={shareIconSmall}
+            />
+            {dropdown && <Dropdown name={name} onClick={handleClickShareURL} />}
+          </S.DropdownWrapper>
+        </S.PaperBox>
+        <ScrollToTopButton />
+      </S.BackgroundArea>
+    </S.Liner>
   );
 }
