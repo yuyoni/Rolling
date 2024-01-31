@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Background = styled.div`
   z-index: 999;
   position: fixed;
-  z-index: 3;
   inset: 0;
 
   display: flex;
@@ -46,6 +45,11 @@ export const ModalContent = styled.div`
 
   border-radius: 1.6rem;
   background: #fff;
+
+  @media (max-width: 360px) {
+    width: 30rem;
+    height: 23rem;
+  }
 `;
 export const ProfileImageWrapper = styled.div`
   display: flex;
@@ -83,6 +87,10 @@ export const SenderNameWrapper = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 2.4rem;
+
+  @media (max-width: 360px) {
+    font-size: 1.8rem;
+  }
 `;
 export const Sender = styled.span`
   max-width: 20rem;
@@ -96,6 +104,9 @@ export const Sender = styled.span`
   font-style: normal;
   font-weight: 700;
   line-height: 2.4rem;
+  @media (max-width: 360px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const SenderBox = styled.div`
@@ -104,6 +115,10 @@ export const SenderBox = styled.div`
   display: inline-flex;
   align-items: flex-start;
   gap: 1.4rem;
+
+  @media (max-width: 360px) {
+    position: relative;
+  }
 `;
 
 export const DateWrapper = styled.p`
@@ -147,6 +162,11 @@ export const Content = styled.div`
     background: rgba(0, 0, 0, 0.3);
     border-radius: 0.6rem;
   }
+  @media (max-width: 360px) {
+    font-size: 1.5rem;
+    width: 27rem;
+    height: 8rem;
+  }
 `;
 
 export const HorizontalLine = styled.div`
@@ -154,6 +174,11 @@ export const HorizontalLine = styled.div`
   height: 0.1rem;
   flex-shrink: 0;
   background: var(--gray-200, #eee);
+
+  @media (max-width: 360px) {
+    margin-top: 0.5rem;
+    width: 27rem;
+  }
 `;
 
 export const ContentHeader = styled.div`
@@ -161,6 +186,12 @@ export const ContentHeader = styled.div`
   align-items: center;
   height: 11.6rem;
   padding: 0 4rem;
+
+  @media (max-width: 360px) {
+    height: 7rem;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
 `;
 
 export const Button = styled.button`
@@ -185,4 +216,10 @@ export const Button = styled.button`
   font-weight: 400;
   line-height: 2.6rem;
   letter-spacing: -0.016rem;
+  @media (max-width: 360px) {
+    width: 8rem;
+    padding: 0.3rem 0.4rem;
+    font-size: 1.2rem;
+    bottom: 0.5rem;
+  }
 `;

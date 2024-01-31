@@ -8,7 +8,7 @@ const ToastTheme = {
 };
 
 export const PositionWrapper = styled.div`
-  z-index: 999;
+  z-index: 995;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +38,12 @@ export const Box = styled.div`
   border-radius: 1rem;
   padding: 0.7em;
 
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  @media (max-width: 360px) {
+    width: 32rem;
+    padding: 1.9rem 3rem;
+  }
 `;
 
 export const Message = styled.p`
@@ -49,11 +54,21 @@ export const Message = styled.p`
   font-weight: 400;
   line-height: 2.6rem;
   color: white;
+  @media (max-width: 360px) {
+    width: 20rem;
+    font-size: 16px;
+    //letter-spacing: -0.16px;
+  }
 `;
 
 export const CloseButton = styled.button`
   size: 6rem;
   color: white;
+  @media (max-width: 360px) {
+    width: 2.4rem;
+    height: 2.4rem;
+    flex-shrink: 0;
+  }
 `;
 
 export const ProgressBar = styled.div`

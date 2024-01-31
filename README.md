@@ -1,96 +1,166 @@
-# Daily Routine
+<h1 align=center>Rolling</h2>
 
-1) 작업 시작전에 pull/fetch? -> 질문
-2) To-do List작성 (Git/Notion)
-3) 문제가 발생시 반드시 Notion 트러블슈팅 작성
-4) **문제가 있으면 앓지말고 반드시 팀과 공유**
-5) 스크럼 기록순서: 인덕-유연-재명-선영-율민
+> 추억의 롤링 페이퍼를 웹 상에서도 즐겨보세요 !
 
-# PR_Rules
+![Alt text](image-5.png)
 
-1) dev 브랜치에 직접 merge 할 수 없습니다.
-   => dev 하위에 새로운 브랜치를 생성하여 작업 후 PR을 요청합니다.
-2) PR은 최소 3명 이상의 리뷰어의 승인 후 dev 브랜치로 머지 될 수 있습니다.
-3) 마지막으로 리뷰한 리뷰어는(3번째) merge해 주어야 합니다.
-3) 모든 구성원은 요청되는 PR에 대해 24시간 내에 리뷰합니다.
-4) fetch/rebase후의 충돌은 로컬에서 해결후 commit하여 구성원들의 리뷰를 받습니다.
+다른 사람들의 롤링페이퍼에 메시지와 이모티콘 리액션을 남길 수 있고, 자기만의 롤링페이퍼를 만들어 다른사람에게 공유할 수 있는 서비스
 
-# Coding Naming Guide
+<br/><br/>
 
-1. Component: PascalCase
-2. Variable: camelCase
-3. Function: camelCase
-4. File/Folder: kebab-case
-5. Class: PascalCase
-6. 변수와, 함수의 이름은 가급적 약자를 사용하지 않습니다.
+## 설치 방법
 
-# Service Naming Guide
-
-1. 롤링페이퍼: paper
-2. 롤링페이퍼 내에 메세지: card
-3. 롤링페이퍼 주인 : recipient
-4. 메시지 보내는 사람: sender
-
-# Page/ Area / Container / box / Item,Element 의 사용
-
-
-## 1. 레이아웃의 구성
-절대적이진 않지만 대체로 다음과 같은 범위와 구조로 구성합니다.
-
-### Page > Area > Container , box > Item,Element // (Wrapper)
-
-```예시코드
-return (
-<Page>
-   <TopArea>
-    <Container>
-      <Item/>
-      <Item/>
-    </Container>
-  </TopArea>
-    <ContentsArea>
-       <ContentsBox>
-         <InformationBox>
-         <ItemContainer>
-            <Item/>
-            <Item/>
-         </Item Container>
-      </ContentsBox>
-   </ContetnsArea>
-</Page>
-);
-
-해당코드만 읽고도, 아래 구조가 머릿속에 그려지는게 목표입니다. 
-Page
-|__TopArea
-|  |__Container
-|     |__Item
-|     |__Item
-|__ContentsArea
-   |__ContentsBox
-      |__InformationBox
-      |__ItemContainer
-         |__Item
-         |__Item
+```bash
+git clone https://github.com/Dev-Duke-Seo/rolling_team1.git
+cd rolling_team1
 ```
 
-## 2. 규칙
+패키지 설치
 
-(1) **Page**를 넘어선 영역을 만들 수 없습니다.
+```bash
+npm install
+```
 
-(2) **Area**를 넘어서는 영역은 Page가 '유일'합니다.  
--> Guide: 대체로 페이지의 50%이상을 차지하는 영역을 Area로 지정합니다.  
--> 대체로 고정된 요소를 담고있는 영역을 표기할때 사용합니다.  
--> Page를 반드시 Area로 직접 나눌 필요는 없습니다.
+.env 파일 생성
 
-(3) Box는 대부분의 요소를 담는 영역의 이름으로 사용 할 수 있습니다.
+```
+REACT_APP_BASE_URL = 'BASE_URL'
+REACT_APP_API_KEY = 'KAKAO_API_KEY'
+```
 
-(4) 단, 내부에 동일한 요소가 반복되는 Box를 **'Container'로 명명**합니다.  
--> 반복과 상관없는 요소가 포함되면 Container명을 사용하지 않습니다.
+## 실행
 
-(5) **Item은** Container의 자식 요소 명칭으로 사용합니다.  
--> 이외의 요소를 나타낼 떄는 범용적으로 Element를 사용할 수 있습니다.
+```bash
+npm run start
+```
 
-(6) 기타 스타일링이나 특수한 목적을 위해 임시로 사용하는 영역은 'Wrapper'라고 명명합니다.
+<br/><br/>
 
-![img.png](.github/img.png)
+## 🫂 팀원 소개
+
+|      ![Alt text](image-4.png)       |       ![Alt text](image-2.png)       |         ![Alt text](image.png)         |         ![Alt text](image-3.png)          |        ![Alt text](image-1.png)        |
+| :---------------------------------: | :----------------------------------: | :------------------------------------: | :---------------------------------------: | :------------------------------------: |
+| [이유연](https://github.com/yuyoni) | [김선영](https://github.com/kimsuns) | [김율민](https://github.com/yulmai999) | [서인덕](https://github.com/Dev-Duke-Seo) | [이재명](https://github.com/Crack-Egg) |
+|                팀장                 |                 팀원                 |                  팀원                  |                   팀원                    |                  팀원                  |
+
+<br/>
+
+## 🔨 사용 기술 및 도구
+
+### 배포
+
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=Netlify&logoColor=white)
+
+### 개발
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+
+### 협업
+
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=eslint&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white) ![Notion](https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white)
+
+<br/>
+
+## 폴더 구조
+
+```bash
+src
+├── assets
+│   └─ fonts
+│   └─ images
+├── apis
+├── components
+│   └─ Header
+│       └── Header.jsx
+│       └── Header.style.js
+│   └─ Footer
+├── contexts
+├── constants
+├── pages
+├── utils
+├── hooks
+├── router
+├── App.jsx
+├── GlobalStyle.css
+└── index.jsx
+```
+
+<br/><br/>
+
+# ✨ 서비스 주요 기능
+
+### 📄 메인 페이지
+
+- 플랫폼에 대한 간단한 설명과 페이지 이동 버튼
+
+### 📄 롤링페이퍼 만들기 페이지
+
+- 이름과 배경색상 or 이미지를 골라 페이퍼를 생성하는 기능
+
+### 📄 롤링페이퍼 리스트 구경하기 페이지
+
+- 이모티콘 리액션, 최신순으로 정렬된 캐러셀 UI의 롤링페이퍼 리스트
+- 하나 클릭 시 해당하는 사용자의 롤링페이퍼로 이동
+
+### 📄 롤링페이퍼 페이지
+
+- 이모지 리액션을 남길 수 있는 기능
+- 이 롤링페이퍼를 공유할 수 있는 기능
+- 롤링페이퍼에 남겨진 메시지들을 무한 스크롤 방식으로 볼 수 있는 기능
+- 메시지 카드는 클릭 시 모달로 자세히 볼 수 있는 기능
+- 편집버튼을 눌러 메시지 카드 삭제 기능 활성화
+- 플러스 버튼을 눌러서 롤링페이퍼 주인에게 메시지 남기기 기능
+
+### 📄 메시지 생성하기 페이지
+
+- 메시지 이름, 프로필 이미지, 내용, 폰트를 선택 및 작성 할 수 있는 기능
+
+<br/><br/>
+
+# ✨ 추가 기능
+
+- 사용자 경험을 개선하기 위한 스켈레톤 UI
+- 데이터가 없는 페이지를 위해 404페이지 생성
+- SEO 향상을 위해 react-helmet 라이브러리를 활용한 페이지 별 메타태그 작성
+- 무한 스크롤 기능이 있는 점을 감안해 사용자 경험을 개선하기 위해 페이지 상단으로 이동할 수 있는 버튼 추가
+
+<br/><br/><br/>
+
+# 💡 문제 및 해결
+
+<br/>
+
+### 1️⃣ 무한 스크롤 기능 구현을 위해 스크롤 이벤트를 이용했을 때
+
+스크롤 이벤트로 무한 스크롤을 구현하면 리플로우에 의해 좋지 않은 렌더링 성능과 상황에 따라 기대한 대로 동작하지 않을 수 있는 문제점이 존재함 <br/>
+⇒ Intersection Observer API를 이용해 해결
+
+<br/>
+
+### 2️⃣ react-quill 라이브러리를 이용해 편집기에서 작성한 내용을 그대로 전송했을 때
+
+react-quill 라이브러리를 이용해 편집기에서 작성한 내용을 메시지 카드에 보여줄 때 html형식의 string값이 그대로 보여지게 되는 문제점 발생<br/>
+⇒ dangerouslySetInnerHTML을 통해 string을 html로 파싱해서 DOM에 추가하는 방식으로 해결
+
+<br/>
+
+### 3️⃣ SEO 향상을 위한 react-helmet 적용했을 때
+
+react-helmet 을 이용해 동적으로 생성한 메타태그가 title만 바뀌고 url공유 시 적용되지 않는 문제가 발생<br/>
+=> prerender로 react-snap을 사용하여 해결
+
+<br/>
+
+### 4️⃣ 그 외 코드의 중복이나 설명 부족으로 코드가 길어지는 문제
+
+- 코드를 줄이기위해서 커스텀 훅을 사용함
+- 중복되는 함수를 좀 더 추상화해서 재사용함
+- 이 과정에서 JSDocs를 사용해서 원활한 재사용을 도움
+
+<br/><br/>
+
+# Q & A
+
+![Alt text](image-6.png)
