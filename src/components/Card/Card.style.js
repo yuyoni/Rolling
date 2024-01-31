@@ -18,7 +18,7 @@ export const Card = styled.div`
   }
 
   @media (max-width: 768px) {
-    max-width: 35.2rem;
+    max-width: 65rem;
   }
 
   @media (max-width: 360px) {
@@ -28,8 +28,11 @@ export const Card = styled.div`
 
 export const AddCard = styled.div`
   position: relative;
-  display: flex;
+
+  max-width: 38.4rem;
   height: 28rem;
+
+  display: flex;
   justify-content: center;
   align-items: center;
 

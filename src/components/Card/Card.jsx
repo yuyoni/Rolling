@@ -22,8 +22,9 @@ export default function Card({ card, cardType, isEditing, onDelete, onClick }) {
     navigate(nextUrl);
   };
 
-  const handleDeleteCard = () => {
+  const handleDeleteCard = event => {
     onDelete(id);
+    event.stopPropagation();
   };
 
   const handleClickCard = () => {

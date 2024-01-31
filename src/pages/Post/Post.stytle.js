@@ -2,10 +2,12 @@ import styled from 'styled-components';
 import { PAPER_COLOR_MAPPER } from '../../constants/colorMapper';
 
 export const Page = styled.div`
+  width: 100%;
+
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  width: 100%;
 
   overflow-x: hidden;
   overflow-y: auto;
@@ -16,7 +18,7 @@ export const CardBackgroundWrapper = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   position: relative;

@@ -2,10 +2,19 @@ import styled from 'styled-components';
 
 export const BoxLiner = styled.div`
   position: absolute;
-  width: 120rem;
-  padding-top: 5rem;
+  top: 2rem;
+  width: 100%;
+  max-width: 120rem;
+  padding-top: 1rem;
   display: flex;
   justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    max-width: 70rem;
+  }
+
+  @media (max-width: 360px) {
+  }
 `;
 
 export const EditButtonBox = styled.div`
