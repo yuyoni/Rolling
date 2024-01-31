@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import desert from '../../assets/images/desert.jpg';
-import mokoko from '../../assets/images/mokoko.png';
+import voldaik from '../../assets/images/voldaik.jpg';
 import sky from '../../assets/images/sky.jpg';
 import basket from '../../assets/images/basket.jpg';
 
@@ -12,7 +12,6 @@ export const Wrap = styled.div`
 `;
 
 export const ButtonOrigin = styled.button`
-  display: flex;
   width: 16.8rem;
   height: 16.8rem;
   padding: 1.2rem 1.6rem;
@@ -22,7 +21,6 @@ export const ButtonOrigin = styled.button`
 `;
 
 export const Img = styled.img`
-  display: flex;
   width: 4.4rem;
   height: 4.4rem;
   justify-content: center;
@@ -45,7 +43,7 @@ export const Button2 = styled(ButtonOrigin)`
 
 export const Button3 = styled(ButtonOrigin)`
   background: ${({ $background }) =>
-    $background === 'color' ? `var( --Blue-200, #B1E4FF)` : `url(${mokoko})`};
+    $background === 'color' ? `var( --Blue-200, #B1E4FF)` : `url(${voldaik})`};
   background-size: cover;
 `;
 
