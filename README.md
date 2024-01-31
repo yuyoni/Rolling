@@ -139,7 +139,7 @@ src
 
 <br/>
 
-### 2️⃣ eact-quill 라이브러리를 이용해 편집기에서 작성한 내용을 그대로 전송했을 때
+### 2️⃣ react-quill 라이브러리를 이용해 편집기에서 작성한 내용을 그대로 전송했을 때
 
 react-quill 라이브러리를 이용해 편집기에서 작성한 내용을 메시지 카드에 보여줄 때 html형식의 string값이 그대로 보여지게 되는 문제점 발생<br/>
 ⇒ dangerouslySetInnerHTML을 통해 string을 html로 파싱해서 DOM에 추가하는 방식으로 해결
