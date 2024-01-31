@@ -12,7 +12,10 @@ const Wrap = styled.div`
 export default function CreatePaper() {
   return (
     <Wrap>
-      <SEOMetatag title="Rolling - 내 롤링 페이퍼 만들기" />
+      <SEOMetatag
+        title="Rolling - 내 롤링 페이퍼 만들기"
+        description="추억의 롤링 페이퍼를 웹에서도 즐길 수 있는 플랫폼 'Rolling'"
+      />
       <FormArea />
     </Wrap>
   );

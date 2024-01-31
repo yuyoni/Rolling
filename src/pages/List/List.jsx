@@ -28,7 +28,10 @@ export default function List() {
 
   return (
     <S.Wrapper>
-      <SEOMetaTag title="Rolling - 롤링 페이퍼 구경하기" />
+      <SEOMetaTag
+        title="Rolling - 롤링 페이퍼 구경하기"
+        description="다른사람들의 롤링페이퍼를 구경해보고 메시지를 남겨보세요!"
+      />
       <S.Container>
         <PaperBox
           orderBy="ReactionCount"

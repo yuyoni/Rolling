@@ -7,7 +7,10 @@ import * as S from './Home.style';
 export default function Home() {
   return (
     <S.MainArea>
-      <SEOMetaTag title="Rolling" />
+      <SEOMetaTag
+        title="Rolling"
+        description="추억의 롤링 페이퍼를 웹에서도 즐길 수 있는 플랫폼 'Rolling'"
+      />
       <S.MainContainer>
         <MainBoxFirst />
         <MainBoxSecond />
