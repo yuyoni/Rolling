@@ -11,6 +11,7 @@ import ModalPortal from '../../components/Modal/ModalPortal';
 import useAsync from '../../hooks/useAsync';
 import * as S from './Post.stytle';
 import toast from '../../components/Toast/Toast';
+import LoadingModal from '../../components/Modal/LoadingModal';
 
 const UPDATE_LIMIT = 6;
 const OBSERVER_OPTIONS = {
@@ -35,8 +36,7 @@ export default function Post() {
   const [offset, setOffset] = useState(0);
   const [hasNext, setHasNext] = useState(true);
 
-  // eslint-disable-next-line
-  const [isLoading, loadingError, getCardsAsync] = useAsync(getCardList);
+  const [isLoading, , getCardsAsync] = useAsync(getCardList);
 
   const [recipientData, setRecipientData] = useState({
     name: '',
@@ -82,7 +82,6 @@ export default function Post() {
     const { results: cardList, next } = result;
     if (next === null) {
       setHasNext(!hasNext);
-      toast.addInfo('모든 카드를 불러왔습니다.');
     }
 
     if (options.offset === 0) {
@@ -95,11 +94,10 @@ export default function Post() {
 
   const handleLoadMore = async () => {
     if (!hasNext) {
-      toast.addInfo('더 불러올 카드가 없습니다.');
+      toast.addError('더 불러올 카드가 없습니다.');
       return;
     }
     if (isLoading) {
-      toast.addWarning('로딩중입니다.');
       return;
     }
     await handleLoadCards(recipientId, { offset, limit: UPDATE_LIMIT });
@@ -147,11 +145,13 @@ export default function Post() {
     setIsModalOpen(true);
     const filteredCard = cards.filter(card => id === card.id)[0];
     setSelectedCard(filteredCard);
+    document.body.style.overflow = 'hidden';
   };
 
   const handleModalClose = () => {
     setIsModalOpen(false);
     setSelectedCard({});
+    document.body.style.overflow = 'unset';
   };
 
   // TODO: EditButton 디자인 업그레이드
@@ -186,6 +186,11 @@ export default function Post() {
       {isModalOpen && selectedCard && (
         <ModalPortal>
           <CardModal card={selectedCard} onClick={handleModalClose} />
+        </ModalPortal>
+      )}
+      {isLoading && (
+        <ModalPortal>
+          <LoadingModal onLoded={handleModalClose} isLoading={isLoading} />
         </ModalPortal>
       )}
 

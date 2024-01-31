@@ -42,6 +42,7 @@ export default function SendMessage() {
       const imageUrlList = result.imageUrls;
       setProfileImages([...imageUrlList]);
     } catch (error) {
+      // eslint-disable-next-line
       alert('프로필 이미지 목록 불러오기 실패');
     }
   };
