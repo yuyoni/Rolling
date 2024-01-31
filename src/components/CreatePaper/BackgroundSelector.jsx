@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import ColorImageContext from '../../contexts/ColorImageContext';
+import { ColorImageContext } from '../../contexts/ColorImageContext';
 import * as S from './BackgroundSelector.style';
 
 export default function BackgroundSelector() {

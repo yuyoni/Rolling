@@ -5,6 +5,7 @@ const Forms = styled.form`
   flex-direction: column;
   gap: 4.5rem;
   width: 72rem;
+  height: 100%;
   @media screen and (max-width: 768px) {
     width: 100%;
     padding: 0 2rem 0 2rem;
