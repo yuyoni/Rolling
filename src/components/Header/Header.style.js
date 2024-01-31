@@ -40,10 +40,6 @@ export const Navigation = styled.div`
     min-width: 32.7rem;
     padding: 0;
     transition: max-width 0.5s ease;
-
-    &.navNoShow {
-      display: none;
-    }
   }
 `;
 

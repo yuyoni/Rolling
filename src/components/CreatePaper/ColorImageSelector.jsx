@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import check from '../../assets/images/checkbgimg.svg';
-import ColorImageContext from '../../contexts/ColorImageContext';
+import { ColorImageContext } from '../../contexts/ColorImageContext';
 import * as S from './ColorImageSelector.style';
 
 export default function ColorImageSelector() {
