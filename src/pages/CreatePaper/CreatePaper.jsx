@@ -5,7 +5,6 @@ import Wrap from './CreatePaper.style';
 
 export default function CreatePaper() {
   return (
-
     <ColorImageProvider>
       <MetaTag
         title="Rolling - 내 롤링 페이퍼 만들기"
