@@ -74,4 +74,3 @@ export const Label = styled.label`
 export const Wrapper = styled.div`
   margin-top: 5.7rem;
 `;
-

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import SEOMetatag from '../../SEOMetaTag';
+import MetaTag from '../../MetaTag';
 import fetchData from '../../apis/fetchData';
 import SubmitButton from '../../components/Button/SubmitButton';
 import ToggleButton from '../../components/Button/ToggleButton';
@@ -75,7 +75,10 @@ export default function SendMessage() {
 
   return (
     <S.MessageForm>
-      <SEOMetatag title="Rolling - 메세지 보내기" />
+      <MetaTag
+        title="Rolling - 메세지 보내기"
+        description="추억의 롤링 페이퍼를 웹에서도 즐길 수 있는 플랫폼 'Rolling'"
+      />
       <S.DivStyle>
         <Heading>From.</Heading>
         <InputText

@@ -6,6 +6,16 @@ export const ImageList = styled.div`
   height: 2.8rem;
 `;
 
+export const ImageListDisplay = styled.div`
+  display: flex;
+  margin-left: 1.2rem;
+  height: 2.8rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 const commonStyles = css`
   width: 2.8rem;
   height: 2.8rem;
