@@ -1,21 +1,14 @@
-import { useState } from 'react';
+import Wrapper from './BackgroundBox.style';
 import BackgroundSelector from './BackgroundSelector';
 import BackgroundText from './BackgroundText';
 import ColorImageSelector from './ColorImageSelector';
 
 export default function BackgroundBox() {
-  const [toggle, setToggle] = useState('color');
-  const toggleChange = () => {
-    if (toggle === 'color') setToggle('image');
-    else setToggle('color');
-  };
   return (
-    <div>
+    <Wrapper>
       <BackgroundText />
-      <BackgroundSelector toggle={toggle} toggleChange={toggleChange} />
-      <ColorImageSelector toggle={toggle} toggleChange={toggleChange} />
-    </div>
+      <BackgroundSelector />
+      <ColorImageSelector />
+    </Wrapper>
   );
 }
-
-// 이 컴포넌트가 필요한지 고민중

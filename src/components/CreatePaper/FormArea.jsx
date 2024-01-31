@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import fetchData from '../../apis/fetchData';
 import purple from '../../assets/images/basket.jpg';
 import beige from '../../assets/images/desert.jpg';
 import blue from '../../assets/images/mokoko.png';
@@ -9,7 +10,6 @@ import BackgroundBox from './BackgroundBox';
 import CreateButton from './CreateButton';
 import Forms from './FormArea.style';
 import RecipientInput from './RecipientInput';
-import fetchData from '../../apis/fetchData';
 
 export default function FormArea() {
   const navigate = useNavigate();
