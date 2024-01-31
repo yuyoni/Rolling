@@ -56,8 +56,7 @@ export const Message = styled.p`
   color: white;
   @media (max-width: 360px) {
     width: 20rem;
-    font-size: 16px;
-    //letter-spacing: -0.16px;
+    font-size: 1.6rem;
   }
 `;
 
