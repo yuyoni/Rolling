@@ -73,6 +73,8 @@ npm run start
 
 2024.01.17 ~ 2024.02.01 (2주)
 
+<img width="1000" alt="image" src="https://github.com/Dev-Duke-Seo/rolling_team1/assets/127701092/a58f1487-ecc2-42a4-87dd-937740112380">
+
 <br/><br/>
 
 ## 🔨 사용 기술 및 도구
