@@ -4,9 +4,8 @@ import plusIcon from '../../assets/images/plus-icon.svg';
 
 export const Card = styled.div`
   position: relative;
-  width: 38.4rem;
+  max-width: 38.4rem;
   height: 28rem;
-  flex-shrink: 0;
 
   border-radius: 1.6rem;
   background: var(--white, #fff);
@@ -17,15 +16,25 @@ export const Card = styled.div`
     transform: scale(1.02);
     transition: 0.2s ease-in-out;
   }
+
+  @media (max-width: 768px) {
+    max-width: 65rem;
+  }
+
+  @media (max-width: 360px) {
+    max-width: 32rem;
+  }
 `;
 
 export const AddCard = styled.div`
-  display: flex;
-  width: 38.4rem;
+  position: relative;
+
+  max-width: 38.4rem;
   height: 28rem;
+
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
 
   border-radius: 1.6rem;
   background: var(--white, #fff);
@@ -36,6 +45,13 @@ export const AddCard = styled.div`
     transition: all 0.3s;
     transform: scale(1.01);
     background-color: var(--gray-200, #eeeeee);
+  }
+  @media (max-width: 768px) {
+    width: 35.2rem;
+  }
+
+  @media (max-width: 360px) {
+    width: 32rem;
   }
 `;
 
@@ -50,15 +66,13 @@ export const AddCardButton = styled.button`
   border-radius: 1rem;
 `;
 
-// ... (Previous code)
-
 export const IconWrapper = styled.div`
   display: flex;
   padding: 1.6rem;
   align-items: flex-start;
   gap: 1rem;
 
-  border-radius: 1rem;
+  border-radius: 10rem;
   background: var(--gray-500, #555);
 `;
 
@@ -74,14 +88,12 @@ export const ProfileImageWrapper = styled.div`
   height: 5.6rem;
   align-items: center;
   border-radius: 1rem;
-  border: 0.1rem solid var(--gray-200, #eee);
   background: var(--white, #fff);
 `;
 
 export const ProfileImage = styled.img`
-  border-radius: 1rem;
+  border-radius: 10rem;
   border: 0.1rem solid var(--gray-200, #eee);
-  background: var(--white, #fff);
   width: 5.6rem;
   height: 5.6rem;
   flex-shrink: 0;
@@ -147,6 +159,13 @@ export const Content = styled.div`
   font-size: 1.8rem;
   line-height: 2.8rem;
   letter-spacing: -0.18rem;
+  @media (max-width: 768px) {
+    width: 30.4rem;
+  }
+
+  @media (max-width: 360px) {
+    width: 27.2rem;
+  }
 `;
 
 export const DateWrapper = styled.p`
@@ -164,8 +183,17 @@ export const DateWrapper = styled.p`
 export const CardHeader = styled.div`
   position: relative;
   width: 38.4rem;
+  max-width: 100%;
   height: 10rem;
-  flex-shrink: 0;
+  flex-shrink: 1;
+
+  @media (max-width: 768px) {
+    width: 35.2rem;
+  }
+
+  @media (max-width: 360px) {
+    width: 32rem;
+  }
 `;
 
 export const DeleteButton = styled.button`
@@ -192,8 +220,17 @@ export const DeleteIcon = styled.img`
 export const HorizonLine = styled.div`
   position: absolute;
   left: 2.4rem;
-  width: 33.6rem;
+  width: 100%;
+  max-width: 33.6rem;
   height: 0.1rem;
   flex-shrink: 0;
   background: var(--gray-200, #eee);
+
+  @media (max-width: 768px) {
+    width: 30.4rem;
+  }
+
+  @media (max-width: 360px) {
+    width: 27.2rem;
+  }
 `;

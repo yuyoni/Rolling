@@ -1,44 +1,28 @@
 import styled from 'styled-components';
 
 const ToastTheme = {
-  success: {
-    backgroundColor: '#3e9a4f',
-    color: '#ffffff',
-    progressBarColor: '#b8f6c2'
-  },
-  error: {
-    backgroundColor: '#b60411',
-    color: '#ffffff',
-    progressBarColor: '#ff929b'
-  },
-  warning: {
-    backgroundColor: '#d0a200',
-    color: '#ffffff',
-    progressBarColor: '#ffe7a2'
-  },
-  info: {
-    backgroundColor: '#0021a1',
-    color: '#ffffff',
-    progressBarColor: '#d0daff'
-  },
-  default: {
-    backgroundColor: '#570385',
-    color: '#ffffff',
-    progressBarColor: '#f3d7ff'
-  }
+  success: '#2BA600',
+  error: '#f50400',
+  warning: '#fff200',
+  info: '#0800ff'
 };
 
 export const PositionWrapper = styled.div`
-  z-index: 999;
+  z-index: 995;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-export const Liner = styled.div`
-  position: fixed;
+export const VerticalLiner = styled.div`
   top: 20%;
+  position: fixed;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+export const HorizontalLiner = styled.div`
+  display: flex;
   justify-content: center;
   align-items: center;
 `;
@@ -46,37 +30,44 @@ export const Liner = styled.div`
 export const Box = styled.div`
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   margin-bottom: 1rem;
-  width: 50rem;
-  height: 10rem;
-  border-radius: 0.5rem 0.5rem 0 0;
+  width: 52.4rem;
+  height: 6.4rem;
+  border-radius: 1rem;
   padding: 0.7em;
-  background-color: ${({ $messageType }) =>
-    $messageType ? ToastTheme[$messageType].backgroundColor : 'black'};
-}
-`;
-export const IconContainer = styled.div`
-  & > svg {
+
+  background-color: rgba(0, 0, 0, 0.8);
+
+  @media (max-width: 360px) {
+    width: 32rem;
+    padding: 1.9rem 3rem;
   }
 `;
 
 export const Message = styled.p`
+  padding-left: 1.2rem;
   width: 50rem;
-  text-align: center;
-  font-size: 2.5rem;
+  text-align: left;
+  font-size: 1.6rem;
   font-weight: 400;
-  color: ${({ $messageType }) =>
-    $messageType ? ToastTheme[$messageType].color : 'var(--Orange-200)'};
+  line-height: 2.6rem;
+  color: white;
+  @media (max-width: 360px) {
+    width: 20rem;
+    font-size: 1.6rem;
+  }
 `;
 
 export const CloseButton = styled.button`
-  position: absolute;
-  top: 1rem;
-  right: 0.5rem;
-
   size: 6rem;
   color: white;
+  @media (max-width: 360px) {
+    width: 2.4rem;
+    height: 2.4rem;
+    flex-shrink: 0;
+  }
 `;
 
 export const ProgressBar = styled.div`
@@ -85,8 +76,9 @@ export const ProgressBar = styled.div`
   bottom: 0;
   height: 1rem;
   background-color: ${({ $messageType }) =>
-    $messageType ? ToastTheme[$messageType].progressBarColor : 'white'};
+    $messageType ? ToastTheme[$messageType] : ToastTheme.success};
   animation: progressBar ${({ $duration }) => $duration}s linear;
+  border-radius: 1rem;
 
   @keyframes progressBar {
     0% {

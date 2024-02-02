@@ -23,7 +23,7 @@ export default function Editor({ onChange }) {
     <S.ReactQuillContainer>
       <S.StyledReactQuill
         modules={modules}
-        className="ql-editor ql-container ql-toobar"
+        className="ql-editor"
         style={{ padding: '0' }}
         onChange={handleChange}
       />

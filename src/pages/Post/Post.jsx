@@ -1,9 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import SEOMetaTag from '../../SEOMetaTag';
+import MetaTag from '../../MetaTag';
 import fetchData from '../../apis/fetchData';
 import getCardList from '../../apis/postApis';
-import editButton from '../../assets/images/edit-button.svg';
 import CardContainer from '../../components/Card/CardContainer';
 import PostPageHeader from '../../components/Card/PostPageHeader';
 import CardModal from '../../components/Modal/CardModal';
@@ -11,6 +10,8 @@ import ModalPortal from '../../components/Modal/ModalPortal';
 import useAsync from '../../hooks/useAsync';
 import * as S from './Post.stytle';
 import toast from '../../components/Toast/Toast';
+import LoadingModal from '../../components/Modal/LoadingModal';
+import EditButtonBox from '../../components/Card/EditButtonBox';
 
 const UPDATE_LIMIT = 6;
 const OBSERVER_OPTIONS = {
@@ -25,19 +26,20 @@ export default function Post() {
    * cards : 카드 리스트
    * recipientData : 롤페이퍼주인 정보객체
    * */
+
+  // CardsState
   const { id: recipientId } = useParams();
   const [cards, setCards] = useState([{}]);
   const [isEditing, setIsEditing] = useState(false);
 
+  // ModalState
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
+  const [isLoading, , getCardsAsync] = useAsync(getCardList);
 
+  // FetchState
   const [offset, setOffset] = useState(0);
   const [hasNext, setHasNext] = useState(true);
-
-  // eslint-disable-next-line
-  const [isLoading, loadingError, getCardsAsync] = useAsync(getCardList);
-
   const [recipientData, setRecipientData] = useState({
     name: '',
     backgroundColor: '',
@@ -55,7 +57,9 @@ export default function Post() {
    * handleDelete : 카드 삭제
    * handleModalOpen : 모달 열기
    * handleModalClose : 모달 닫기
-   * */
+   * handleLoadCards : 카드 불러오기
+   * handleLoadMore : 더 불러오기
+   */
 
   const fetchRecipientData = async () => {
     const recipientsResponse = await fetchData(
@@ -82,7 +86,6 @@ export default function Post() {
     const { results: cardList, next } = result;
     if (next === null) {
       setHasNext(!hasNext);
-      toast.addInfo('모든 카드를 불러왔습니다.');
     }
 
     if (options.offset === 0) {
@@ -95,11 +98,10 @@ export default function Post() {
 
   const handleLoadMore = async () => {
     if (!hasNext) {
-      toast.addInfo('더 불러올 카드가 없습니다.');
+      toast.addError('더 불러올 카드가 없습니다.');
       return;
     }
     if (isLoading) {
-      toast.addWarning('로딩중입니다.');
       return;
     }
     await handleLoadCards(recipientId, { offset, limit: UPDATE_LIMIT });
@@ -137,6 +139,20 @@ export default function Post() {
     setIsEditing(!isEditing);
   };
 
+  const handleDeletePaper = async () => {
+    const response = await fetchData(
+      `3-1/recipients/${recipientId}/`,
+      'DELETE'
+    );
+    if (!response) {
+      toast.addError('롤링 페이퍼 삭제에 실패했습니다.');
+      return;
+    }
+    // eslint-disable-next-line
+    alert('롤링 페이퍼가 삭제되었습니다.');
+    window.location.href = '/list';
+  };
+
   const handleDelete = async cardId => {
     await fetchData(`3-1/messages/${cardId}/`, 'DELETE');
     setCards(prevCards => prevCards.filter(card => card.id !== cardId));
@@ -147,18 +163,21 @@ export default function Post() {
     setIsModalOpen(true);
     const filteredCard = cards.filter(card => id === card.id)[0];
     setSelectedCard(filteredCard);
+    document.body.style.overflow = 'hidden';
   };
 
   const handleModalClose = () => {
     setIsModalOpen(false);
     setSelectedCard({});
+    document.body.style.overflow = 'unset';
   };
-
-  // TODO: EditButton 디자인 업그레이드
 
   return (
     <>
-      <SEOMetaTag title={`Rolling - ${recipientData.name}의 롤링 페이퍼`} />
+      <MetaTag
+        title={`Rolling - ${recipientData.name}의 롤링 페이퍼`}
+        description={`${recipientData.name}의 롤링 페이퍼에 리액션과 메시지를 남겨보세요`}
+      />
       <S.Page>
         <PostPageHeader
           recipientId={recipientId}
@@ -167,13 +186,16 @@ export default function Post() {
           messageCount={recipientData.messageCount}
           topReactions={recipientData.topReactions}
         />
+
         <S.CardBackgroundWrapper
           $backgroundImageURL={recipientData.backgroundImageURL}
           $backgroundColor={recipientData.backgroundColor}
         >
-          <S.EditButton onClick={handleIsEditing}>
-            <img src={editButton} alt="edit-button" />
-          </S.EditButton>
+          <EditButtonBox
+            onClickEdit={handleIsEditing}
+            onClickDelete={handleDeletePaper}
+            isEditing={isEditing}
+          />
           <CardContainer
             cards={cards}
             isEditing={isEditing}
@@ -186,6 +208,11 @@ export default function Post() {
       {isModalOpen && selectedCard && (
         <ModalPortal>
           <CardModal card={selectedCard} onClick={handleModalClose} />
+        </ModalPortal>
+      )}
+      {isLoading && (
+        <ModalPortal>
+          <LoadingModal onLoded={handleModalClose} isLoading={isLoading} />
         </ModalPortal>
       )}
 

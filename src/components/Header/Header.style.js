@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   background-color: var(--white, #fff);
   display: flex;
   height: 6.4rem;
@@ -40,10 +40,6 @@ export const Navigation = styled.div`
     min-width: 32.7rem;
     padding: 0;
     transition: max-width 0.5s ease;
-
-    &.navNoShow {
-      display: none;
-    }
   }
 `;
 

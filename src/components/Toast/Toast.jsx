@@ -20,6 +20,11 @@ class Toast {
   // MessageType = 'success' | 'warning' | 'error' | 'info';
   addSuccess = message => {
     const id = v4();
+    if (
+      this.TOAST_QUEUE.filter(toast => toast.message === message).length > 0
+    ) {
+      return;
+    }
     this.TOAST_QUEUE.push({
       id,
       message,
@@ -36,6 +41,11 @@ class Toast {
 
   addWarning = message => {
     const id = v4();
+    if (
+      this.TOAST_QUEUE.filter(toast => toast.message === message).length > 0
+    ) {
+      return;
+    }
     this.TOAST_QUEUE.push({
       id,
       message,
@@ -52,6 +62,11 @@ class Toast {
 
   addError = message => {
     const id = v4();
+    if (
+      this.TOAST_QUEUE.filter(toast => toast.message === message).length > 0
+    ) {
+      return;
+    }
     this.TOAST_QUEUE.push({
       id,
       message,
@@ -68,6 +83,11 @@ class Toast {
 
   addInfo = message => {
     const id = v4();
+    if (
+      this.TOAST_QUEUE.filter(toast => toast.message === message).length > 0
+    ) {
+      return;
+    }
     this.TOAST_QUEUE.push({
       id,
       message,
