@@ -27,6 +27,9 @@
     "eject": "react-scripts eject",
     "postbuild": "react-snap"
   },
+  "reactSnap": {
+    "include": [ "/", "/post", "/list" ]
+ },
   "eslintConfig": {
     "extends": [
       "react-app",
